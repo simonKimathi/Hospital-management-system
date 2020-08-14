@@ -4,4 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>com.hospital.servlets.HelloServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hey</url-pattern>
+  </servlet-mapping>
+
 </web-app>
