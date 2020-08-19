@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax learning</title>
+</head>
+<body>
+
+
+<div id="demo">
+    <h1>xmlhttprequest object</h1>
+    <button type="button" onclick="loadAjax()">load ajax</button>
+</div>
+
+
+
+<script>
+    function loadAjax(){
+        var xhhtp=new XMLHttpRequest();
+        xhhtp.onreadystatechange=function (){
+            if (this.readyState==4&&this.status==200){
+                document.getElementById("demo").innerHTML=this.responseText;
+            }
+        };
+        xhhtp.open("GET","info.txt",true);
+        xhhtp.send();
+
+    }
+
+
+</script>
+</body>
+</html>

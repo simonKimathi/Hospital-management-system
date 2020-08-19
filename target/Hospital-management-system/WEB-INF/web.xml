@@ -4,7 +4,9 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-
+  <welcome-file-list>
+    <welcome-file>oldindex.jsp</welcome-file>
+  </welcome-file-list>
 <!--<servlet>
     <servlet-name>hello</servlet-name>
     <servlet-class>com.hospital.servlet.helloServlet</servlet-class>
