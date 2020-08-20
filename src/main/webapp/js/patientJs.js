@@ -1,4 +1,4 @@
-var patient={
+/* var patient={
     data:[{
         name:'kim',
         age:24
@@ -19,8 +19,8 @@ var patient={
             + '<th>AGE</th>'
             + '</tr>';
 
-        /*this.data.forEach(col=>{
-            tableContent+='<tr><td>'+col.name+'<td><td>'+col.age+'</td></tr>'*/
+        /!*this.data.forEach(col=>{
+            tableContent+='<tr><td>'+col.name+'<td><td>'+col.age+'</td></tr>'*!/
 
         for (var idx = 0; idx < this.data.length; idx++) {
             tableContent += '<tr><td>' + this.data[idx].name + '</td><td>' + this.data[idx].age + '</td></tr>';
@@ -32,7 +32,7 @@ var patient={
         document.getElementById("content").innerHTML = tableContent;
     }
 };
-patient.showTable();
+patient.showTable();*/
 //document.getElementById("content").innerHTML=patient.showTable();
 
 /*
@@ -41,3 +41,13 @@ function showTable() {
         console.log(col.name+" "+col.age);
     })
 }*/
+
+//hospitalJsLib
+
+/*
+(function () {
+    hospitalJsLib.loadData().call({
+        dataUrl:"organization"
+    })
+
+})();*/

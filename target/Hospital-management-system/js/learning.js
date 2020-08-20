@@ -57,25 +57,17 @@ var x = 10;
 //bind() can be used when the function needs to be called later in certain events when it's useful.
 //Demo with javascript .call()
 
-var obj = {name:"Niladri"};
+var obj = {name:"kim"};
 
-var greeting = function(a,b,c){
-    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
+var greeting = function(a,b){
+    return "welcome mr "+this.name+" to "+ a +" in "+b;
 };
 
-console.log(greeting.call(obj,"Newtown","KOLKATA","WB"));
-// returns output as welcome Niladri to Newtown KOLKATA in WB
+console.log(greeting.call(obj,"meru","kenya"));
+// returns output as welcome  mr kim to meru in kenya
 
 //Demo with javascript .apply()
-
-var obj = {name:"Niladri"};
-
-var greeting = function(a,b,c){
-    return "welcome "+this.name+" to "+a+" "+b+" in "+c;
-};
-
-// array of arguments to the actual function
-var args = ["Newtown","KOLKATA","WB"];
+var args = ["meru","kenya"];
 console.log("Output using .apply() below ")
 console.log(greeting.apply(obj,args));
 
@@ -87,8 +79,8 @@ var obj1={ names:"kim" };
 var fn=function (a,b) {
     return a+" "+this.names+" "+b;
 }
-console.log(fn.call(obj1,"symoh","john")); //using call
-//using bind
+console.log(fn.call(obj1,"symoh","john"));
+//using apply
 var args=("symoh","john");//can be many
 
 console.log(fn.apply(obj1,args));

@@ -1,5 +1,5 @@
-/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/patient.java
-/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/helloListener.java
-/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/helloServlet.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/department/Servlet/DepartmentServlet.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/patient/model/Patient.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/department/model/Department.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/utilities/Listener/DatabaseBootstrap.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/utilities/DbConnection.java
