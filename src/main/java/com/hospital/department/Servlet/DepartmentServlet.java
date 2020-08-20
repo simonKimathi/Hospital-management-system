@@ -30,7 +30,7 @@ public class DepartmentServlet extends HttpServlet {
         List<Department> departmentList=new ArrayList<Department>();
         try {
             //get data from database
-            PreparedStatement preparedStatement = dbConnection.prepareStatement("SELECT * FROM organization");
+            PreparedStatement preparedStatement = dbConnection.prepareStatement("SELECT * FROM department");
             preparedStatement.execute();
             ResultSet resultSet = preparedStatement.getResultSet();
             while (resultSet.next()){

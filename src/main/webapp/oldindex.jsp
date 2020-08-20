@@ -24,12 +24,13 @@
             color: white;
         }
     </style>
-    <script src="./js/department.js"></script>
+
 </head>
 <body>
 <h2>Hospital management system</h2>
 <div id="content"> </div>
 <script src="./js/app.js"></script>
+<script src="./js/department.js"></script>
 </body>
 
 </html>
