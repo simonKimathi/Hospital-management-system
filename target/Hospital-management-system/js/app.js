@@ -1,6 +1,18 @@
+var hospitalJsLib = hospitalJsLib || {};
 
-var hospitalJsLib= hospitalJsLib ||{}; //if hospitalJsLib is not created then create
-//show table object
+hospitalJsLib.showTable = function(){
+    var me = this;
+
+    var tableContent = `<table id="patients"><tr><th>Name</th><th>Address</th></tr>`;
+    me.data.forEach(row => {
+        tableContent += `<tr><td>${row.id}</td><td>${row.name}</td></tr>`;
+    });
+    tableContent += `</table>`;
+
+    document.getElementById('content').innerHTML = tableContent;
+
+}
+
 hospitalJsLib.loadData = function(){
     var me = this;
 
@@ -18,3 +30,4 @@ hospitalJsLib.loadData = function(){
     xhr.send();
 
 }
+

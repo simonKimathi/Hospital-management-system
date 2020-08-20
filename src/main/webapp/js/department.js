@@ -1,5 +1,5 @@
-(function (){
+(function(){
     hospitalJsLib.loadData.call({
-        dataUrl:'department'
+        dataUrl: 'department'
     });
 })();
