@@ -18,23 +18,31 @@ public class DatabaseBootstrap implements ServletContextListener {
 
         System.out.println("INFO: Creating database if it does not exist....");
 
-        Statement statement = null;
-        Statement statement2 = null;
+        Statement createDbStatement = null;
+        Statement departmentStatement = null;
+        Statement patientStatement = null;
 
         try {
-            statement = dbConnection.connect().createStatement();
-            statement.execute("CREATE DATABASE IF NOT EXISTS mrs");
+            createDbStatement = dbConnection.connect().createStatement();
+            createDbStatement.execute("CREATE DATABASE IF NOT EXISTS mrs");
 
             System.out.println("INFO: db created or updated successfully...");
 
             System.out.println("INFO: Connection to database just created or existing");
             DbConnection dbConnection2 = new DbConnection("jdbc:mysql://localhost:3306/mrs","root",
                     "camoncxair");
-            statement2 = dbConnection2.connect().createStatement();
+            //connect statement to connection
+            departmentStatement = dbConnection2.connect().createStatement();
 
+            patientStatement = dbConnection2.connect().createStatement();
 
+            //create tables if not exists
             System.out.println("INFO: Creating tables");
-            statement2.execute("create table if not exists department(id varchar(255), name varchar(255))");
+
+            departmentStatement.execute("create table if not exists department(id varchar(255), name varchar(255))");
+
+            patientStatement.execute("create table if not exists patient(firtName varchar(255),LastName varchar(255),surName varchar(255),idNumber integer ,gender varchar(255),dateOfBirth varchar(255),contact varchar(255),emergencyContact varchar(255),county varchar(255),subCounty varchar(255), village varchar(255))");
+
 
             sce.getServletContext().setAttribute("dbConnection", dbConnection2.connect());
 
@@ -43,11 +51,11 @@ public class DatabaseBootstrap implements ServletContextListener {
             sqEx.printStackTrace();
         }finally {
             try {
-                if (statement != null)
-                    statement.close();
+                if (createDbStatement != null)
+                    createDbStatement.close();
 
-                if (statement2 != null)
-                    statement2.close();
+                if (departmentStatement != null)
+                    departmentStatement.close();
 
             }catch (SQLException sqlEx2){
                 sqlEx2.printStackTrace();

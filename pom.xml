@@ -43,11 +43,11 @@
 
 
   </dependencies>
-  <properties>
+  <!--<properties>
     <pluginGroup>org.wildfly.plugins</pluginGroup>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
-  </properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>-->
 
   <build>
     <finalName>Hospital-management-system</finalName>
@@ -60,6 +60,7 @@
         <version>2.0.2.Final</version>
       </plugin>
 
+<!--
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -69,6 +70,7 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+-->
 
     </plugins>
 

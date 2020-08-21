@@ -36,8 +36,17 @@ public class PatientServlet extends HttpServlet {
             while (resultSet.next()){
                 //create object of class patient
                 Patient patient=new Patient();
-
-                //....to be done
+                patient.setfName(resultSet.getString("firstName"));
+                patient.setlName(resultSet.getString("lastName"));
+                patient.setsName(resultSet.getString("surName"));
+                patient.setId(resultSet.getInt("idNumber"));
+                patient.setGender(resultSet.getString("gender"));
+                patient.setDOB(resultSet.getString("dateOfBirth"));
+                patient.setContact(resultSet.getString("contact"));
+                patient.setEmergencyContact(resultSet.getString("emergencyContact"));
+                patient.setCounty(resultSet.getString("county"));
+                patient.setSubCounty(resultSet.getString("subCounty"));
+                patient.setVillage(resultSet.getString("village"));
 
                 patientList.add(patient);
             }

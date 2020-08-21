@@ -17,7 +17,6 @@ public class DbConnection {
 
     public Connection connect(){
         Connection connection=null;
-        //statement2.execute("create table if not exists patient(firtName varchar(255),LastName varchar(255),surName varchar(255),idNumber integer ,gender varchar(255),dateOfBirth varchar(255),contact varchar(255),emergencyContact varchar(255),county varchar(255),subCounty varchar(255), village varchar(255))");
 
 
         try {
