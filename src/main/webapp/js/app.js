@@ -1,6 +1,6 @@
-var hospitalJsLib = hospitalJsLib || {};
+var SystechSkulJsLib = SystechSkulJsLib || {};
 
-hospitalJsLib.showGrid = function(){
+SystechSkulJsLib.showGrid = function(){
     var me = this;
 
     var xhr = new XMLHttpRequest();
@@ -25,89 +25,92 @@ hospitalJsLib.showGrid = function(){
         tableContent += `<button class="button ${button.cssClass}" id="${button.id}">${button.label}</button>`;
     });
 
-    tableContent = `<br><table id="${me.gridStyle}"><tr>`;
+    tableContent += `<br/><table class='${me.gridStyle}'><tr>`;
 
-    //create headers
-    me.grid.columns.forEach(col=>{
-        tableContent+=`<th>col.header</th>`;
+    me.gridColumns.forEach(col => {
+        tableContent += `<th>${col.header}</th>`;
     });
-    tableContent += `</tr>`
+    tableContent += `</tr>`;
 
-    //create table data #row
-    me.gridColumns.forEach(row=> {
+    me.gridData.forEach(row => {
 
         tableContent += `<tr>`;
-        //create table data #columns in that row
-        me.gridColumns.forEach(col=>{
-            tableContent+=`<td>row[col.colIndex]</td>`;
+
+        me.gridColumns.forEach(col => {
+            tableContent += `<td>${row[col.dataIndex]}</td>`;
         });
-        tableContent+=`</tr>`
+
+        tableContent += `</tr>`;
     });
-    //close table
+
     tableContent += `</table>`;
 
-    //change content by id
     document.getElementById('module-content').innerHTML = tableContent;
-    //add buttons for form actions(save,cancel)
-    me.gridButtons.forEach(button =>{
-        if(button.handler=='addButton'){
-            document.getElementById(button.id).addEventListener('click',function () {
-                hospitalJsLib.Form.call(me);
+
+    me.gridButtons.forEach(button => {
+        console.log('Registing event for adding form');
+        if (button.handler == 'addButton') {
+            document.getElementById(button.id).addEventListener('click', function () {
+                SystechSkulJsLib.Form.call(me);
             });
         }
+
     });
 
 }
 
-hospitalJsLib.Form = function(){
-    var me=this;
+SystechSkulJsLib.Form = function(){
+    var me = this;
 
-    var formContent=`<form action="#">`;
+    var formContent = `<form action="#">`;
 
-    me.formField.forEach(field=>{
+    me.formField.forEach(field =>{
         formContent += `<div class="row">`
             + `<div class="col-25">`
-                    + `<label for="${field.name}">${field.label}</label>`
-                + `</div>`
-                + `<div class="col-75">`
-                    + `<input type="${field.type}" id="${field.id}" name="${field.name}">`
-                + `</div>`
+            + `<label for="${field.name}">${field.label}</label>`
+            + `</div>`
+            + `<div class="col-75">`
+            + `<input type="${field.type}" id="${field.id}" name="${field.name}">`
+            + `</div>`
             + `</div>`;
+
     });
 
     formContent +=  `<div class="row">`
-                + `<input type="submit" value="Submit" id="${me.componentId}">`
-            + `</div>`
+        + `<input type="submit" value="Submit" id="${me.componentId}">`
+        + `</div>`
         + ` </form>`;
+
     document.getElementById('module-content').innerHTML = formContent;
 
-    document.getElementById(me.componentId).addEventListener('click',event=> {
+    document.getElementById(me.componentId).addEventListener('click', event => {
         event.preventDefault();
 
-        var formData=``;
-        me.formField.forEach(field=>{
-            formData += field.name + '=' +document.getElementById(field.id).value + '&';
+        var formData = '';
+        me.formField.forEach(field =>{
+            formData += field.name + '=' + document.getElementById(field.id).value + '&';
         });
-        var me = this;
 
         var xhr = new XMLHttpRequest();
+
+        var requestResponse = [];
         xhr.onreadystatechange = function(){
             if (xhr.readyState == XMLHttpRequest.DONE){
                 if (xhr.status == 200){
-                    hospitalJsLib.data = eval('(' + xhr.responseText + ')');
+                    requestResponse = eval('(' + xhr.responseText + ')');
+
                 }
             }
         }
 
-        xhr.open('post',me.dataUrl,false);
+        console.log(formData);
+
+        xhr.open('post', me.dataUrl, false);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send(formData);
 
-        hospitalJsLib.showGrid().call(me);
-
+        SystechSkulJsLib.showGrid.call(me);
 
     });
-
-
 }
 

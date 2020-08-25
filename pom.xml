@@ -43,11 +43,11 @@
 
 
   </dependencies>
-  <!--<properties>
+<properties>
     <pluginGroup>org.wildfly.plugins</pluginGroup>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-  </properties>-->
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
 
   <build>
     <finalName>Hospital-management-system</finalName>

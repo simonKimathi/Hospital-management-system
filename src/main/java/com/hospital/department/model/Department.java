@@ -1,5 +1,7 @@
 package com.hospital.department.model;
 
+import java.io.PrintWriter;
+
 public class Department {
     //declare variables
     String id;
@@ -20,5 +22,12 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String msg(){
+        String stringBuilder="";
+        for(int i=0;i<10;i++){
+            stringBuilder  +=( "im loop number :"+i+"<br/>");
+        }
+        return stringBuilder;
     }
 }

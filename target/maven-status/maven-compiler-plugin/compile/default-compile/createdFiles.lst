@@ -4,3 +4,4 @@ com/hospital/utilities/DbConnection.class
 com/hospital/department/model/Department.class
 com/hospital/patient/servlet/PatientServlet.class
 com/hospital/patient/model/Patient.class
+com/hospital/user/model/User.class

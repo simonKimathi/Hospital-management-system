@@ -1,14 +1,14 @@
 (function(){
-    hospitalJsLib.showGrid().call({
+    SystechSkulJsLib.showGrid.call({
         dataUrl: 'department',
-        gridStyle:'patients',
+        gridStyle:'customers',
         componentId:'department',
         gridColumns:[{
                 header:'id',
-                colIndex:'id'
+                dataIndex:'id'
             },{
                 header:'Name',
-                colIndex:'name'
+                dataIndex:'name'
             }],
         gridButtons:[{
             label: 'Add department',
@@ -28,12 +28,12 @@
         }],
         formField:[{
             label: 'Organization Id',
-            name: 'name',
+            name: 'id',
             type: 'text',
             id: 'org-name'
         },{
             label: 'Organization Name',
-            name: 'address',
+            name: 'name',
             type: 'text',
             id: 'org-address'
         }]
