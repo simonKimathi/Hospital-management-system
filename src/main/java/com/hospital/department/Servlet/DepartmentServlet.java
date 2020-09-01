@@ -1,8 +1,12 @@
 package com.hospital.department.Servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hospital.department.annotation.SaveToDb;
+import com.hospital.department.bean.DepartmentBeanI;
 import com.hospital.department.model.Department;
+import org.apache.commons.beanutils.BeanUtils;
 
+import javax.inject.Inject;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,13 +25,22 @@ import java.util.List;
 @WebServlet("/department")
 public class DepartmentServlet extends HttpServlet {
     //GET method
+
+    @Inject @SaveToDb
+    private DepartmentBeanI departmentBean;
+
+    @Inject
+    public Department department;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         //instantiate servlet context to be used everywhere
         ServletContext servletContext=getServletContext();
         //get connection from other context on database connection from database bootstrap
         Connection dbConnection=(Connection)servletContext.getAttribute("dbConnection");
         response.setContentType("text/plain");
-        //create array list of departments
+
+
+        /*//create array list of departments
         List<Department> departmentList=new ArrayList<Department>();
         try {
             //get data from database
@@ -45,12 +59,14 @@ public class DepartmentServlet extends HttpServlet {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }
+        }*/
+
+
 
         //map the object using object mapper(jackson) to be handles as html
 
         ObjectMapper objectMapper=new ObjectMapper();
-        response.getWriter().print(objectMapper.writeValueAsString(departmentList));
+        response.getWriter().print(objectMapper.writeValueAsString(departmentBean.list(dbConnection)));
 
 
     }
@@ -58,6 +74,18 @@ public class DepartmentServlet extends HttpServlet {
         ServletContext scx = getServletContext();
         Connection dbConnection = (Connection) scx.getAttribute("dbConnection");
 
+        try {
+            BeanUtils.populate(department, request.getParameterMap());
+
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+
+        response.getWriter().print(departmentBean.add(dbConnection,department));
+
+       /*
         String id = request.getParameter("id");
         String name = request.getParameter("name");
 
@@ -71,7 +99,9 @@ public class DepartmentServlet extends HttpServlet {
 
         }catch (SQLException sqlEx){
             sqlEx.printStackTrace();
-        }
+        }*/
+
+
 
     }
 

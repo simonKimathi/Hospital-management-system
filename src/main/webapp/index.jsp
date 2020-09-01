@@ -3,6 +3,7 @@
 <%@ page import="com.hospital.user.model.User" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <%@ include file="./page/header.html" %>
@@ -11,22 +12,32 @@
 <div id="module-content"> table loading...</div>
 <jsp:useBean id="userInfo" class="com.hospital.user.model.User"/>
 <jsp:setProperty name="userInfo" property="*" />
-
+<hr/>
+<h1>using bean</h1>
 my id is: <jsp:getProperty name="userInfo" property="id"/><br/>
 my name is: <jsp:getProperty name="userInfo" property="name"/><br/>
 my address is: <jsp:getProperty name="userInfo" property="address"/><br/>
 my email is: <jsp:getProperty name="userInfo" property="email"/><br/>
+<hr/>
+<h1>using el language(expression language)</h1>
+my id is: ${param.id}<br/>
+my name is: ${param.name}<br/>
+my address is: ${param.address}<br/>
+my email is: ${param.email}<br/>
+<hr/>
+
+
 <%--my age is:<%= %>--%>
 
 <%--    <%Department department=new Department();%>
     <%=(department.msg())%>--%>
 <%
-    List<User> users;
+    List<User> users ;
     if(session.getAttribute("users")==null){
-        users=new ArrayList<User>();
-    }
-    else{
-        users=(List<User>) session.getAttribute("users");
+        users = new ArrayList<User>();
+    }else{
+        users = (List<User>) session.getAttribute("users");
+
     }
 
     String id=request.getParameter("id");
