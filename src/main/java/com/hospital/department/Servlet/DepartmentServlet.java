@@ -53,6 +53,7 @@ public class DepartmentServlet extends HttpServlet {
         }
 
         response.getWriter().print(departmentBean.add(dbConnection,department));
+
     }
 
 

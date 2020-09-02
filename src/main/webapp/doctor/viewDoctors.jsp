@@ -20,6 +20,7 @@
     <!-- Custom styles for this template -->
     <link href="../Stylesheet/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
+    <script src="../js/app.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" >
@@ -45,31 +46,40 @@
                     </li>
                     <li class="nav-item">
                         <i class="fas fa-angle-right rotate"></i>
-                        <span><div class="fa-hospital-user fa-lg fas">
-                        </div>&nbsp;Patients </span>
+                        <span> Patients </span>
                         <ul class="nested">
-                            <li><i class="far fa-folder-open ic-w mr-1"></i>add patient</li>
-                            <li><i class="far fa-folder-open ic-w mr-1"></i>view patients</li>
+                            <a href="../Patient/addPatient.jsp">
+                                <li><i class="far fa-folder-open ic-w mr-1"></i>add patient</li>
+                            </a>
+                            <a href="../Patient/viewPatients.jsp">
+                                <li><i class="far fa-folder-open ic-w mr-1"></i>view patients</li>
+                            </a>
                         </ul>
 
                     </li>
                     <li class="nav-item">
                         <i class="fas fa-angle-right rotate"></i>
-                        <span><div class="fa-lg fa-user-md fas">
-                        </div>&nbsp;doctors </span>
+                        <span> doctors </span>
                         <ul class="nested">
-                            <li><i class="fa-lg fa-user-md fas"></i>add doctor</li>
-                            <li><i class="fa-lg fa-user-md fas"></i>view doctors </li>
+                            <a href="../doctor/addDoctor.jsp">
+                                <li><i class="fa-lg fa-user-md fas"></i>add doctor</li>
+                            </a>
+                            <a href="../doctor/viewDoctors.jsp">
+                                <li><i class="fa-lg fa-user-md fas"></i>view doctors</li>
+                            </a>
                         </ul>
 
                     </li>
                     <li class="nav-item">
                         <i class="fas fa-angle-right rotate"></i>
-                        <span><div class="fa-lg fa-notes-medical fas">
-                        </div>&nbsp;Rooms </span>
+                        <span> Rooms </span>
                         <ul class="nested">
-                            <li><i class="fa-lg fa-notes-medical fas"></i>add room</li>
-                            <li><i class="fa-lg fa-medkit fas"></i>view rooms</li>
+                            <a href="../room/addRoom.jsp">
+                                <li><i class="fa-lg fa-notes-medical fas"></i>add room</li>
+                            </a>
+                            <a href="../room/viewRooms.jsp">
+                                <li><i class="fa-lg fa-medkit fas"></i>view rooms</li>
+                            </a>
                         </ul>
 
                     </li>
@@ -81,6 +91,7 @@
         </main>
     </div>
 </div>
+<script src="../js/Doctor.js"></script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

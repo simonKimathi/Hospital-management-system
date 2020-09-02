@@ -50,5 +50,6 @@ public class RoomServlet extends HttpServlet {
         }
 
         response.getWriter().print(roomBean.add(dbConnection,room));
+        response.sendRedirect("room/viewRooms.jsp");
     }
 }

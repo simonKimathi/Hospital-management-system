@@ -54,5 +54,6 @@ public class PatientServlet extends HttpServlet {
         }
 
         response.getWriter().print(patientBean.add(dbConnection,patient));
+        response.sendRedirect("Patient/viewPatients.jsp");
     }
 }

@@ -50,5 +50,6 @@ public class EmployeeServlet extends HttpServlet {
         }
 
         response.getWriter().print(employeeBean.addDoctor(dbConnection,employee));
+        response.sendRedirect("doctor/viewDoctors.jsp");
     }
 }
