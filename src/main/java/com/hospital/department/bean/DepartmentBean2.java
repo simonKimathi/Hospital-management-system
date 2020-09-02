@@ -1,6 +1,5 @@
 package com.hospital.department.bean;
 
-import com.hospital.department.annotation.SaveToDb;
 import com.hospital.department.model.Department;
 
 import java.sql.Connection;

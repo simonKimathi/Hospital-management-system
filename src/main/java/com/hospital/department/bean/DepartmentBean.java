@@ -49,9 +49,9 @@ public class DepartmentBean implements DepartmentBeanI{
             }
 
 
-        } catch (
-                SQLException throwables) {
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
+
         }
         return departmentList;
     }

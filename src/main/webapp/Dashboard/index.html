@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
 </head>
 <body>
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" >
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Nairobi Hospital</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
@@ -23,7 +23,7 @@
         </li>
     </ul>
 </nav>
-<div class="container-fluid">
+<div class="container-fluid" style="padding-top:50px">
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
@@ -36,11 +36,36 @@
                             Quick links<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"> <div class="fa-hospital-user fa-lg fas">
-                        </div>
-                            &nbsp;Patients </a>
+                        <i class="fas fa-angle-right rotate"></i>
+                        <span><div class="fa-hospital-user fa-lg fas">
+                        </div>&nbsp;Patients </span>
+                        <ul class="nested">
+                            <li><i class="far fa-folder-open ic-w mr-1"></i>add patient</li>
+                            <li><i class="far fa-folder-open ic-w mr-1"></i>view patients</li>
+                        </ul>
+
                     </li>
                     <li class="nav-item">
+                        <i class="fas fa-angle-right rotate"></i>
+                        <span><div class="fa-lg fa-user-md fas">
+                        </div>&nbsp;doctors </span>
+                        <ul class="nested">
+                            <li><i class="fa-lg fa-user-md fas"></i>add doctor</li>
+                            <li><i class="fa-lg fa-user-md fas"></i>view doctors </li>
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-angle-right rotate"></i>
+                        <span><div class="fa-lg fa-notes-medical fas">
+                        </div>&nbsp;Rooms </span>
+                        <ul class="nested">
+                            <li><i class="fa-lg fa-notes-medical fas"></i>add room</li>
+                            <li><i class="fa-lg fa-medkit fas"></i>view rooms</li>
+                        </ul>
+
+                    </li>
+                    <!--<li class="nav-item">
                         <a class="nav-link" href="#"><div class="fa-lg fa-user-md fas">
                         </div> &nbsp;Doctors</a>
                     </li>
@@ -54,7 +79,7 @@
                         <a class="nav-link" href="#"> <div class="fa-folder-open fa-lg fas">
                         </div>
                             Reports </a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
         </nav>
@@ -63,7 +88,9 @@
                 <h1 class="h2">welcome back&nbsp;</h1>
                 <p id="current_time">loading current time...</p>
             </div>
-            <div class="row box">
+
+
+            <!--<div class="row box">
                 <a href="" class=" nav-link col-md-3 text-center"> <span class="fa-5x fa-user-plus fas"> </span> <h3><br>Register a patient</h3> </a>
                 <a href="#" class="nav-link col-md-3 text-center"> <span class=" fa-5x fa-search fas"> </span> <h3><br>Find a patient</h3> </a>
                 <a href="#" class="nav-link col-md-3 text-center"> <span class="fa-5x fa-list-ul fas"> </span> <h3><br>active visits</h3> </a>
@@ -80,10 +107,10 @@
                 <a href="#" class="nav-link col-md-3 text-center"> <span class="fa-5x fa-receipt fas"> </span> <h3><br>Find an invoice</h3> </a>
                 <a href="#" class="nav-link col-md-3 text-center"> <span class="fa-5x fa-file-alt fas"> </span> <h3><br>Inventory Control</h3> </a>
                 <a href="#" class="nav-link col-md-3 text-center"> <span class="fa-5x fa-cogs fas"> </span> <h3><br>System administration</h3> </a>
-            </div>
+            </div>-->
         </main>
     </div>
-</div>                                                                                                                                                                                                                                                sss
+</div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

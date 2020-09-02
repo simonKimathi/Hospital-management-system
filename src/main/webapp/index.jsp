@@ -12,7 +12,8 @@
 <div id="module-content"> table loading...</div>
 <jsp:useBean id="userInfo" class="com.hospital.user.model.User"/>
 <jsp:setProperty name="userInfo" property="*" />
-<hr/>
+
+<%--<hr/>
 <h1>using bean</h1>
 my id is: <jsp:getProperty name="userInfo" property="id"/><br/>
 my name is: <jsp:getProperty name="userInfo" property="name"/><br/>
@@ -27,10 +28,10 @@ my email is: ${param.email}<br/>
 <hr/>
 
 
-<%--my age is:<%= %>--%>
+&lt;%&ndash;my age is:<%= %>&ndash;%&gt;
 
-<%--    <%Department department=new Department();%>
-    <%=(department.msg())%>--%>
+&lt;%&ndash;    <%Department department=new Department();%>
+    <%=(department.msg())%>&ndash;%&gt;
 <%
     List<User> users ;
     if(session.getAttribute("users")==null){
@@ -73,7 +74,7 @@ my email is: ${param.email}<br/>
     Email: <input type="text" name="email"/>
     Password: <input type="password" name="password"/>
     <input type="submit" value="Submit">
-</form>
+</form>--%>
 
 <script src="./js/department.js"></script>
 </body>

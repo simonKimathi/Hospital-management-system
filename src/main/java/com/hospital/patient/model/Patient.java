@@ -1,9 +1,9 @@
 package com.hospital.patient.model;
 
 public class Patient {
-    String fName;
-    String lName;
-    String sName;
+    String firstName;
+    String lastName;
+    String surName;
     int id;
     String gender;
     String DOB;
@@ -13,28 +13,28 @@ public class Patient {
     String subCounty;
     String village;
 
-    public String getfName() {
-        return fName;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getlName() {
-        return lName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setlName(String lName) {
-        this.lName = lName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getsName() {
-        return sName;
+    public String getSurName() {
+        return surName;
     }
 
-    public void setsName(String sName) {
-        this.sName = sName;
+    public void setSurName(String surName) {
+        this.surName = surName;
     }
 
     public int getId() {

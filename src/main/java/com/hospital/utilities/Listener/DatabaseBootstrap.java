@@ -18,40 +18,33 @@ public class DatabaseBootstrap implements ServletContextListener {
     private DataSource dataSource;
 
     public void contextInitialized(ServletContextEvent sce) {
-       /* DbConnection dbConnection = new DbConnection("jdbc:mysql://localhost:3306/","root",
-                "camoncxair");
 
-        System.out.println("INFO: Creating database if it does not exist....");
-*/
-        //Statement createDbStatement = null;
         Statement departmentStatement = null;
         Statement patientStatement = null;
+        Statement employeeStatement = null;
+        Statement roomStatement = null;
 
         try {
-            //InitialContext initialContext=new InitialContext();
-            //DataSource dataSource= (DataSource) initialContext.lookup("java:jboss/datasources/mrs");
+            //connect statement to datasource
+
             Connection connection=dataSource.getConnection();
 
-          /*  createDbStatement = dbConnection.connect().createStatement();
-            createDbStatement.execute("CREATE DATABASE IF NOT EXISTS mrs");
-*/
-            /*System.out.println("INFO: db created or updated successfully...");
-
-            System.out.println("INFO: Connection to database just created or existing");
-            DbConnection dbConnection2 = new DbConnection("jdbc:mysql://localhost:3306/mrs","root",
-                    "camoncxair");*/
-            //connect statement to connection
             departmentStatement = connection.createStatement();
 
             patientStatement = connection.createStatement();
+            employeeStatement = connection.createStatement();
+            roomStatement = connection.createStatement();
 
             //create tables if not exists
             System.out.println("INFO: Creating tables");
 
             departmentStatement.execute("create table if not exists department(id varchar(255), name varchar(255))");
 
-            patientStatement.execute("create table if not exists patient(firtName varchar(255),LastName varchar(255),surName varchar(255),idNumber integer ,gender varchar(255),dateOfBirth varchar(255),contact varchar(255),emergencyContact varchar(255),county varchar(255),subCounty varchar(255), village varchar(255))");
+            patientStatement.execute("create table if not exists patient(firtName varchar(255),LastName varchar(255),surName varchar(255),id integer ,gender varchar(255),DOB varchar(255),contact varchar(255),emergencyContact varchar(255),county varchar(255),subCounty varchar(255), village varchar(255))");
 
+            employeeStatement.execute("create table if not exists employee(employeeId varchar(255),firtName varchar(255),LastName varchar(255),surName varchar(255),gender varchar(255),address varchar(255),contact varchar(255),eType varchar(255),salary integer)");
+
+            roomStatement.execute("create table if not exists room(id varchar(255), name varchar(255), rType varchar(255),assigned varchar(255) DEFAULT 'vacant')");
 
             sce.getServletContext().setAttribute("dbConnection", connection);
 
