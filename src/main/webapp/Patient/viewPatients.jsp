@@ -68,7 +68,7 @@
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" >
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Nairobi Hospital</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://localhost:8080/Hospital-management-system">Nairobi Hospital</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
@@ -82,7 +82,7 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column" id="myUL">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                        <a class="nav-link active" href="http://localhost:8080/Hospital-management-system"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
@@ -127,16 +127,12 @@
                 </ul>
             </div>
         </nav>
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">welcome back&nbsp;</h1>
-                <p id="current_time">loading current time...</p>
-            </div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
             <%--<div id="module-content"> table loading...</div>--%>
             <table class = "table table-bordered table-stripped table-condensed" align = "center">
                 <tr>
                     <thead class="table-primary">
-                    <th scope="col">Room Id</th>
+                    <th scope="col">Patient Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Gender</th>
                     <th scope="col">Date Of Birth</th><%--
@@ -182,6 +178,7 @@
                 </tr>
                 <%
                         }
+                        connection.close();
                     }
                     catch(Exception ex)
                     {

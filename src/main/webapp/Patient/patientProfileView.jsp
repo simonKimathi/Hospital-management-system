@@ -66,6 +66,7 @@
                         </ul>
                         <%
                                 }
+                                connection1.close();
                             }
                             catch(Exception ex1)
                             {

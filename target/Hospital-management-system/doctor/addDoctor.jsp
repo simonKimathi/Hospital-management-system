@@ -66,7 +66,7 @@
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" >
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Nairobi Hospital</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://localhost:8080/Hospital-management-system">Nairobi Hospital</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
@@ -80,7 +80,7 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column" id="myUL">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                        <a class="nav-link active" href="http://localhost:8080/Hospital-management-system"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
@@ -89,10 +89,10 @@
                     <li >
                         <span class="caret"> Patients </span>
                         <ul class="nested">
-                            <a href="../Patient/addPatient.jsp">
+                            <a href="../Hospital-management-system/Patient/addPatient.jsp">
                                 <li><i class="far fa-folder-open ic-w mr-1"></i>add patient</li>
                             </a>
-                            <a href="../Patient/viewPatients.jsp">
+                            <a href="../Hospital-management-system/Patient/viewPatients.jsp">
                                 <li><i class="far fa-folder-open ic-w mr-1"></i>view patients</li>
                             </a>
                         </ul>
@@ -101,10 +101,10 @@
                     <li >
                         <span class="caret"> doctors </span>
                         <ul class="nested">
-                            <a href="../doctor/addDoctor.jsp">
+                            <a href="../Hospital-management-system/doctor/addDoctor.jsp">
                                 <li><i class="fa-lg fa-user-md fas"></i>add doctor</li>
                             </a>
-                            <a href="../doctor/viewDoctors.jsp">
+                            <a href="../Hospital-management-system/doctor/viewDoctors.jsp">
                                 <li><i class="fa-lg fa-user-md fas"></i>view doctors</li>
                             </a>
                         </ul>
@@ -113,10 +113,10 @@
                     <li >
                         <span class="caret"> Rooms </span>
                         <ul class="nested">
-                            <a href="../room/addRoom.jsp">
+                            <a href="../Hospital-management-system/room/addRoom.jsp">
                                 <li><i class="fa-lg fa-notes-medical fas"></i>add room</li>
                             </a>
-                            <a href="../room/viewRooms.jsp">
+                            <a href="../Hospital-management-system/room/viewRooms.jsp">
                                 <li><i class="fa-lg fa-medkit fas"></i>view rooms</li>
                             </a>
                         </ul>

@@ -31,7 +31,9 @@
         preparedStatement1.setString(2,room);
         preparedStatement.execute();*/
         response.sendRedirect("viewDoctors.jsp");
+        connection.close();
     }
+
     catch(Exception e)
     {
         System.out.print(e);
