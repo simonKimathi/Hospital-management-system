@@ -1,11 +1,11 @@
 <div class="container">
     <div class="card-header">
         <h4 class="card-title">
-            Add Patient </h4>
+            Add Doctor </h4>
         <a class="heading-elements-toggle" href="#"> <i class="la la-ellipsis-h font-medium-3"> </i> </a>
     </div>
     <div class="card-body">
-        <form id="addForm" method="post" action="/employee">
+        <form id="addForm" method="post" action="${request.contextPath}/Hospital-management-system/employee">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputFName">First Name</label>

@@ -2,6 +2,7 @@ com/hospital/Employee/bean/EmployeeBean.class
 com/hospital/department/Servlet/DepartmentServlet.class
 com/hospital/patient/bean/PatientBean.class
 com/hospital/Employee/bean/EmployeeBeanI.class
+com/hospital/Employee/Servlet/assignRoom.class
 com/hospital/room/bean/RoomBeanI.class
 com/hospital/department/bean/DepartmentBeanI.class
 com/hospital/Employee/Servlet/EmployeeServlet.class

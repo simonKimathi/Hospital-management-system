@@ -1,6 +1,6 @@
-var SystechSkulJsLib = SystechSkulJsLib || {};
+var HospitalSystemJsLib = HospitalSystemJsLib || {};
 
-SystechSkulJsLib.showGrid = function(){
+HospitalSystemJsLib.showGrid = function(){
     var me = this;
 
     var xhr = new XMLHttpRequest();
@@ -51,7 +51,7 @@ SystechSkulJsLib.showGrid = function(){
         console.log('Registing event for adding form');
         if (button.handler == 'addButton') {
             document.getElementById(button.id).addEventListener('click', function () {
-                SystechSkulJsLib.Form.call(me);
+                HospitalSystemJsLib.Form.call(me);
             });
         }
 
@@ -59,7 +59,7 @@ SystechSkulJsLib.showGrid = function(){
 
 }
 
-SystechSkulJsLib.Form = function(){
+HospitalSystemJsLib.Form = function(){
     var me = this;
 
     var formContent = `<form action="#">`;
@@ -109,7 +109,7 @@ SystechSkulJsLib.Form = function(){
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send(formData);
 
-        SystechSkulJsLib.showGrid.call(me);
+        HospitalSystemJsLib.showGrid.call(me);
 
     });
 }

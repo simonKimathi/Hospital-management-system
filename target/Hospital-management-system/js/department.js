@@ -1,5 +1,5 @@
 (function(){
-    SystechSkulJsLib.showGrid.call({
+    HospitalSystemJsLib.showGrid.call({
         dataUrl: 'department',
         gridStyle:'customers',
         componentId:'department',

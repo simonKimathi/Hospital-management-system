@@ -9,7 +9,16 @@ public class Employee {
     String address;
     String contact;
     String eType;
+    String roomAssigned;
     int salary;
+
+    public String getRoomAssigned() {
+        return roomAssigned;
+    }
+
+    public void setRoomAssigned(String roomAssigned) {
+        this.roomAssigned = roomAssigned;
+    }
 
     public String getEmployeeId() {
         return employeeId;

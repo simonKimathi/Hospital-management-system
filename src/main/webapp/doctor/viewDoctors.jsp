@@ -1,4 +1,9 @@
-<%--
+<%@ page import="javax.naming.Context" %>
+<%@ page import="javax.sql.DataSource" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="javax.naming.InitialContext" %><%--
   Created by IntelliJ IDEA.
   User: symoh
   Date: 02/09/2020
@@ -9,6 +14,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script src="../js/app.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +26,52 @@
     <!-- Custom styles for this template -->
     <link href="../Stylesheet/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
-    <script src="../js/app.js"></script>
+    <style>
+
+        /* Remove default bullets */
+        ul, #myUL {
+            list-style-type: none;
+        }
+
+        /* Remove margins and padding from the parent ul */
+        #myUL {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the caret/arrow */
+        .caret {
+            cursor: pointer;
+            user-select: none; /* Prevent text selection */
+        }
+
+        /* Create the caret/arrow with a unicode, and style it */
+        .caret::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+        .caret-down::before {
+            transform: rotate(90deg);
+        }
+
+        /* Hide the nested list */
+        .nested {
+            display: none;
+        }
+
+        /* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
+        .active {
+            display: block;
+        }
+        table tr td:last-child {
+            border: none;
+        }
+
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" >
@@ -36,7 +87,7 @@
     <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
             <div class="sidebar-sticky">
-                <ul class="nav flex-column">
+                <ul class="nav flex-column" id="myUL">
                     <li class="nav-item">
                         <a class="nav-link active" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -44,9 +95,8 @@
                         </svg>
                             Quick links<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <i class="fas fa-angle-right rotate"></i>
-                        <span> Patients </span>
+                    <li >
+                        <span class="caret"> Patients </span>
                         <ul class="nested">
                             <a href="../Patient/addPatient.jsp">
                                 <li><i class="far fa-folder-open ic-w mr-1"></i>add patient</li>
@@ -57,9 +107,8 @@
                         </ul>
 
                     </li>
-                    <li class="nav-item">
-                        <i class="fas fa-angle-right rotate"></i>
-                        <span> doctors </span>
+                    <li >
+                        <span class="caret"> doctors </span>
                         <ul class="nested">
                             <a href="../doctor/addDoctor.jsp">
                                 <li><i class="fa-lg fa-user-md fas"></i>add doctor</li>
@@ -70,9 +119,8 @@
                         </ul>
 
                     </li>
-                    <li class="nav-item">
-                        <i class="fas fa-angle-right rotate"></i>
-                        <span> Rooms </span>
+                    <li >
+                        <span class="caret"> Rooms </span>
                         <ul class="nested">
                             <a href="../room/addRoom.jsp">
                                 <li><i class="fa-lg fa-notes-medical fas"></i>add room</li>
@@ -87,11 +135,73 @@
             </div>
         </nav>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-            <div id="module-content"> table loading...</div>
+            <%--<div id="module-content"> table loading...</div>--%>
+                <table class = "table table-bordered table-stripped table-condensed" align = "center">
+                    <tr>
+                        <thead class="table-primary">
+                        <th scope="col">Hospital Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Room Assigned</th>
+                        <%--<th scope="col">Address</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">operations</th>--%>
+                        </thead>
+                    </tr>
+                    <a href="addDoctor.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Doctor</button></a><br><br>
+
+                    <%
+                        Context context = new InitialContext();
+                        DataSource dataSource = (DataSource)context.lookup("java:jboss/datasources/mrs");
+
+
+                        try
+                        {
+                            Connection connection = dataSource.getConnection();
+                            String query = "Select * from employee";
+                            Statement statement = connection.createStatement();
+                            ResultSet result = statement.executeQuery(query);
+                            while(result.next())
+                            {
+                                String name= result.getString("firstName") +" "+result.getString("lastName") +" "+result.getString("surName");
+                    %>
+
+                    <tr>
+                        <td><%=result.getString("employeeId")%></td>
+                        <td><%=name%></td>
+                        <td><%=result.getString("roomAssigned")%></td>
+                        <%--<td><%=result.getString("address")%></td>
+                        <td><%=result.getString("contact")%></td>--%>
+                        <td>
+                            <a href="doctorProfile.jsp?id=<%=result.getString("employeeId") %>" > <button type="button" class="btn btn-info add-new">VIEW DOCTOR</button></a>
+                        </td>
+
+                    </tr>
+                    <%
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            out.println("Exception:" +ex.getMessage());
+                            ex.printStackTrace();
+                        }
+                    %>
+                </table>
         </main>
     </div>
 </div>
+<script src="../js/app.js"></script>
 <script src="../js/Doctor.js"></script>
+<script>
+    var toggler = document.getElementsByClassName("caret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function() {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+</script>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

@@ -18,7 +18,7 @@ public class EmployeeBean implements EmployeeBeanI {
             return "fail";
 
         try {
-            PreparedStatement statement = connection.prepareStatement("insert into department(employeeId" +
+            PreparedStatement statement = connection.prepareStatement("insert into employee(employeeId" +
                     "firstName," +
                     ",lastName" +
                     ",surName" +
@@ -51,8 +51,8 @@ public class EmployeeBean implements EmployeeBeanI {
 
         try {
             String ddType="doctor";
-            PreparedStatement statement = connection.prepareStatement("insert into department(employeeId" +
-                    "firstName," +
+            PreparedStatement statement = connection.prepareStatement("insert into employee(employeeId" +
+                    ",firstName" +
                     ",lastName" +
                     ",surName" +
                     ",gender" +
@@ -60,7 +60,7 @@ public class EmployeeBean implements EmployeeBeanI {
                     ",contact" +
                     ",eType" +
                     ",salary" +
-                    ") values(?,?,?,?,?,?,?,?)");
+                    ") values(?,?,?,?,?,?,?,?,?)");
             statement.setString(1,employee.getEmployeeId());
             statement.setString(2,employee.getFirstName());
             statement.setString(3,employee.getLastName());
@@ -84,7 +84,7 @@ public class EmployeeBean implements EmployeeBeanI {
         List<Employee> employeeList = new ArrayList<Employee>();
         try {
             //get data from database
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM department");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM employee");
             preparedStatement.execute();
             ResultSet resultSet = preparedStatement.getResultSet();
             while (resultSet.next()) {
@@ -114,7 +114,7 @@ public class EmployeeBean implements EmployeeBeanI {
         try {
             //get data from database
             String eeTYpe="doctor";
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM department where eType="+eeTYpe);
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM employee where eType="+eeTYpe);
             preparedStatement.execute();
             ResultSet resultSet = preparedStatement.getResultSet();
             while (resultSet.next()) {

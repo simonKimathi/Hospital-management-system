@@ -17,8 +17,7 @@ public class PatientBean implements PatientBeanI {
             return "fail";
 
         try {
-            PreparedStatement statement = connection.prepareStatement("insert into patient(id," +
-                    "firstName," +
+            PreparedStatement statement = connection.prepareStatement("insert into patient(firstName" +
                     ",lastName" +
                     ",surName" +
                     ",id" +
@@ -29,7 +28,7 @@ public class PatientBean implements PatientBeanI {
                     ",county" +
                     ",subCounty" +
                     ",village) " +
-                    "values(?,?,?,?,?,?,?,?,?,?,?,?)");
+                    "values(?,?,?,?,?,?,?,?,?,?,?)");
             statement.setString(1,patient.getFirstName());
             statement.setString(2,patient.getLastName());
             statement.setString(3,patient.getSurName());
