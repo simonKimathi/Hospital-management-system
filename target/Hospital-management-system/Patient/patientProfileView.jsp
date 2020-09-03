@@ -36,9 +36,9 @@
                         %>
                         <ul class="meta list list-unstyled">
                             <br/>
-                            <li class="name"> <%= name%>
+                            <li class="name"style="text-align: center"> <%= name%>
                                 <br/>
-                                <label class="label label-info"><%= result1.getString("gender")%></label>
+                                <label class="label label-info " style="text-align: center"><%= result1.getString("gender")%></label>
                             </li>
                                 <table class="table table-borderless">
                                 <tr>
@@ -64,17 +64,7 @@
                                 </tr>
                                 </table>
                         </ul>
-                        <%
-                                }
-                                connection1.close();
-                            }
-                            catch(Exception ex1)
-                            {
-                                out.println("Exception:" +ex1.getMessage());
-                                ex1.printStackTrace();
-                            }
 
-                        %>
                     </div>
 
                 </div>
@@ -110,6 +100,22 @@
                     </div>
                 </div>
             </div>
+            <div style="text-align: center">
+                <a href="viewPatients.jsp"><button type="button" class="btn btn-dark" onclick="return confirm('are you sure you want to close this record?')">close</button></a>
+                <a href="deletePatient.jsp?id=<%=result1.getString("id") %>"><button type="button" class="btn btn-danger" onclick="return confirm('are you sure you want to delete this patient?')">delete patient</button></a>
+            </div>
+            <%
+                        }
+                        connection1.close();
+                    }
+                    catch(Exception ex1)
+                    {
+                        out.println("Exception:" +ex1.getMessage());
+                        ex1.printStackTrace();
+                    }
+
+                %>
+
         </div>
     </section>
 

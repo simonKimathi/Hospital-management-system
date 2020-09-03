@@ -39,9 +39,9 @@
                         %>
                         <ul class="meta list list-unstyled">
                             <br/>
-                            <li class="name"> <%= name%>
+                            <li class="name" style="text-align: center">Dr. <%= name%>
                                 <br/>
-                                <label class="label label-info"><%= result1.getString("gender")%></label>
+                                <label class="label label-info" style="text-align: center"><%= result1.getString("gender")%></label>
                             </li>
                             <table class="table table-borderless">
                                 <tr>
@@ -70,15 +70,15 @@
                     %>
                     <%--<c:choose>
                         <c:when test="${<%=r%>>==n}">--%>
-                            <span class="label label-success center-align">No room assigned</span><br/>
-                            <a href="assignRoom.jsp?id=<%=result1.getString("employeeId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">assign room</button></a>
-                        <%
-                            }
-                        else
-                            {
-                        %>
-                   <%-- </c:when>
-                        <c:otherwise>--%>
+                    <span class="label label-success center-align">No room assigned</span><br/>
+                    <a href="assignRoom.jsp?id=<%=result1.getString("employeeId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">assign room</button></a>
+                    <%
+                    }
+                    else
+                    {
+                    %>
+                    <%-- </c:when>
+                         <c:otherwise>--%>
                     <span class="label label-success center-align"><%=result1.getString("roomAssigned") %></span>
                     <br/>
                     <a href="assignRoom.jsp?id=<%=result1.getString("employeeId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">Change room</button></a>
@@ -89,17 +89,6 @@
                     <%--</c:otherwise>
                     </c:choose>--%>
 
-                    <%
-                            }
-                                connection1.close();
-                        }
-                        catch(Exception ex1)
-                        {
-                            out.println("Exception:" +ex1.getMessage());
-                            ex1.printStackTrace();
-                        }
-
-                    %>
                     <br/><br/><br/>
                     <hr/>
                     <h1> Pending patients</h1>
@@ -122,6 +111,21 @@
                     </div>
                 </div>
             </div>
+            <div style="text-align: center">
+                <a href="viewDoctors.jsp"><button type="button" class="btn btn-dark" onclick="return confirm('are you sure you want to close this record?')">close</button></a>
+                <a href="deleteDoctor.jsp?id=<%=result1.getString("employeeId") %>"><button type="button" class="btn btn-danger" onclick="return confirm('are you sure you want to delete this doctor?')">delete patient</button></a>
+            </div>
+            <%
+                    }
+                    connection1.close();
+                }
+                catch(Exception ex1)
+                {
+                    out.println("Exception:" +ex1.getMessage());
+                    ex1.printStackTrace();
+                }
+
+            %>
         </div>
     </section>
 
