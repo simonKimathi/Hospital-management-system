@@ -25,9 +25,9 @@
         <%--include navigation bar--%>
         <%@ include file="../commonSections/sideBar.jsp" %>
 
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
+        <main role="main" class="  col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
             <%--<div id="module-content"> table loading...</div>--%>
-            <table class = "table table-bordered table-stripped table-condensed" align = "center">
+            <table class = "customers table table-bordered table-stripped table-condensed" align = "center">
                 <tr>
                     <thead class="table-primary">
                     <th scope="col">Patient Id</th>
@@ -61,7 +61,7 @@
                             String name= result.getString("firstName") +" "+result.getString("lastName") +" "+result.getString("surName");
                 %>
 
-                <tr >
+                <tr class="table-row" data-href="PatientProfile.jsp?id=<%=result.getString("id") %>">
                     <td><%=result.getString("id")%></td>
                     <td><%=name%></td>
                     <td><%=result.getString("gender")%></td>
@@ -71,9 +71,9 @@
                     <td><%=result.getString("county")%></td>
                     <td><%=result.getString("subCounty")%></td>
                     <td><%=result.getString("village")%></td>--%>
-                    <td>
+                    <%--<td>
                         <a href="PatientProfile.jsp?id=<%=result.getString("id") %>" > <button type="button" class="btn btn-info add-new">VIEW PATIENT</button></a>
-                    </td>
+                    </td>--%>
 
                 </tr>
                 <%

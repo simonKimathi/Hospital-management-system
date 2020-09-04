@@ -34,16 +34,16 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
             <%--<div id="module-content"> table loading...</div>--%>
-                <table class = "table table-bordered table-stripped table-condensed" align = "center">
+                <table class = "customers table table-bordered table-stripped table-condensed" align = "center" >
                     <tr>
-                        <thead class="table-primary">
+                        <%--<thead class="table-primary" >--%>
                         <th scope="col">Hospital Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Room Assigned</th>
                         <%--<th scope="col">Address</th>
                         <th scope="col">Contact</th>
                         <th scope="col">operations</th>--%>
-                        </thead>
+                        <%--</thead>--%>
                     </tr>
                     <a href="addDoctor.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Doctor</button></a><br><br>
 
@@ -65,15 +65,15 @@
                                 String name= result.getString("firstName") +" "+result.getString("lastName") +" "+result.getString("surName");
                     %>
 
-                    <tr>
+                    <tr class="table-row" data-href="doctorProfile.jsp?id=<%=result.getString("employeeId") %>" >
                         <td><%=result.getString("employeeId")%></td>
                         <td><%=name%></td>
                         <td><%=result.getString("roomAssigned")%></td>
                         <%--<td><%=result.getString("address")%></td>
                         <td><%=result.getString("contact")%></td>--%>
-                        <td>
+                        <%--<td>
                             <a href="doctorProfile.jsp?id=<%=result.getString("employeeId") %>" > <button type="button" class="btn btn-info add-new">VIEW DOCTOR</button></a>
-                        </td>
+                        </td>--%>
 
                     </tr>
                     <%

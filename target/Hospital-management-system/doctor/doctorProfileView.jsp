@@ -21,8 +21,8 @@
                 <div class="col-md-4">
 
                     <div class="user-info">
-                        <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
-                        <%
+                        <%--<img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+                       --%> <%
                             String id1=request.getParameter("id");
                             try
                             {
@@ -62,7 +62,6 @@
                 <div class="col-md-5">
                     <br/>
                     <h1> Room assigned</h1>
-                    <br/>
                     <%
                         String n="";
                         int r= result1.getInt("roomAssigned");
@@ -70,7 +69,7 @@
                     %>
                     <%--<c:choose>
                         <c:when test="${<%=r%>>==n}">--%>
-                    <span class="label label-success center-align">No room assigned</span><br/>
+                    <span class="label label-success center-align bg-warning text-light">No room assigned</span><br/>
                     <a href="assignRoom.jsp?id=<%=result1.getString("employeeId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">assign room</button></a>
                     <%
                     }
@@ -79,7 +78,7 @@
                     %>
                     <%-- </c:when>
                          <c:otherwise>--%>
-                    <span class="label label-success center-align"><%=result1.getString("roomAssigned") %></span>
+                    <span class="label label-success center-align bg-success "><%=result1.getString("roomAssigned") %></span>
                     <br/>
                     <a href="assignRoom.jsp?id=<%=result1.getString("employeeId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">Change room</button></a>
 

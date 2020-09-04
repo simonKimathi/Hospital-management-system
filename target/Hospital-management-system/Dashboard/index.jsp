@@ -1,10 +1,9 @@
 <!doctype html>
 <html lang="en">
-
 <%--include header tag--%>
 <%@ include file="../commonSections/header.jsp" %>
-
 <body>
+<%--navigation bar--%>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" >
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="http://localhost:8080/Hospital-management-system">Nairobi Hospital</a>
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
@@ -80,14 +79,14 @@
             </div>
 
             <div class="row box">
-                <a href="<%=request.getContextPath()%>/Patient/addPatient.jsp" class=" nav-link col-md-4 text-center"> <i class="material-icons " style="font-size: 48px; ">group_add</i> <h3>Register a patient</h3> </a>
-                <a href="<%=request.getContextPath()%>/Patient/viewPatients.jsp" class="nav-link col-md-4 text-center"> <span class="material-icons" style="font-size: 48px; ">people_alt</span><h3>View patients</h3> </a>
-                <a href="<%=request.getContextPath()%>/doctor/addDoctor.jsp" class="nav-link col-md-4 text-center"> <span class="material-icons" style="font-size: 48px; ">people_add</span><h3><br>add A doctor</h3> </a>
+                <a href="<%=request.getContextPath()%>/Patient/addPatient.jsp" class=" nav-link col-md-4 text-center"> <span class="fa-5x fa-user-plus fas"> </span> <h3><br>Register a patient</h3> </a>
+                <a href="<%=request.getContextPath()%>/Patient/viewPatients.jsp" class="nav-link col-md-4 text-center"> <span class=" fa-5x fa-search fas"> </span> <h3><br>view patients</h3> </a>
+                <a href="<%=request.getContextPath()%>/doctor/addDoctor.jsp" class="nav-link col-md-4 text-center"> <span class="fa-5x fa-hand-holding-medical fas"> </span> <h3><br>Register A doctor</h3> </a>
             </div>
             <div class="row box">
-                <a href="<%=request.getContextPath()%>/doctor/viewDoctors.jsp" class="nav-link col-md-4 text-center"> <span class="material-icons" style="font-size: 48px; ">people_alt</span> </span> <h3><br>view doctors</h3> </a>
-                <a href="<%=request.getContextPath()%>/room/addRoom.jsp" class="nav-link col-md-4 text-center"> <span class="material-icons" style="font-size: 48px; ">add_business</span> </span> <h3><br>add a room</h3> </a>
-                <a href="<%=request.getContextPath()%>/room/viewRooms.jsp" class="nav-link col-md-4 text-center"> <span class="material-icons" style="font-size: 48px; ">people_alt</span> </span> <h3><br>view rooms</h3> </a>
+                <a href="<%=request.getContextPath()%>/doctor/viewDoctors.jsp" class="nav-link col-md-4 text-center"> <span class=" fa-5x fa-medkit fas"> </span> <h3><br>view doctors</h3> </a>
+                <a href="<%=request.getContextPath()%>/room/addRoom.jsp" class="nav-link col-md-4 text-center"> <span class="fa-5x fa-receipt fas"> </span> <h3><br>add a room</h3> </a>
+                <a href="<%=request.getContextPath()%>/room/viewRooms.jsp" class="nav-link col-md-4 text-center"> <span class="fa-5x fa-file-alt fas"> </span> <h3><br>view rooms</h3> </a>
             </div>
 
             <!--<div class="row box">

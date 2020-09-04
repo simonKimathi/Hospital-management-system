@@ -41,7 +41,7 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
             <%--<div id="module-content"> table loading...</div>--%>
 
-            <table class = "table table-bordered table-stripped table-condensed" align = "center" >
+            <table class = " customers table table-bordered table-stripped table-condensed" align = "center" >
                 <tr>
                     <thead class="table-primary">
                     <th scope="col">Room Id</th>
