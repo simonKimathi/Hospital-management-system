@@ -5,7 +5,7 @@
         <a class="heading-elements-toggle" href="#"> <i class="la la-ellipsis-h font-medium-3"> </i> </a>
     </div>
     <div class="card-body">
-        <form id="addForm" method="post" action="${request.contextPath}/Hospital-management-system/employee">
+        <form id="addForm" method="post" action="${request.contextPath}/Hospital-management-system/doctor">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputFName">First Name</label>
@@ -22,8 +22,8 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="inputId">employee Id</label>
-                    <input class="form-control" id="InputId" ype="number" placeholder="employee id" name="employeeId"/>
+                    <label for="inputId">doctor Id</label>
+                    <input class="form-control" id="InputId" ype="number" placeholder="doctor id" name="nationalId"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputGender">Gender</label>

@@ -29,7 +29,7 @@
                                 Context context1 = new InitialContext();
                                 DataSource dataSource1 = (DataSource)context1.lookup("java:jboss/datasources/mrs");
                                 Connection connection1 = dataSource1.getConnection();
-                                String query1 = "Select * from employee where employeeId ="+request.getParameter("id");
+                                String query1 = "Select * from hospital_doctor where employeeId ="+request.getParameter("id");
                                 Statement statement1 = connection1.createStatement();
                                 ResultSet result1 = statement1.executeQuery(query1);
                                 while(result1.next())

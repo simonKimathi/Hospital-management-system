@@ -51,7 +51,7 @@
                     try
                     {
                         Connection connection = dataSource.getConnection();
-                        String query = "Select * from patient";
+                        String query = "Select * from hospital_patient";
                         Statement statement = connection.createStatement();
                         ResultSet result = statement.executeQuery(query);
                         int count =0;

@@ -24,7 +24,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputId">National Id Number</label>
-                    <input class="form-control" id="InputId" ype="number" placeholder="ID Number" name="id"/>
+                    <input class="form-control" id="InputId" ype="number" placeholder="ID Number" name="nationalId"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputGender">Gender</label>

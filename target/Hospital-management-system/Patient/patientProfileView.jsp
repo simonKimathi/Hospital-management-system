@@ -26,7 +26,7 @@
                                 Context context1 = new InitialContext();
                                 DataSource dataSource1 = (DataSource)context1.lookup("java:jboss/datasources/mrs");
                                 Connection connection1 = dataSource1.getConnection();
-                                String query1 = "Select * from patient where id ="+id1;
+                                String query1 = "Select * from hospital_patient where id ="+id1;
                                 Statement statement1 = connection1.createStatement();
                                 ResultSet result1 = statement1.executeQuery(query1);
                                 while(result1.next())

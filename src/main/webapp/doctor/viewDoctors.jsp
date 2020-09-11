@@ -55,7 +55,7 @@
                         try
                         {
                             Connection connection = dataSource.getConnection();
-                            String query = "Select * from employee";
+                            String query = "Select * from hospital_doctor";
                             Statement statement = connection.createStatement();
                             ResultSet result = statement.executeQuery(query);
                             int count=0;

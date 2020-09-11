@@ -17,7 +17,7 @@
         DataSource dataSource = (DataSource)context.lookup("java:jboss/datasources/mrs");
         Connection connection=dataSource.getConnection();
         Statement statement = connection.createStatement();
-        int i=statement.executeUpdate("DELETE FROM employee WHERE employeeId="+id);
+        int i=statement.executeUpdate("DELETE FROM doctor WHERE employeeId="+id);
         out.println("Data Deleted Successfully!");
         response.sendRedirect("viewDoctors.jsp");
     }
