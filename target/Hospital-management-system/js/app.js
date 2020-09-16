@@ -53,12 +53,14 @@ HospitalSystemJsLib.showGrid = function(){
     /* loop through the gridData, which was assign from the table ajax request, to create
     the table rows */
     me.gridData.forEach(row => {
-
-        tableContent += `<tr class="table-row">`;
+//data-href="PatientProfile.jsp?id="
+        tableContent += `<tr class="table-row" >`;
 
         ///finding out which data row belongs to which header or column and appending it
         me.gridColumns.forEach(col => {
-            tableContent += `<td>${row[col.dataIndex]}</td>`;
+            /*
+            */
+            tableContent += `<td data-href="${row.dataHref}?id=${row[col]}.nationalId" >${row[col.dataIndex]}</td>`;
         });
 
         /*Creating the row edit and delete buttons id for which to append event listeners for editing

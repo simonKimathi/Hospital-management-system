@@ -7,16 +7,16 @@
             dataIndex:'id'
         },{
             header:'first name',
-            dataIndex:'firstName'
+            dataIndex:'bioData[0]'
         },{
             header:'Last Name',
-            dataIndex:'lastName'
+            dataIndex:'bioData[1]'
         },{
             header:'sur Name',
-            dataIndex:'surName'
+            dataIndex:'bioData[2]'
         },{
             header:'gender',
-            dataIndex:'gender'
+            dataIndex:'bioData[3]'
         },{
             header:'date of birth',
             dataIndex:'dob'
@@ -29,6 +29,9 @@
             label: 'Add a Patient',
             cssClass: 'btn btn-info add-new fa fa-plus',
             id: 'org-addButton',
+        }],
+        gridData:[{
+            dataHref:'../PatientProfile.jsp'
         }]
     });
 })();

@@ -43,11 +43,11 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="InputContact"> Contact Number:</label>
-                    <input class="form-control" id="InputContact" type="number" placeholder="+254..." name="contact"/>
+                    <input class="form-control" id="InputContact" type="text" placeholder="+254..." name="phoneNumber"/>
                 </div>
                 <div class="form-group col-md-4">
                     <label for="InputEmergencyContact"> Emergency Number: </label>
-                    <input class="form-control" id="InputEmergencyContact" type="number" placeholder="+254..." name="emergencyContact"/>
+                    <input class="form-control" id="InputEmergencyContact" type="text" placeholder="+254..." name="emergencyContact"/>
                 </div>
             </div>
             <div class="form-row">

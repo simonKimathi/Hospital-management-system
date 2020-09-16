@@ -2,9 +2,10 @@ package com.hospital.commonClasses;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Embeddable
-public class BioData {
+public class BioData implements Serializable {
     @Column
     private String firstName;
 
@@ -18,7 +19,7 @@ public class BioData {
     private int nationalId;
 
     @Column
-    private int gender;
+    private String gender;
 
     public String getFirstName() {
         return firstName;
@@ -52,11 +53,11 @@ public class BioData {
         this.nationalId = nationalId;
     }
 
-    public int getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(int gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 }
