@@ -4,7 +4,6 @@ com/hospital/model/Nurse.class
 com/hospital/model/Medicine.class
 com/hospital/servlet/assignRoom.class
 com/hospital/servlet/RoomServlet.class
-com/hospital/commonClasses/test.class
 com/hospital/model/Doctor.class
 com/hospital/commonClasses/Contact.class
 com/hospital/EJB/PatientBeanI.class

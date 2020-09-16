@@ -20,11 +20,11 @@
         <a class="heading-elements-toggle" href="#"> <i class="la la-ellipsis-h font-medium-3"> </i> </a>
     </div>
     <div class="card-body">
-        <form id="addForm" method="post" action="<%=request.getContextPath()%>/roomServlet">
+        <form id="addForm" method="post" action="<%=request.getContextPath()%>/room">
             <div class="form-row">
                 <div class="form-group">
-                    <label for="rid">Room ID</label>
-                    <input type="text" class="form-control" id="rid" placeholder="enter room id" name="id">
+                    <label for="roomId">Room ID</label>
+                    <input type="text" class="form-control" id="roomId" placeholder="enter room id" name="roomId">
                 </div>
             </div>
             <div class="form-row">

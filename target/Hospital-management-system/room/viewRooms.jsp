@@ -33,6 +33,7 @@
         <%@ include file="../commonSections/sideBar.jsp" %>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
+
             <div id="module-content"> table loading...</div>
 
            <%-- <table class = " customers table table-bordered table-stripped table-condensed" align = "center" >

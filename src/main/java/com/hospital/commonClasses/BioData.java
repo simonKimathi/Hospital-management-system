@@ -17,6 +17,9 @@ public class BioData {
     @Column
     private int nationalId;
 
+    @Column
+    private int gender;
+
     public String getFirstName() {
         return firstName;
     }
@@ -47,5 +50,13 @@ public class BioData {
 
     public void setNationalId(int nationalId) {
         this.nationalId = nationalId;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
     }
 }

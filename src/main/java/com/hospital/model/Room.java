@@ -1,12 +1,9 @@
 package com.hospital.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hospital.commonClasses.BaseEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "hospital_room")
@@ -20,18 +17,18 @@ public class Room extends BaseEntity implements Serializable {
     private String rType;
 
     @Column
-    private String governed;
+    private String assigned;
 
     /*@OneToMany(mappedBy = "room",cascade = CascadeType.ALL)
     private List<Patient> patientList=new ArrayList<Patient>();*/
 
 
-    public String getGoverned() {
-        return governed;
+    public String getAssigned() {
+        return assigned;
     }
 
-    public void setGoverned(String governed) {
-        this.governed = governed;
+    public void setAssigned(String governed) {
+        this.assigned = governed;
     }
 
     public String getRoomId() {

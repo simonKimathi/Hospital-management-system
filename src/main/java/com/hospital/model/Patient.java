@@ -20,8 +20,8 @@ public class Patient extends BaseEntity implements Serializable {
     @Embedded
     private BioData bioData;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Gender gender;
+/*    @Enumerated(EnumType.ORDINAL)
+    private Gender gender;*/
 
     @Embedded
     private Contact contact;
@@ -123,14 +123,6 @@ public class Patient extends BaseEntity implements Serializable {
 
     public void setContact(Contact contact) {
         this.contact = contact;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
     }
 
     public Contact getContact() {

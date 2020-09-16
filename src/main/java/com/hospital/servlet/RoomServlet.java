@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
-@WebServlet("/roomServlet")
+@WebServlet("/room")
 public class RoomServlet extends HttpServlet {
     @EJB
     private RoomBeanI roomBean;

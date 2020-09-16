@@ -21,7 +21,7 @@ HospitalSystemJsLib.showGrid = function(){
     }
 
     //its a get method hence calls servlet doGet method
-    xhr.open('get', me.dataUrl, true);
+    xhr.open('get', me.dataUrl, false);
     xhr.send();
 
     //append the ajax response to the current object gridData, that later populates the table
@@ -31,7 +31,8 @@ HospitalSystemJsLib.showGrid = function(){
 
     //add buttons on top of the table, that is add button
     me.gridButtons.forEach(button => {
-        tableContent += `<button class="${button.cssClass}" id="${button.id}"><i class="fa ${button.fontAwesomeIcon}"></i> ${button.label}</button>`;
+        //<a href="addRoom.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Room</button></a><br><br>
+        tableContent += `<a href="${button.linkAddress}"><button class="${button.cssClass}" id="${button.id}"><i class="fa ${button.fontAwesomeIcon}"></i> ${button.label}</button></a>`;
     });
 
     //beginning of creating the table html
@@ -41,7 +42,7 @@ HospitalSystemJsLib.showGrid = function(){
     me.gridColumns.forEach(col => {
         tableContent += `<th>${col.header}</th>`;
     });
-    tableContent += `<th></th><th></th>`;
+    /*tableContent += `<th></th><th></th>`;*/
 
     tableContent += `</tr>`;
 
@@ -53,7 +54,7 @@ HospitalSystemJsLib.showGrid = function(){
     the table rows */
     me.gridData.forEach(row => {
 
-        tableContent += `<tr>`;
+        tableContent += `<tr class="table-row">`;
 
         ///finding out which data row belongs to which header or column and appending it
         me.gridColumns.forEach(col => {
@@ -62,19 +63,19 @@ HospitalSystemJsLib.showGrid = function(){
 
         /*Creating the row edit and delete buttons id for which to append event listeners for editing
         and deleting respectively, the ids needs to be unique for each row*/
-        var editBtnId = me.componentId + '-edit-' + row.id;
-        var deleteBtnId = me.componentId + '-del-' + row.id;
+        /*var editBtnId = me.componentId + '-edit-' + row.id;
+        var deleteBtnId = me.componentId + '-del-' + row.id;*/
 
         /* adding the edit and delete buttons in each row for which the unique button id created above will be append
         in order to attach and event listener for either editing or deleting*/
-        tableContent += `<td><button class="btn" id="${editBtnId}"><i class="fa fa-edit"></i></button></td>`
-            + `<td><button class="btn" id="${deleteBtnId}"><i class="fa fa-trash"></button></td>`;
+        /*tableContent += `<td><button class="btn" id="${editBtnId}"><i class="fa fa-edit"></i></button></td>`
+            + `<td><button class="btn" id="${deleteBtnId}"><i class="fa fa-trash"></button></td>`;*/
 
         tableContent += `</tr>`;
 
         /*Storing then edit and delete button in action event so that we can attach event listener to the row
         edit and delete button once the table is rendered*/
-        actionEvents.push({editBtnId: editBtnId, deleteBtnId: deleteBtnId, recordId: row.id});
+        /*actionEvents.push({editBtnId: editBtnId, deleteBtnId: deleteBtnId, recordId: row.id});*/
 
     });
 
@@ -93,7 +94,7 @@ HospitalSystemJsLib.showGrid = function(){
     });
 
     //adding events listeners to each row of the table, from actionEvents store
-    actionEvents.forEach(button => {
+   /* actionEvents.forEach(button => {
 
         //row edit event listeners
         document.getElementById(button.editBtnId).addEventListener('click', function(){
@@ -139,7 +140,7 @@ HospitalSystemJsLib.showGrid = function(){
             HospitalSystemJsLib.showGrid.call(me);
 
         });
-    });
+    });*/
 
 }
 

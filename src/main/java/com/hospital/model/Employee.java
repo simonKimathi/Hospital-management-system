@@ -14,8 +14,8 @@ public abstract class Employee extends BaseEntity implements Serializable {
     @Embedded
     private BioData bioData;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Gender gender;
+    /*@Enumerated(EnumType.ORDINAL)
+    private Gender gender;*/
 
 
 
@@ -37,8 +37,8 @@ public abstract class Employee extends BaseEntity implements Serializable {
         this.bioData = bioData;
     }
 
-    public void setGender(Gender gender) {
-        this.gender = gender;
+    public Contact getContact() {
+        return contact;
     }
 
     public void setContact(Contact contact) {
@@ -52,8 +52,6 @@ public abstract class Employee extends BaseEntity implements Serializable {
     public void setRoomAssigned(String roomAssigned) {
         this.roomAssigned = roomAssigned;
     }
-
-
 
     public int getSalary() {
         return salary;

@@ -26,19 +26,19 @@
         <%@ include file="../commonSections/sideBar.jsp" %>
 
         <main role="main" class="  col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
-            <%--<div id="module-content"> table loading...</div>--%>
-            <table class = "customers table table-bordered table-stripped table-condensed" align = "center">
+            <div id="module-content"> table loading...</div>
+            <%--<table class = "customers table table-bordered table-stripped table-condensed" align = "center">
                 <tr>
                     <thead class="table-primary">
                     <th scope="col">Patient Id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">Date Of Birth</th><%--
+                    <th scope="col">Date Of Birth</th>&lt;%&ndash;
                     <th scope="col">Contact</th>
                     <th scope="col">Emergency Contact</th>
                     <th scope="col">County</th>
                     <th scope="col">sub-county</th>
-                    <th scope="col">Village</th>--%>
+                    <th scope="col">Village</th>&ndash;%&gt;
                     </thead>
                 </tr>
                 <a href="addPatient.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New patient</button></a><br><br>
@@ -65,15 +65,15 @@
                     <td><%=result.getString("NationalId")%></td>
                     <td><%=name%></td>
                     <td><%=result.getString("gender")%></td>
-                    <td><%=result.getString("DOB")%></td><%--
+                    <td><%=result.getString("DOB")%></td>&lt;%&ndash;
                     <td><%=result.getString("contact")%></td>
                     <td><%=result.getString("emergencyContact")%></td>
                     <td><%=result.getString("county")%></td>
                     <td><%=result.getString("subCounty")%></td>
-                    <td><%=result.getString("village")%></td>--%>
-                    <%--<td>
+                    <td><%=result.getString("village")%></td>&ndash;%&gt;
+                    &lt;%&ndash;<td>
                         <a href="PatientProfile.jsp?id=<%=result.getString("id") %>" > <button type="button" class="btn btn-info add-new">VIEW PATIENT</button></a>
-                    </td>--%>
+                    </td>&ndash;%&gt;
 
                 </tr>
                 <%
@@ -89,11 +89,13 @@
                 %>
             </table>
 
-
+--%>
         </main>
     </div>
 </div>
 
+<%--include custom js--%>
+<script src="<%=request.getContextPath()%>/js/Patient.js"></script>
 <%--include footer--%>
 <%@ include file="../commonSections/footer.jsp" %>
 

@@ -1,6 +1,6 @@
 (function(){
     HospitalSystemJsLib.showGrid.call({
-        dataUrl: 'doctor',
+        dataUrl: '../patient',
         gridStyle:'customers',
         gridColumns:[{
             header:'id number',
@@ -23,6 +23,12 @@
         },{
             header:'contact',
             dataIndex:'contact'
+        }],
+        gridButtons:[{
+            linkAddress:'../Patient/addPatient.jsp',
+            label: 'Add a Patient',
+            cssClass: 'btn btn-info add-new fa fa-plus',
+            id: 'org-addButton',
         }]
     });
 })();

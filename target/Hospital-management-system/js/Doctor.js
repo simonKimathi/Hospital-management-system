@@ -1,10 +1,10 @@
 (function(){
     HospitalSystemJsLib.showGrid.call({
-        dataUrl: 'doctor',
+        dataUrl: '../doctor',
         gridStyle:'customers',
         gridColumns:[{
             header:'id number',
-            dataIndex:'id'
+            dataIndex:'nationalId'
         },{
             header:'first name',
             dataIndex:'firstName'
@@ -23,6 +23,12 @@
         },{
             header:'contact',
             dataIndex:'contact'
+        }],
+        gridButtons:[{
+            linkAddress:'../doctor/addDoctor.jsp',
+            label: 'Add a doctor',
+            cssClass: 'btn btn-info add-new fa fa-plus',
+            id: 'org-addButton',
         }]
     });
 })();
