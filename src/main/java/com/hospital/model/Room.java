@@ -22,8 +22,8 @@ public class Room extends BaseEntity implements Serializable {
     @Column
     private String governed;
 
-    @OneToMany(mappedBy = "room",cascade = CascadeType.ALL)
-    private List<Patient> patientList=new ArrayList<Patient>();
+    /*@OneToMany(mappedBy = "room",cascade = CascadeType.ALL)
+    private List<Patient> patientList=new ArrayList<Patient>();*/
 
 
     public String getGoverned() {
@@ -50,7 +50,7 @@ public class Room extends BaseEntity implements Serializable {
         this.rType = rType;
     }
 
-    @JsonIgnore
+   /* //@JsonIgnore
     public List<Patient> getPatientList() {
         return patientList;
     }
@@ -58,9 +58,9 @@ public class Room extends BaseEntity implements Serializable {
     public void setPatientList(List<Patient> patientList) {
         this.patientList = patientList;
     }
-
-    public void addPatient(Patient patient){
+*/
+    /*public void addPatient(Patient patient){
         patient.setRoom(this);
         this.patientList.add(patient);
-    }
+    }*/
 }

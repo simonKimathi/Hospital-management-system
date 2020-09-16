@@ -5,7 +5,7 @@
         <a class="heading-elements-toggle" href="#"> <i class="la la-ellipsis-h font-medium-3"> </i> </a>
     </div>
     <div class="card-body">
-        <form id="addForm" method="post" action="${request.contextPath}/Hospital-management-system/doctor">
+        <form id="addForm" method="post" action="<%=request.getContextPath()%>/doctor">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputFName">First Name</label>
@@ -22,7 +22,7 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
-                    <label for="inputId">doctor Id</label>
+                    <label for="inputId">National Id</label>
                     <input class="form-control" id="InputId" ype="number" placeholder="doctor id" name="nationalId"/>
                 </div>
                 <div class="form-group col-md-4">

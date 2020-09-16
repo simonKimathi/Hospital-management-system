@@ -10,13 +10,7 @@
   Time: 17:52
   To change this template use File | Settings | File Templates.
 --%>
-<%--
-  Created by IntelliJ IDEA.
-  User: symoh
-  Date: 02/09/2020
-  Time: 18:01
-  To change this template use File | Settings | File Templates.
---%>
+
 <!doctype html>
 <html lang="en">
 <%--include header tag--%>
@@ -39,15 +33,15 @@
         <%@ include file="../commonSections/sideBar.jsp" %>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
-            <%--<div id="module-content"> table loading...</div>--%>
+            <div id="module-content"> table loading...</div>
 
-            <table class = " customers table table-bordered table-stripped table-condensed" align = "center" >
+           <%-- <table class = " customers table table-bordered table-stripped table-condensed" align = "center" >
                 <tr>
                     <thead class="table-primary">
                     <th scope="col">Room Id</th>
                     <th scope="col">room Type</th>
                     <th scope="col">room occupant</th>
-                    <%--<th scope="col">operations</th>--%>
+                    &lt;%&ndash;<th scope="col">operations</th>&ndash;%&gt;
                     </thead>
                 </tr>
                 <a href="addRoom.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Room</button></a><br><br>
@@ -71,10 +65,10 @@
                     <td><%=result.getString("id")%></td>
                     <td><%=result.getString("rType")%></td>
                     <td><%=result.getString("assigned")%></td>
-                    <%--<td>
+                    &lt;%&ndash;<td>
                         <a href="update.jsp?id=<%=result.getString("id") %>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
                         <a href="delete.jsp?id=<%=result.getString("id") %>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                    </td>--%>
+                    </td>&ndash;%&gt;
 
                 </tr>
                 <%
@@ -91,13 +85,16 @@
                 %>
             </table>
 
-
+--%>
 
 
         </main>
     </div>
 </div>
 
+
+<%--include custom page js--%>
+<script src="<%=request.getContextPath()%>/js/room.js"></script>
 <%--include footer--%>
 <%@ include file="../commonSections/footer.jsp" %>
 

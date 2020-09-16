@@ -42,7 +42,7 @@
                             </li>
                                 <table class="table table-borderless">
                                 <tr>
-                                    <td> ID Number</td><td> <%=result1.getString("id")%></td>
+                                    <td> ID Number</td><td> <%=result1.getString("NationalId")%></td>
                                 </tr>
                                 <tr>
                                     <td> Date of Birth</td><td> <%=result1.getString("DOB")%></td>
@@ -102,7 +102,7 @@
             </div>
             <div style="text-align: center">
                 <a href="viewPatients.jsp"><button type="button" class="btn btn-dark" onclick="return confirm('are you sure you want to close this record?')">close</button></a>
-                <a href="deletePatient.jsp?id=<%=result1.getString("id") %>"><button type="button" class="btn btn-danger" onclick="return confirm('are you sure you want to delete this patient?')">delete patient</button></a>
+                <a href="deletePatient.jsp?id=<%=result1.getString("NationalId") %>"><button type="button" class="btn btn-danger" onclick="return confirm('are you sure you want to delete this patient?')">delete patient</button></a>
             </div>
             <%
                         }

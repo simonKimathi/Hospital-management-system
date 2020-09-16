@@ -6,7 +6,7 @@
         <a class="heading-elements-toggle" href="#"> <i class="la la-ellipsis-h font-medium-3"> </i> </a>
     </div>
     <div class="card-body">
-        <form id="addForm" method="post" action="${request.contextPath}/Hospital-management-system/patient">
+        <form id="addForm" method="post" action="<%=request.getContextPath()%>/patient">
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="inputFName">First Name</label>

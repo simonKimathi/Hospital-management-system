@@ -16,7 +16,18 @@ public class Hospital extends BaseEntity {
 
     @Column
     private  String city;
+/*
+    "select count(p.name) from Patient p where h.name like 'meru hospital%' join p.hospital h"
 
+    "select h from Hospital h where h.name like '%meru%'"
+
+    "select h.contact.email from Hospital h",.getResultList();
+
+    "select d from Doctor d where d.salary >100000 and d.salary <150000"
+
+    "select d having d.salary > avg(d.salary) from Doctor d"
+
+*/
     @OneToMany(mappedBy = "hospital",cascade = CascadeType.ALL)
     private List<Patient> patientList=new ArrayList<Patient>();
 

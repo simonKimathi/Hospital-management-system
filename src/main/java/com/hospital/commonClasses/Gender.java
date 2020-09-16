@@ -11,7 +11,7 @@ public enum Gender {
     }
 
     public Gender fromCode(char code) {
-        if ( code == 'M' || code == 'm' ) {
+        if ( code == 'M' || code == 'm'|| code == 'M' ) {
             return MALE;
         }
         if ( code == 'F' || code == 'f' ) {

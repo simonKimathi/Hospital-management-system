@@ -61,8 +61,8 @@
                             String name= result.getString("firstName") +" "+result.getString("lastName") +" "+result.getString("surName");
                 %>
 
-                <tr class="table-row" data-href="PatientProfile.jsp?id=<%=result.getString("id") %>">
-                    <td><%=result.getString("id")%></td>
+                <tr class="table-row" data-href="PatientProfile.jsp?id=<%=result.getString("NationalId") %>">
+                    <td><%=result.getString("NationalId")%></td>
                     <td><%=name%></td>
                     <td><%=result.getString("gender")%></td>
                     <td><%=result.getString("DOB")%></td><%--

@@ -43,6 +43,10 @@ public class Patient extends BaseEntity implements Serializable {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @NotFound( action = NotFoundAction.IGNORE)
+    private Hospital hospital;
+/*
+    @ManyToOne(cascade = CascadeType.ALL)
+    @NotFound( action = NotFoundAction.IGNORE)
     private Room room;
 
     @Transient
@@ -57,8 +61,8 @@ public class Patient extends BaseEntity implements Serializable {
     @Transient
     private int hospitalId;
 
-    @OneToMany(mappedBy = "medicalRecord",cascade = CascadeType.ALL)
-    private List<MedicalRecord> medicalRecordsList=new ArrayList<MedicalRecord>();
+    @OneToMany(mappedBy = "patient",cascade = CascadeType.ALL)
+    private List<MedicalRecord> medicalRecordsList=new ArrayList<MedicalRecord>();*/
 
 
 
@@ -133,22 +137,6 @@ public class Patient extends BaseEntity implements Serializable {
         return contact;
     }
 
-    public Room getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
-    public int getRoomId() {
-        return roomId;
-    }
-
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
-    }
-
     public Hospital getHospital() {
         return hospital;
     }
@@ -156,20 +144,4 @@ public class Patient extends BaseEntity implements Serializable {
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
-
-    public int getHospitalId() {
-        return hospitalId;
-    }
-
-    public void setHospitalId(int hospitalId) {
-        this.hospitalId = hospitalId;
-    }
-
-    /*    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
-    }*/
 }

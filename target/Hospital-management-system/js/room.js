@@ -1,16 +1,23 @@
 (function(){
     HospitalSystemJsLib.showGrid.call({
-        dataUrl: 'room',
+        dataUrl: 'roomServlet',
         gridStyle:'customers',
         gridColumns:[{
-            header:'Room ID',
+            header:'db ID',
             dataIndex:'id'
+        },{
+            header:'Room ID',
+            dataIndex:'roomId'
         },{
             header:'Room Type',
             dataIndex:'rType'
-        },{
-            header:'Doctor assigned',
-            dataIndex:'assigned'
-        }]
+        }],
+        gridButtons: [{
+            label: 'Add Rooom',
+            cssClass: 'action-btn',
+            fontAwesomeIcon: 'fa-plus',
+            handler: 'addButton',
+            id: 'org-addButton',
+        }],
     });
 })();

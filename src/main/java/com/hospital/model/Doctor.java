@@ -15,6 +15,9 @@ public class Doctor extends Employee implements Serializable {
     @Column
     private String Qualification;
 
+    @Column(name = "practice_id")
+    private String practiceId;
+
     public String getQualification() {
         return Qualification;
     }
@@ -22,6 +25,15 @@ public class Doctor extends Employee implements Serializable {
     public void setQualification(String qualification) {
         Qualification = qualification;
     }
+
+    public String getPracticeId() {
+        return practiceId;
+    }
+
+    public void setPracticeId(String practiceId) {
+        this.practiceId = practiceId;
+    }
+
     /*    @OneToMany(mappedBy = "doctor",cascade = CascadeType.ALL)
     private List<Patient> patientList=new ArrayList<Patient>();
 

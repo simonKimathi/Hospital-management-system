@@ -27,10 +27,10 @@ public class RoomBean implements RoomBeanI {
     @Override
     public List<Room> list() {
 
-        Patient patient=new Patient();
+        /*Patient patient=new Patient();
         //patient.setBioData();
+        //select * from db*/
 
-        //select * from db
         return entityManager.createQuery("FROM Room r").getResultList();
     }
 }

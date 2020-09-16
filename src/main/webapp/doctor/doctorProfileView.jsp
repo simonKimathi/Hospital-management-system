@@ -29,7 +29,7 @@
                                 Context context1 = new InitialContext();
                                 DataSource dataSource1 = (DataSource)context1.lookup("java:jboss/datasources/mrs");
                                 Connection connection1 = dataSource1.getConnection();
-                                String query1 = "Select * from hospital_doctor where employeeId ="+request.getParameter("id");
+                                String query1 = "Select * from hospital_doctor where NationalId ="+request.getParameter("id");
                                 Statement statement1 = connection1.createStatement();
                                 ResultSet result1 = statement1.executeQuery(query1);
                                 while(result1.next())
@@ -45,7 +45,7 @@
                             </li>
                             <table class="table table-borderless">
                                 <tr>
-                                    <td> Employee ID</td><td> <%=result1.getString("employeeId")%></td>
+                                    <td> Employee ID</td><td> <%=result1.getString("NationalId")%></td>
                                 </tr>
                                 <tr>
                                     <td> Address</td><td> <%=result1.getString("address")%></td>
@@ -70,7 +70,7 @@
                     <%--<c:choose>
                         <c:when test="${<%=r%>>==n}">--%>
                     <span class="label label-success center-align bg-warning text-light">No room assigned</span><br/>
-                    <a href="assignRoom.jsp?id=<%=result1.getString("employeeId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">assign room</button></a>
+                    <a href="assignRoom.jsp?id=<%=result1.getString("NationalId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">assign room</button></a>
                     <%
                     }
                     else
@@ -80,7 +80,7 @@
                          <c:otherwise>--%>
                     <span class="label label-success center-align bg-success "><%=result1.getString("roomAssigned") %></span>
                     <br/>
-                    <a href="assignRoom.jsp?id=<%=result1.getString("employeeId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">Change room</button></a>
+                    <a href="assignRoom.jsp?id=<%=result1.getString("NationalId") %>&name=<%=name%>" > <button type="button" class="btn btn-primary">Change room</button></a>
 
                     <%
                         }
@@ -112,7 +112,7 @@
             </div>
             <div style="text-align: center">
                 <a href="viewDoctors.jsp"><button type="button" class="btn btn-dark" onclick="return confirm('are you sure you want to close this record?')">close</button></a>
-                <a href="deleteDoctor.jsp?id=<%=result1.getString("employeeId") %>"><button type="button" class="btn btn-danger" onclick="return confirm('are you sure you want to delete this doctor?')">delete patient</button></a>
+                <a href="deleteDoctor.jsp?id=<%=result1.getString("NationalId") %>"><button type="button" class="btn btn-danger" onclick="return confirm('are you sure you want to delete this doctor?')">delete patient</button></a>
             </div>
             <%
                     }

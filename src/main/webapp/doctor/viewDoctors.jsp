@@ -37,7 +37,7 @@
                 <table class = "customers table table-bordered table-stripped table-condensed" align = "center" >
                     <tr>
                         <%--<thead class="table-primary" >--%>
-                        <th scope="col">Hospital Id</th>
+                        <th scope="col">National Id</th>
                         <th scope="col">Name</th>
                         <th scope="col">Room Assigned</th>
                         <%--<th scope="col">Address</th>
@@ -65,8 +65,8 @@
                                 String name= result.getString("firstName") +" "+result.getString("lastName") +" "+result.getString("surName");
                     %>
 
-                    <tr class="table-row" data-href="doctorProfile.jsp?id=<%=result.getString("employeeId") %>" >
-                        <td><%=result.getString("employeeId")%></td>
+                    <tr class="table-row" data-href="doctorProfile.jsp?id=<%=result.getString("NationalId") %>" >
+                        <td><%=result.getString("NationalId")%></td>
                         <td><%=name%></td>
                         <td><%=result.getString("roomAssigned")%></td>
                         <%--<td><%=result.getString("address")%></td>

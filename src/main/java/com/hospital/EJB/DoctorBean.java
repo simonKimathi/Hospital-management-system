@@ -19,6 +19,7 @@ public class DoctorBean implements DoctorBeanI {
     @Override
     public String add( Doctor doctor) {
 
+
         entityManager.merge(doctor);
         return "ok";
     }

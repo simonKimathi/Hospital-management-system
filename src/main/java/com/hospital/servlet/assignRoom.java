@@ -20,12 +20,12 @@ public class assignRoom extends HttpServlet {
         String room=req.getParameter("room");
         String name=req.getParameter("name");
         try {
-            PreparedStatement preparedStatement=connection.prepareStatement("UPDATE employee SET `roomAssigned`=? WHERE employeeId=?");
+            PreparedStatement preparedStatement=connection.prepareStatement("UPDATE hospital_doctor SET `roomAssigned`=? WHERE NationalId=?");
             preparedStatement.setString(1,room);
             preparedStatement.setString(2,id);
             preparedStatement.execute();
 
-            PreparedStatement preparedStatement1=connection.prepareStatement("UPDATE room SET `assigned`=? WHERE id=?");
+            PreparedStatement preparedStatement1=connection.prepareStatement("UPDATE hospital_room SET `assigned`=? WHERE roomId=?");
             preparedStatement1.setString(1,name);
             preparedStatement1.setString(2,room);
             preparedStatement1.execute();

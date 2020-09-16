@@ -1,4 +1,5 @@
 package com.hospital.model;
 
-public class Bill {
+
+public class InvoiceLine {
 }
