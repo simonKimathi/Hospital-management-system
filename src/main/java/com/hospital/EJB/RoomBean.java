@@ -1,6 +1,5 @@
 package com.hospital.EJB;
 
-import com.hospital.model.Patient;
 import com.hospital.model.Room;
 
 import javax.ejb.Remote;

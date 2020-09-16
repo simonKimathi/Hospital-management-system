@@ -3,9 +3,10 @@ package com.hospital.model;
 import com.hospital.commonClasses.BaseEntity;
 import com.hospital.commonClasses.BioData;
 import com.hospital.commonClasses.Contact;
-import com.hospital.commonClasses.Gender;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 @MappedSuperclass

@@ -3,14 +3,11 @@ package com.hospital.model;
 import com.hospital.commonClasses.BaseEntity;
 import com.hospital.commonClasses.BioData;
 import com.hospital.commonClasses.Contact;
-import com.hospital.commonClasses.Gender;
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "hospital_patient")
@@ -42,35 +39,24 @@ public class Patient extends BaseEntity implements Serializable {
     private String village;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @NotFound( action = NotFoundAction.IGNORE)
-    private Hospital hospital;
-/*
-    @ManyToOne(cascade = CascadeType.ALL)
-    @NotFound( action = NotFoundAction.IGNORE)
-    private Room room;
-
-    @Transient
-    private int roomId;
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @NotFound( action = NotFoundAction.IGNORE)
+    @NotFound(action = NotFoundAction.IGNORE)
     private Hospital hospital;
 
+    public BioData getBioData() {
+        return bioData;
+    }
 
+    public void setBioData(BioData bioData) {
+        this.bioData = bioData;
+    }
 
-    @Transient
-    private int hospitalId;
+    public Contact getContact() {
+        return contact;
+    }
 
-    @OneToMany(mappedBy = "patient",cascade = CascadeType.ALL)
-    private List<MedicalRecord> medicalRecordsList=new ArrayList<MedicalRecord>();*/
-
-
-
-/*    @ManyToOne(cascade = CascadeType.ALL)
-    @NotFound( action = NotFoundAction.IGNORE)
-    private Doctor doctor ;*/
-
-
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
 
     public String getDOB() {
         return DOB;
@@ -79,7 +65,6 @@ public class Patient extends BaseEntity implements Serializable {
     public void setDOB(String DOB) {
         this.DOB = DOB;
     }
-
 
     public String getEmergencyContact() {
         return emergencyContact;
@@ -111,22 +96,6 @@ public class Patient extends BaseEntity implements Serializable {
 
     public void setVillage(String village) {
         this.village = village;
-    }
-
-    public BioData getBioData() {
-        return bioData;
-    }
-
-    public void setBioData(BioData bioData) {
-        this.bioData = bioData;
-    }
-
-    public void setContact(Contact contact) {
-        this.contact = contact;
-    }
-
-    public Contact getContact() {
-        return contact;
     }
 
     public Hospital getHospital() {
