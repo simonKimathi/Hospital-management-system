@@ -26,11 +26,5 @@ public class HospitalSoapApi {
 
         return roomBean.list();
     }
-    /*
-    * book appointments for doctors
-    *
-    *
-    *
-    *
-    * */
+
 }
