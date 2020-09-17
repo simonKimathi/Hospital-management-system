@@ -58,10 +58,44 @@ HospitalSystemJsLib.showGrid = function(){
 
         ///finding out which data row belongs to which header or column and appending it
         me.gridColumns.forEach(col => {
+
+            var objectDrillDown = (col.dataIndex).split('.');
+
+            var rowDataContent;
+            var rowObj = true;
+            objectDrillDown.forEach(arrEl => {
+                if (rowObj){
+                    rowDataContent = row[arrEl];
+                    rowObj = false;
+                }else{
+                    rowDataContent = rowDataContent[arrEl];
+                }
+            });
+
+            console.log(rowDataContent);
+
+            tableContent += `<td>${rowDataContent}</td>`;
             /*
             */
+            /*var objectDrillDown=(col.dataIndex).split('.');
+
+            var objectIndex='';
+            objectDrillDown.forEach(arrEl=>{
+                objectIndex=`[${arrEl}]`;
+            })
+
+            console.log(objectIndex);
+            var rowDataContent='';
+
+            if (objectIndex){
+                rowDataContent=row+`${objectIndex}`
+            }
+            else {
+                rowDataContent='';
+            }
+            console.log(rowDataContent);
             tableContent += `<td data-href="${row.dataHref}?id=${row[col]}.nationalId" >${row[col.dataIndex]}</td>`;
-        });
+       */ });
 
         /*Creating the row edit and delete buttons id for which to append event listeners for editing
         and deleting respectively, the ids needs to be unique for each row*/

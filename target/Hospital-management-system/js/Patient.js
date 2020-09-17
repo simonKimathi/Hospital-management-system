@@ -7,16 +7,16 @@
             dataIndex:'id'
         },{
             header:'first name',
-            dataIndex:'bioData[0]'
+            dataIndex:'bioData.firstName'
         },{
             header:'Last Name',
-            dataIndex:'bioData[1]'
+            dataIndex:'bioData.lastName'
         },{
             header:'sur Name',
-            dataIndex:'bioData[2]'
+            dataIndex:'bioData.surName'
         },{
             header:'gender',
-            dataIndex:'bioData[3]'
+            dataIndex:'bioData.gender'
         },{
             header:'date of birth',
             dataIndex:'dob'
@@ -31,7 +31,6 @@
             id: 'org-addButton',
         }],
         gridData:[{
-            dataHref:'../PatientProfile.jsp'
         }]
     });
 })();
