@@ -74,7 +74,7 @@ HospitalSystemJsLib.showGrid = function(){
 
             console.log(rowDataContent);
 
-            tableContent += `<td>${rowDataContent}</td>`;
+            tableContent += `<td data-href="${row.dataHref}?id=${row[col]}.nationalId" >${rowDataContent}</td>`;
             /*
             */
             /*var objectDrillDown=(col.dataIndex).split('.');

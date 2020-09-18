@@ -13,13 +13,18 @@ public class User extends BaseEntity implements Serializable {
 
 
     @Column
+    String name;
+
+    @Column
     String userName;
 
     @Column
     String email;
 
+/*
     @Column
     String address;
+*/
 
     @Column
     String password;
@@ -31,13 +36,21 @@ public class User extends BaseEntity implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-
+/*
     public String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
+    }*/
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getUserName() {

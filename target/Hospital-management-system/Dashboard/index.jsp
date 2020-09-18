@@ -1,3 +1,10 @@
+<%@ page import="com.hospital.model.User" %><%
+    User user = (User) session.getAttribute("loggedInUser");
+
+    if(user ==null){
+        response.sendRedirect("../signIn_register/temp.jsp");
+    }
+%>
 <!doctype html>
 <html lang="en">
 <%--include header tag--%>

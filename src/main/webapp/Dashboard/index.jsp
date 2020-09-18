@@ -2,10 +2,9 @@
     User user = (User) session.getAttribute("loggedInUser");
 
     if(user ==null){
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("../signIn_register/temp.jsp");
     }
 %>
-
 <!doctype html>
 <html lang="en">
 <%--include header tag--%>

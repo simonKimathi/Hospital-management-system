@@ -46,7 +46,7 @@ public class UserBean implements UserBeanI {
     @Override
     public User getUser(User user) {
         try {
-            Query q = entityManager.createQuery(NQ_FIND_USER);
+            Query q = entityManager.createQuery("SELECT u FROM User u WHERE u.userName = :user AND u.password= :pass");
             q.setParameter("user", user.getUserName());
             q.setParameter("pass", user.getPassword());
             return (User) q.getSingleResult();

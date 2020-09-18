@@ -4,12 +4,15 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/Dashboard/index.html" value="file://$PROJECT_DIR$/src/main/webapp/Dashboard" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/Dashboard/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/Dashboard" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/Patient/viewPatients.jsp" value="file://$PROJECT_DIR$/src/main/webapp/Patient" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/doctor/assignRoom.jsp" value="file://$PROJECT_DIR$/src/main/webapp/doctor" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/doctor/doctorProfileView.jsp" value="file://$PROJECT_DIR$/src/main/webapp/doctor" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/room/viewRooms.jsp" value="file://$PROJECT_DIR$/src/main/webapp/room" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/signIn/sign-in.html" value="file://$PROJECT_DIR$/src/main/webapp/signIn" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/signIn_register/addUser.jsp" value="file://$PROJECT_DIR$/src/main/webapp/signIn_register" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/signIn_register/signIn_register.jsp" value="file://$PROJECT_DIR$/src/main/webapp/signIn_register" />
       </map>
     </option>
   </component>

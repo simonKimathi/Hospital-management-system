@@ -41,7 +41,7 @@ public class LogInServlet extends HttpServlet {
                 HttpSession httpSession =req.getSession();
                 httpSession.setAttribute("loggedInUser",user1);
 
-                resp.sendRedirect("index.jsp");
+                resp.sendRedirect(req.getContextPath());
             }
 
         } catch (IllegalAccessException e) {
@@ -50,6 +50,6 @@ public class LogInServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        resp.sendRedirect("login.jsp");
+        resp.sendRedirect("signIn_register/temp.jsp");
     }
 }

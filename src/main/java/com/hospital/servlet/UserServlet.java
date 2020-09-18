@@ -9,13 +9,14 @@ import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 
 @WebServlet("/register")
-public class UserServlet {
+public class UserServlet extends HttpServlet {
     @EJB
     private UserBeanI userBean;
 
@@ -42,6 +43,6 @@ public class UserServlet {
         }
 
         response.getWriter().print(userBean.registerUser(user));
-        response.sendRedirect("Patient/viewPatients.jsp");
+        response.sendRedirect("signIn_register/temp.jsp");
     }
 }

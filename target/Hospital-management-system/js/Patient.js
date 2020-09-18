@@ -31,6 +31,7 @@
             id: 'org-addButton',
         }],
         gridData:[{
+            dataHref:'../PatientProfile.jsp'
         }]
     });
 })();

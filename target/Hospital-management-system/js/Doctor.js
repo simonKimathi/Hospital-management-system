@@ -7,16 +7,16 @@
             dataIndex:'nationalId'
         },{
             header:'first name',
-            dataIndex:'firstName'
+            dataIndex:'bioData.firstName'
         },{
             header:'Last Name',
-            dataIndex:'lastName'
+            dataIndex:'bioData.lastName'
         },{
             header:'sur Name',
-            dataIndex:'surName'
+            dataIndex:'bioData.surName'
         },{
             header:'gender',
-            dataIndex:'gender'
+            dataIndex:'bioData.gender'
         },{
             header:'Address',
             dataIndex:'address'
@@ -29,6 +29,9 @@
             label: 'Add a doctor',
             cssClass: 'btn btn-info add-new fa fa-plus',
             id: 'org-addButton',
+        }],
+        gridData:[{
+            dataHref:'../doctorProfile.jsp'
         }]
     });
 })();
