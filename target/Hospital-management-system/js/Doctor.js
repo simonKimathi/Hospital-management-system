@@ -4,7 +4,7 @@
         gridStyle:'customers',
         gridColumns:[{
             header:'id number',
-            dataIndex:'nationalId'
+            dataIndex:'bioData.nationalId'
         },{
             header:'first name',
             dataIndex:'bioData.firstName'
@@ -22,7 +22,7 @@
             dataIndex:'address'
         },{
             header:'contact',
-            dataIndex:'contact'
+            dataIndex:'contact.phoneNumber'
         }],
         gridButtons:[{
             linkAddress:'../doctor/addDoctor.jsp',

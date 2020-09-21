@@ -34,61 +34,6 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
             <div id="module-content"> table loading...</div>
-                <%--<table class = "customers table table-bordered table-stripped table-condensed" align = "center" >
-                    <tr>
-                        &lt;%&ndash;<thead class="table-primary" >&ndash;%&gt;
-                        <th scope="col">National Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Room Assigned</th>
-                        &lt;%&ndash;<th scope="col">Address</th>
-                        <th scope="col">Contact</th>
-                        <th scope="col">operations</th>&ndash;%&gt;
-                        &lt;%&ndash;</thead>&ndash;%&gt;
-                    </tr>
-                    <a href="addDoctor.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Doctor</button></a><br><br>
-
-                    <%
-                        Context context = new InitialContext();
-                        DataSource dataSource = (DataSource)context.lookup("java:jboss/datasources/mrs");
-
-
-                        try
-                        {
-                            Connection connection = dataSource.getConnection();
-                            String query = "Select * from hospital_doctor";
-                            Statement statement = connection.createStatement();
-                            ResultSet result = statement.executeQuery(query);
-                            int count=0;
-                            while(result.next())
-                            {
-                                count ++;
-                                String name= result.getString("firstName") +" "+result.getString("lastName") +" "+result.getString("surName");
-                    %>
-
-                    <tr class="table-row" data-href="doctorProfile.jsp?id=<%=result.getString("NationalId") %>" >
-                        <td><%=result.getString("NationalId")%></td>
-                        <td><%=name%></td>
-                        <td><%=result.getString("roomAssigned")%></td>
-                        &lt;%&ndash;<td><%=result.getString("address")%></td>
-                        <td><%=result.getString("contact")%></td>&ndash;%&gt;
-                        &lt;%&ndash;<td>
-                            <a href="doctorProfile.jsp?id=<%=result.getString("employeeId") %>" > <button type="button" class="btn btn-info add-new">VIEW DOCTOR</button></a>
-                        </td>&ndash;%&gt;
-
-                    </tr>
-                    <%
-                            }
-                            application.setAttribute("doctorsCount",count);
-                            connection.close();
-                        }
-                        catch(Exception ex)
-                        {
-                            out.println("Exception:" +ex.getMessage());
-                            ex.printStackTrace();
-                        }
-                    %>
-                </table>
-        --%>
         </main>
     </div>
 </div>

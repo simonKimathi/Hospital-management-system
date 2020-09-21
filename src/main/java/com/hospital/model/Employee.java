@@ -27,8 +27,6 @@ public abstract class Employee extends BaseEntity implements Serializable {
     @Column
     private String roomAssigned;
 
-    @Column
-    private int salary;
 
     public BioData getBioData() {
         return bioData;
@@ -54,11 +52,4 @@ public abstract class Employee extends BaseEntity implements Serializable {
         this.roomAssigned = roomAssigned;
     }
 
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
 }

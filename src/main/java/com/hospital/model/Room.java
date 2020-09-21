@@ -1,5 +1,6 @@
 package com.hospital.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.hospital.commonClasses.BaseEntity;
 
 import javax.persistence.Column;
@@ -41,6 +42,7 @@ public class Room extends BaseEntity implements Serializable {
         this.roomId = roomId;
     }
 
+    //@JsonProperty(value = "room type")
     public String getrType() {
         return rType;
     }

@@ -35,60 +35,6 @@
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4" style="padding: 10px">
 
             <div id="module-content"> table loading...</div>
-
-           <%-- <table class = " customers table table-bordered table-stripped table-condensed" align = "center" >
-                <tr>
-                    <thead class="table-primary">
-                    <th scope="col">Room Id</th>
-                    <th scope="col">room Type</th>
-                    <th scope="col">room occupant</th>
-                    &lt;%&ndash;<th scope="col">operations</th>&ndash;%&gt;
-                    </thead>
-                </tr>
-                <a href="addRoom.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Room</button></a><br><br>
-
-                <%
-                    Context context = new InitialContext();
-                    DataSource dataSource = (DataSource)context.lookup("java:jboss/datasources/mrs");
-                    try
-                    {
-                        Connection connection = dataSource.getConnection();
-                        String query = "Select * from hospital_room";
-                        Statement statement = connection.createStatement();
-                        ResultSet result = statement.executeQuery(query);
-                        int count=0;
-                        while(result.next())
-                        {
-                          count ++;
-                %>
-
-                <tr>
-                    <td><%=result.getString("id")%></td>
-                    <td><%=result.getString("rType")%></td>
-                    <td><%=result.getString("assigned")%></td>
-                    &lt;%&ndash;<td>
-                        <a href="update.jsp?id=<%=result.getString("id") %>" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                        <a href="delete.jsp?id=<%=result.getString("id") %>" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                    </td>&ndash;%&gt;
-
-                </tr>
-                <%
-
-                        }
-                        application.setAttribute("roomsCount",count);
-                        connection.close();
-                    }
-                    catch(Exception ex)
-                    {
-                        out.println("Exception:" +ex.getMessage());
-                        ex.printStackTrace();
-                    }
-                %>
-            </table>
-
---%>
-
-
         </main>
     </div>
 </div>
