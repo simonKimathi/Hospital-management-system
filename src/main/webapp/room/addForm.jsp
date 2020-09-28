@@ -29,8 +29,8 @@
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="roomType">room type</label>
-                    <select id="roomType" class="form-control" placeholder="choose..." name="rType">
+                    <label for="rType">room type</label>
+                    <select id="rType" class="form-control" placeholder="choose..." name="rType">
                         <option>Billing</option>
                         <option>Laboratory</option>
                         <option>Pharmacy</option>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <br/>
-            <button type="submit" class="btn btn-primary" id="roomComponent">Save</button>
+            <button type="submit" class="btn btn-primary" id="saveRoom">Save</button>
         </form>
     </div>
 </div>

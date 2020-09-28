@@ -301,6 +301,7 @@ SystechSkulJsLib.Form = function(){
         //add this to submit the data sent through ajax as form
         xhr.setRequestHeader("Content-type",  me.formContentType? me.formContentType : "application/x-www-form-urlencoded");
 
+        console.log("form data"+formData);
         if (me.formContentType == 'application/json')
             xhr.send(JSON.stringify(formData));
         else
@@ -310,26 +311,53 @@ SystechSkulJsLib.Form = function(){
         SystechSkulJsLib.showGrid.call(me);
 
     });
-}
 
-function populateFormJson(formData, fieldName, fieldValue) {
-    var formFieldNameParts = fieldName.split('.');
+    function populateFormJson(formData, fieldName, fieldValue) {
+        var formFieldNameParts = fieldName.split('.');
 
-    lastFieldNamePartIdx = formFieldNameParts.length-1;
-    for (var i = 0; i < lastFieldNamePartIdx; ++ i) {
-        currentFieldNamePart = formFieldNameParts[i];
+        lastFieldNamePartIdx = formFieldNameParts.length-1;
+        for (var i = 0; i < lastFieldNamePartIdx; ++ i) {
+            currentFieldNamePart = formFieldNameParts[i];
 
-        if (!(currentFieldNamePart in formData)){
-            formData[currentFieldNamePart] = {}
+            if (!(currentFieldNamePart in formData)){
+                formData[currentFieldNamePart] = {}
+            }
+
+            formData = formData[currentFieldNamePart];
         }
 
-        formData = formData[currentFieldNamePart];
+        formData[formFieldNameParts[lastFieldNamePartIdx]] = fieldValue;
+
     }
 
-    formData[formFieldNameParts[lastFieldNamePartIdx]] = fieldValue;
 
-}
-function submitForm(){
+    function submitForm(formDataRaw, formContentType){
 
+        //send the form data to servlet through ajax
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == XMLHttpRequest.DONE){
+                if (xhr.status == 200){
+                    console.log(xhr.responseText)
+                }
+            }
+        }
+        xhr.open('post', '/Hospital-management-system/rest/hospital/save/' + me.dataUrlSave, false);
+
+        //add this to submit the data sent through ajax as form
+        xhr.setRequestHeader("Content-type",  me.formContentType? me.formContentType : "application/x-www-form-urlencoded");
+
+        console.log("form data x"+formDataRaw);
+        if (me.formContentType == 'application/json')
+            xhr.send(JSON.stringify(formDataRaw));
+        else
+            xhr.send(formDataRaw);
+
+        //auto render the grid table to auto load the table store and show all the added records
+        SystechSkulJsLib.showGrid.call(me);
+
+    }
 }
+
+
 

@@ -36,6 +36,18 @@
         }]
     });
 })();
+document.getElementById("saveRoom").addEventListener('click', event => {
+    event.preventDefault();
 
+    var roomId = document.getElementById('roomId');
+    var rType = document.getElementById('rType');
+
+    var formData = {
+        roomId:roomId,
+        rType:rType
+    }
+
+    submitForm(formData, 'application/json');
+});
 
 

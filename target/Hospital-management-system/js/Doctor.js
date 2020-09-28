@@ -36,3 +36,31 @@
         }]
     });
 })();
+
+document.getElementById("saveDoctor").addEventListener('click', event => {
+    event.preventDefault();
+
+    var firstName = document.getElementById('firstName');
+    var lastName = document.getElementById('lastName');
+    var surName = document.getElementById('surName');
+    var nationalId = document.getElementById('nationalId');
+    var gender = document.getElementById('gender');
+    var phoneNo = document.getElementById('phoneNo');
+    var address = document.getElementById('address');
+
+    var formData = {
+        bioData: {
+            firstName: firstName,
+            lastName: lastName,
+            surName: surName,
+            nationalId: nationalId,
+            gender: gender,
+        },
+        contact: {
+            phoneNo: phoneNo,
+            address:address
+        }
+    }
+
+    submitForm(formData, 'application/json');
+});
