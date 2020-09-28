@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "Hospital_medical_record")
-public class MedicalRecord extends BaseEntity implements Serializable {
+public class MedicalRecord extends BaseEntity {
 
     @Embedded
     private PatientVitals patientVitals;

@@ -1,12 +1,16 @@
 package com.hospital.model;
 
-import javax.persistence.Column;
-import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import com.hospital.commonClasses.BaseEntity;
+
+import javax.persistence.*;
 import java.util.Date;
 
-public class PatientVisits {
+@Entity
+@Table(name = "hospital_visit")
+public class PatientVisits extends BaseEntity {
+
+
+
     @ManyToOne
     private Doctor doctor;
 

@@ -1,7 +1,9 @@
-package com.hospital.patient.servlet;
+package com.hospital.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hospital.EJB.PatientBeanI;
+import com.hospital.commonClasses.BioData;
+import com.hospital.commonClasses.Contact;
 import com.hospital.model.Patient;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -24,6 +26,12 @@ public class PatientServlet extends HttpServlet {
     @Inject
     public Patient patient;
 
+    @Inject
+    public BioData bioData;
+
+    @Inject
+    public Contact contact;
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         response.setContentType("text/plain");
 
@@ -34,8 +42,14 @@ public class PatientServlet extends HttpServlet {
     }
     protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
-        try {
+        try{
+            BeanUtils.populate(bioData, request.getParameterMap());
+            BeanUtils.populate(contact, request.getParameterMap());
+
             BeanUtils.populate(patient, request.getParameterMap());
+
+            patient.setBioData(bioData);
+            patient.setContact(contact);
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();

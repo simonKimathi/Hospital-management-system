@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 
 @MappedSuperclass
-public abstract class Employee extends BaseEntity implements Serializable {
+public abstract class Employee extends BaseEntity {
 
     @Embedded
     private BioData bioData;

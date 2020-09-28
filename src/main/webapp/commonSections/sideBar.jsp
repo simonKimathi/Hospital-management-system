@@ -5,7 +5,7 @@
   Time: 15:57
   To change this template use File | Settings | File Templates.
 --%>
-<nav class="col-md-2 d-none d-md-block bg-light sidebar" style="padding-top: 70px">
+<nav class="col-md-2 d-none d-md-block sidebar" style="padding-top: 70px;background-color:#2A2739;height: inherit">
     <div class="text-dark">
         <h3>Quick Links</h3>
     </div>

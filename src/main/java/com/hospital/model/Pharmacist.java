@@ -6,6 +6,6 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "hospital_pharmacist")
-public class Pharmacist extends Employee implements Serializable {
+public class Pharmacist extends Employee {
 
 }

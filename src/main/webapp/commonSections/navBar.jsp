@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 !--Navbar-->
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" style="margin-bottom: 10px" >
+<nav class="navbar navbar-dark fixed-top flex-md-nowrap p-0 shadow" style="margin-bottom: 10px" >
     <%--<nav class="navbar navbar-expand-lg navbar-light bg-light">--%>
         <!-- Just an image -->
         <nav class="navbar navbar-light bg-light">

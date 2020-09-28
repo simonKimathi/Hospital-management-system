@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "hospital_patient")
-public class Patient extends BaseEntity implements Serializable {
+public class Patient extends BaseEntity {
 
 
     @Embedded
@@ -63,6 +63,7 @@ public class Patient extends BaseEntity implements Serializable {
     }
 
     public void setDOB(String DOB) {
+        DOB=DOB.replace("/","-");
         this.DOB = DOB;
     }
 

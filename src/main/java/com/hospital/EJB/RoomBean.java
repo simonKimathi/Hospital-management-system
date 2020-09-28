@@ -24,6 +24,21 @@ public class RoomBean implements RoomBeanI {
     }
 
     @Override
+    public Room findById(int id){
+        return entityManager.find(Room.class, id);
+    }
+
+    @Override
+    public String delete(int id) throws Exception{
+        if (id == 0)
+            throw new Exception("Invalid faculty details!!");
+
+        entityManager.remove(entityManager.find(Room.class, id));
+
+        return "OK";
+    }
+
+    @Override
     public List<Room> list() {
 
         /*Patient patient=new Patient();

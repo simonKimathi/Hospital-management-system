@@ -41,6 +41,16 @@ public class HospitalSoapApi {
     }
 
     @WebMethod
+    public Room findRoom(int id){
+        return roomBean.findById(id);
+    }
+
+    @WebMethod
+    public String deleteRoom(int id) throws Exception {
+        return roomBean.delete(id);
+    }
+
+    @WebMethod
     public List<Patient> viewPatients(){
         return patientBean.list();
     }

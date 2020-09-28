@@ -48,7 +48,7 @@
                                     <td> Date of Birth</td><td> <%=result1.getString("DOB")%></td>
                                 </tr>
                                 <tr>
-                                    <td>Contact</td> <td><%=result1.getString("contact")%> </td>
+                                    <td>Contact</td> <td><%=result1.getString("phoneNumber")%> </td>
                                 </tr>
                                 <tr>
                                     <td>Emergency Contact</td><td><%=result1.getString("emergencyContact")%></td>

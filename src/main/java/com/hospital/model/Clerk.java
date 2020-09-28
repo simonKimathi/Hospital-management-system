@@ -8,7 +8,7 @@ import java.sql.Time;
 
 @Entity
 @Table(name = "hospital_clerk")
-public class Clerk extends Employee implements Serializable {
+public class Clerk extends Employee{
 
     @Column
     private Time shiftStart;

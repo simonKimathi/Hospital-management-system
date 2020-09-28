@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "hospital_medicine")
-public class Medicine extends BaseEntity implements Serializable {
+public class Medicine extends BaseEntity {
 
     @Column
     private String quantity;

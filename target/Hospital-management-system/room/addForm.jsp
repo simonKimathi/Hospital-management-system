@@ -20,7 +20,7 @@
         <a class="heading-elements-toggle" href="#"> <i class="la la-ellipsis-h font-medium-3"> </i> </a>
     </div>
     <div class="card-body">
-        <form id="addForm" method="post" action="http://localhost:8080/Hospital-management-system/rest/hospital/save">
+        <form id="addForm" action="#">
             <div class="form-row">
                 <div class="form-group">
                     <label for="roomId">Room ID</label>
@@ -29,8 +29,8 @@
             </div>
             <div class="form-row">
                 <div class="form-group">
-                    <label for="inputGender">Gender</label>
-                    <select id="inputGender" class="form-control" placeholder="choose..." name="rType">
+                    <label for="roomType">room type</label>
+                    <select id="roomType" class="form-control" placeholder="choose..." name="rType">
                         <option>Billing</option>
                         <option>Laboratory</option>
                         <option>Pharmacy</option>
@@ -39,10 +39,11 @@
                 </div>
             </div>
             <br/>
-            <button type="submit" class="btn btn-primary" onclick="this.formUpload()">Save</button>
+            <button type="submit" class="btn btn-primary" id="roomComponent">Save</button>
         </form>
     </div>
 </div>
+<%--
 <script>
 
     var roomId=$('input[name="roomId"]').val();
@@ -64,4 +65,4 @@
             console.log(response);
         });
     };
-</script>
+</script>--%>

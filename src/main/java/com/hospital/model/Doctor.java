@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "hospital_doctor")
-public class Doctor extends Employee implements Serializable {
+public class Doctor extends Employee  {
 
     @Column
     private String Qualification;

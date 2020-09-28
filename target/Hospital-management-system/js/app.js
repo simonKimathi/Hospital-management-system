@@ -21,7 +21,7 @@ HospitalSystemJsLib.showGrid = function(){
     }
 
     //its a get method hence calls servlet doGet method
-    xhr.open('get', me.dataUrl, false);
+    xhr.open('get','/Hospital-management-system/rest/hospital/list/'+ me.dataUrl , false);
     xhr.send();
 
     //append the ajax response to the current object gridData, that later populates the table
@@ -32,6 +32,7 @@ HospitalSystemJsLib.showGrid = function(){
     //add buttons on top of the table, that is add button
     me.gridButtons.forEach(button => {
         //<a href="addRoom.jsp"><button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New Room</button></a><br><br>
+        //tableContent += `<a href="${button.linkAddress}"><button class="${button.cssClass}" id="${button.id}"><i class="fa ${button.fontAwesomeIcon}"></i> ${button.label}</button></a>`;
         tableContent += `<a href="${button.linkAddress}"><button class="${button.cssClass}" id="${button.id}"><i class="fa ${button.fontAwesomeIcon}"></i> ${button.label}</button></a>`;
     });
 
@@ -54,7 +55,10 @@ HospitalSystemJsLib.showGrid = function(){
     the table rows */
     me.gridData.forEach(row => {
 //data-href="PatientProfile.jsp?id="
-        tableContent += `<tr class="table-row" >`;
+
+        var hrefValue=me.dataHref+"?id="+row.id;
+        console.log(hrefValue);
+        tableContent += `<tr class="table-row" data-href="${hrefValue}">`;
 
         ///finding out which data row belongs to which header or column and appending it
         me.gridColumns.forEach(col => {
@@ -72,9 +76,13 @@ HospitalSystemJsLib.showGrid = function(){
                 }
             });
 
+/*
             console.log(rowDataContent);
+*/
 
-            tableContent += `<td data-href="${row.dataHref}?id=${row[col]}.nationalId" >${rowDataContent}</td>`;
+            //console.log("href id"+me.dataHref +" :"+row.id);
+
+            tableContent += `<td>${rowDataContent}</td>`;
             /*
             */
             /*var objectDrillDown=(col.dataIndex).split('.');
@@ -182,7 +190,7 @@ HospitalSystemJsLib.showGrid = function(){
 
 
 //Form creation function
-HospitalSystemJsLib.Form = function(){
+SystechSkulJsLib.Form = function(){
     var me = this;
 
     var formContent = `<form action="#">`;
@@ -255,13 +263,29 @@ HospitalSystemJsLib.Form = function(){
     document.getElementById(me.componentId).addEventListener('click', event => {
         event.preventDefault();
 
-        //variable to hold the form data to be sent to the servlet for saving
-        var formData = '';
+        var formData = undefined;
 
-        //loop through the form fields to get the form input field name and value and append with an equal sign
-        me.formField.forEach(field =>{
-            formData += field.name + '=' + document.getElementById(field.id).value + '&';
-        });
+        if (me.formContentType == 'application/json'){
+            //variable to hold the form data to create json for saving rest endpoint
+            formData = {};
+
+            //loop through the form fields to create json object for saving
+            me.formField.forEach(field =>{
+                populateFormJson(formData, field.name, document.getElementById(field.id).value);
+
+            });
+
+        }else{
+
+            //variable to hold the form data to be sent to the servlet for saving
+            formData = '';
+
+            //loop through the form fields to get the form input field name and value and append with an equal sign
+            me.formField.forEach(field =>{
+                formData += field.name + '=' + document.getElementById(field.id).value + '&';
+            });
+
+        }
 
         //send the form data to servlet through ajax
         var xhr = new XMLHttpRequest();
@@ -272,15 +296,40 @@ HospitalSystemJsLib.Form = function(){
                 }
             }
         }
-        xhr.open('post', me.dataUrl, false);
-        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded"); //add this to submit the data sent through ajax as form
-        xhr.send(formData);
+        xhr.open('post', '/Hospital-management-system/rest/hospital/save/' + me.dataUrlSave , false);
+
+        //add this to submit the data sent through ajax as form
+        xhr.setRequestHeader("Content-type",  me.formContentType? me.formContentType : "application/x-www-form-urlencoded");
+
+        if (me.formContentType == 'application/json')
+            xhr.send(JSON.stringify(formData));
+        else
+            xhr.send(formData);
 
         //auto render the grid table to auto load the table store and show all the added records
-        HospitalSystemJsLib.showGrid.call(me);
+        SystechSkulJsLib.showGrid.call(me);
 
     });
+}
 
+function populateFormJson(formData, fieldName, fieldValue) {
+    var formFieldNameParts = fieldName.split('.');
+
+    lastFieldNamePartIdx = formFieldNameParts.length-1;
+    for (var i = 0; i < lastFieldNamePartIdx; ++ i) {
+        currentFieldNamePart = formFieldNameParts[i];
+
+        if (!(currentFieldNamePart in formData)){
+            formData[currentFieldNamePart] = {}
+        }
+
+        formData = formData[currentFieldNamePart];
+    }
+
+    formData[formFieldNameParts[lastFieldNamePartIdx]] = fieldValue;
+
+}
+function submitForm(){
 
 }
 

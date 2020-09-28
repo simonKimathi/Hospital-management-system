@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "hospital_user")
-public class User extends BaseEntity implements Serializable {
+public class User extends BaseEntity {
 
 
     @Column

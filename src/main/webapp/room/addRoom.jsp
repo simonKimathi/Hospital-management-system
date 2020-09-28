@@ -34,7 +34,26 @@
 </div>
 
 <%--include footer--%>
+<script src="<%=request.getContextPath()%>/js/room.js"></script>
 <%@ include file="../commonSections/footer.jsp" %>
+
+
+
+<script>
+    function addRoom(){
+        var roomId= document.getElementById("roomId").value;
+        var roomtype= document.getElementById("roomType").value;
+
+        //pa
+
+
+    }
+</script>
+
+
+
+
+
 </body>
 </html>
 

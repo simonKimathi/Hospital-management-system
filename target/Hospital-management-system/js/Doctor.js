@@ -1,7 +1,8 @@
 (function(){
     HospitalSystemJsLib.showGrid.call({
-        dataUrl: '../doctor',
+        dataUrl: 'viewDoctors',
         gridStyle:'customers',
+        dataHref:'doctorProfile.jsp',
         gridColumns:[{
             header:'id number',
             dataIndex:'bioData.nationalId'
@@ -19,7 +20,7 @@
             dataIndex:'bioData.gender'
         },{
             header:'Address',
-            dataIndex:'address'
+            dataIndex:'contact.address'
         },{
             header:'contact',
             dataIndex:'contact.phoneNumber'
