@@ -42,7 +42,28 @@ public class LogInServlet extends HttpServlet {
                 HttpSession httpSession =req.getSession();
                 httpSession.setAttribute("loggedInUser",user1);
 
-                resp.sendRedirect(req.getContextPath());
+                //resp.sendRedirect(req.getContextPath());
+
+
+                //redirect based on user roles
+                if(user1.getRole().equals("Admin")){
+                    String url="admin/index.jsp";
+                    resp.sendRedirect("admin/index.jsp");
+                    //resp.sendRedirect("doctor/doctor-dashboard.jsp");
+                }
+                else if(user1.getRole().equals("Doctor")){
+                    resp.sendRedirect(req.getContextPath());
+                }
+                else if(user1.getRole().equals("Cashier")){
+                    resp.sendRedirect(req.getContextPath());
+                }
+                else if(user1.getRole().equals("Pharmacist")){
+                    resp.sendRedirect(req.getContextPath());
+                }
+                else {
+                    resp.sendRedirect(req.getContextPath());
+                }
+
             }
             else {
                 PrintWriter out = resp.getWriter();
@@ -52,9 +73,7 @@ public class LogInServlet extends HttpServlet {
                 out.println("</script>");
             }
 
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
 

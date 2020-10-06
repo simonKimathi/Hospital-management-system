@@ -1,6 +1,7 @@
 package com.hospital.EJB;
 
 import com.hospital.model.Room;
+import com.hospital.model.User;
 
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
@@ -24,6 +25,12 @@ public class RoomBean implements RoomBeanI {
     }
 
     @Override
+    public String deleteRoom(Room room) {
+        entityManager.remove(entityManager.find(Room.class, room));
+        return "Deleted";
+    }
+
+    @Override
     public Room findById(int id){
         return entityManager.find(Room.class, id);
     }
@@ -41,10 +48,17 @@ public class RoomBean implements RoomBeanI {
     @Override
     public List<Room> list() {
 
-        /*Patient patient=new Patient();
-        //patient.setBioData();
-        //select * from db*/
-
         return entityManager.createQuery("FROM Room r").getResultList();
     }
+
+    @Override
+    public Room getRoomByType(String rType) {
+        return entityManager.find(Room.class, rType);
+    }
+
+    @Override
+    public Room getRoomById(int roomId) {
+        return entityManager.find(Room.class, roomId);
+    }
+
 }

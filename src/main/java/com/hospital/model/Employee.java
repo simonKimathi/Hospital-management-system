@@ -25,6 +25,12 @@ public abstract class Employee extends BaseEntity {
 
 
     @Column
+    private String designation;
+
+    @Column
+    private String specialty;
+
+    @Column
     private String roomAssigned;
 
 

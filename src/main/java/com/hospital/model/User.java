@@ -1,56 +1,81 @@
 package com.hospital.model;
 
 import com.hospital.commonClasses.BaseEntity;
+import com.hospital.commonClasses.BioData;
+import com.hospital.commonClasses.Contact;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.io.Serializable;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "hospital_user")
-public class User extends BaseEntity {
+public class User extends BaseEntity{
+
+    @Embedded
+    private BioData bioData;
 
 
-    @Column
-    String name;
+    @Embedded
+    private Contact contact;
 
     @Column
     String userName;
 
-    @Column
-    String email;
 
-/*
     @Column
-    String address;
-*/
+    String specialty;
+
+    @Column
+    String designation;
+
+
+    @Column
+    String role;
+
 
     @Column
     String password;
 
-    public String getEmail() {
-        return email;
+    @Transient
+    Encription encryption;
+
+    public BioData getBioData() {
+        return bioData;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-/*
-    public String getAddress() {
-        return address;
+    public void setBioData(BioData bioData) {
+        this.bioData = bioData;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }*/
-
-    public String getName() {
-        return name;
+    public Contact getContact() {
+        return contact;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
+    public String getSpecialty() {
+        return specialty;
+    }
+
+    public void setSpecialty(String specialty) {
+        this.specialty = specialty;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getUserName() {
@@ -69,15 +94,4 @@ public class User extends BaseEntity {
         this.password = password;
     }
 
-    /*public  String showUser(User user){
-        String newPasswordShow = "";
-
-        int countPwdSize = user.getPassword() == null? 0 : user.getPassword().length();
-
-        while((--countPwdSize)>0)
-            newPasswordShow += "*";
-
-        return "<br/><br/>" +user.getId() + " | " + user.getUserName() + " | " + user.getAddress() + " | " + user.getEmail() + " | " + newPasswordShow + "<br/>";
-
-    }*/
 }

@@ -10,7 +10,9 @@
 <%
     User user = (User) session.getAttribute("loggedInUser");
 
+
     if(user ==null){
         response.sendRedirect("../signIn_register/temp.jsp");
     }
+
 %>

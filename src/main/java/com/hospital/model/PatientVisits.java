@@ -1,6 +1,8 @@
 package com.hospital.model;
 
 import com.hospital.commonClasses.BaseEntity;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -21,11 +23,11 @@ public class PatientVisits extends BaseEntity {
     private Room room;
 
     @Column
-    @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
     private Date fromDate;
 
     @Column
-    @Temporal(TemporalType.TIMESTAMP)
+    @UpdateTimestamp
     private Date toDate;
 
     @Column(name = "doctors_notes")

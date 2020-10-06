@@ -33,14 +33,19 @@ public class UserBean implements UserBeanI {
     }
 
     @Override
-    public List<Patient> list() {
+    public List<User> list() {
 
-        return entityManager.createQuery("FROM Patient p").getResultList();
+        return entityManager.createQuery("FROM User u").getResultList();
     }
 
     @Override
-    public User getUser(int id) {
-        return entityManager.find(User.class, id);
+    public User getUserByUserName(String userName) {
+        return entityManager.find(User.class, userName);
+    }
+
+    @Override
+    public User getUserByName(String name) {
+        return entityManager.find(User.class, name);
     }
 
     @Override
@@ -54,6 +59,19 @@ public class UserBean implements UserBeanI {
             System.err.println(e.getMessage());
             return null;
         }
+    }
+
+    @Override
+    public User changePassword(User user) {
+        int updatedEntities = entityManager.createQuery(
+                "update User u " +
+                        "set u.password = :newPassword " +
+                        "where u.userName = :userName" )
+                .setParameter( "newPassword", user.getPassword() )
+                .setParameter( "userName", user.getUserName() )
+                .executeUpdate();
+
+        return user;
     }
 
     @Override

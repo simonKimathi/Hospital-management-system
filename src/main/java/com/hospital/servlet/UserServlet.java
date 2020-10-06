@@ -2,6 +2,8 @@ package com.hospital.servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hospital.EJB.UserBeanI;
+import com.hospital.commonClasses.BioData;
+import com.hospital.commonClasses.Contact;
 import com.hospital.model.User;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -21,6 +23,12 @@ public class UserServlet extends HttpServlet {
     private UserBeanI userBean;
 
     @Inject
+    public BioData bioData;
+
+    @Inject
+    public Contact contact;
+
+    @Inject
     public User user;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -34,7 +42,12 @@ public class UserServlet extends HttpServlet {
     protected  void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
         try {
+            BeanUtils.populate(bioData, request.getParameterMap());
+            BeanUtils.populate(contact, request.getParameterMap());
+
             BeanUtils.populate(user, request.getParameterMap());
+            user.setBioData(bioData);
+            user.setContact(contact);
 
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -43,6 +56,6 @@ public class UserServlet extends HttpServlet {
         }
 
         response.getWriter().print(userBean.registerUser(user));
-        response.sendRedirect("signIn_register/temp.jsp");
+        //response.sendRedirect("signIn_register/temp.jsp");
     }
 }

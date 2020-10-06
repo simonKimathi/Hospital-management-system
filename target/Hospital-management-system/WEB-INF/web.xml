@@ -8,6 +8,7 @@
     <welcome-file>Dashboard/index.jsp</welcome-file>
   </welcome-file-list>
 
+
   <servlet>
     <servlet-name>Resteasy</servlet-name>
     <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
@@ -50,3 +51,13 @@
   </servlet-mapping>-->
 
 </web-app>
+
+<entity-mappings version="2.1"
+                 xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd">
+
+<entity class="com.hospital.model.User">
+  <convert converter="com.hospital.model.CryptoConverter" attribute-name="password"/>
+</entity>
+</entity-mappings>

@@ -7,7 +7,8 @@ import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table(name = "hospital_patient")
@@ -23,8 +24,7 @@ public class Patient extends BaseEntity {
     @Embedded
     private Contact contact;
 
-    @Column
-    private String DOB;
+
 
     @Column
     private String emergencyContact;
@@ -37,6 +37,8 @@ public class Patient extends BaseEntity {
 
     @Column
     private String village;
+
+
 
     @ManyToOne(cascade = CascadeType.ALL)
     @NotFound(action = NotFoundAction.IGNORE)
@@ -58,14 +60,7 @@ public class Patient extends BaseEntity {
         this.contact = contact;
     }
 
-    public String getDOB() {
-        return DOB;
-    }
 
-    public void setDOB(String DOB) {
-        DOB=DOB.replace("/","-");
-        this.DOB = DOB;
-    }
 
     public String getEmergencyContact() {
         return emergencyContact;
@@ -106,4 +101,6 @@ public class Patient extends BaseEntity {
     public void setHospital(Hospital hospital) {
         this.hospital = hospital;
     }
+
+
 }

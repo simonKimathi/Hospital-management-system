@@ -8,12 +8,15 @@ import java.util.List;
 public interface UserBeanI {
     String removeUser(User user);
 
-    List<Patient> list();
+    List<User> list();
 
-    User getUser(int id);
+    User getUserByUserName(String userName);
 
+    User getUserByName(String name);
 
     User getUser(User user);
+
+    User changePassword(User user);
 
     public String registerUser(User user);
 }

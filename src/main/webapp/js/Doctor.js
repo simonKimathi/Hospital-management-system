@@ -1,7 +1,8 @@
 (function(){
     HospitalSystemJsLib.showGrid.call({
-        dataUrl: 'viewDoctors',
-        gridStyle:'customers',
+        dataUrl: 'doctor/getDoctors',
+        gridStyle:'datatable table table-hover table-center mb-0',
+        contentId:'module-content',
         dataHref:'doctorProfile.jsp',
         gridColumns:[{
             header:'id number',

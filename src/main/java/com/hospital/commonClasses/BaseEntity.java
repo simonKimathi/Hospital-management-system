@@ -1,7 +1,10 @@
 package com.hospital.commonClasses;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @MappedSuperclass
@@ -12,8 +15,9 @@ public abstract class BaseEntity implements Serializable {
     private int id;
 
     @Column(name = "time_created")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date timeCreated;
+    //@Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
+    private LocalDateTime timeCreated;
 
     public int getId() {
         return id;
@@ -23,11 +27,11 @@ public abstract class BaseEntity implements Serializable {
         this.id = id;
     }
 
-    public Date getTimeCreated() {
+    public LocalDateTime getTimeCreated() {
         return timeCreated;
     }
 
-    public void setTimeCreated(Date timeCreated) {
+    public void setTimeCreated(LocalDateTime timeCreated) {
         this.timeCreated = timeCreated;
     }
 }

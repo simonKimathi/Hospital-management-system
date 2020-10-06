@@ -5,13 +5,6 @@
   Time: 17:52
   To change this template use File | Settings | File Templates.
 --%>
-<%--
-  Created by IntelliJ IDEA.
-  User: symoh
-  Date: 02/09/2020
-  Time: 18:01
-  To change this template use File | Settings | File Templates.
---%>
 
 <div class="container">
     <div class="card-header">
@@ -20,7 +13,7 @@
         <a class="heading-elements-toggle" href="#"> <i class="la la-ellipsis-h font-medium-3"> </i> </a>
     </div>
     <div class="card-body">
-        <form id="addForm" action="#">
+        <form id="addForm" action="#" accept-charset="utf-8">
             <div class="form-row">
                 <div class="form-group">
                     <label for="roomId">Room ID</label>
@@ -39,7 +32,7 @@
                 </div>
             </div>
             <br/>
-            <button type="submit" class="btn btn-primary" id="saveRoom">Save</button>
+            <button type="submit" class="btn btn-primary" id="saveRoom" >Save</button>
         </form>
     </div>
 </div>

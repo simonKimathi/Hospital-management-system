@@ -1,9 +1,10 @@
 (function(){
     HospitalSystemJsLib.showGrid.call({
         /*dataUrl: '../room',*/
-        dataUrl: 'viewRooms',
-        dataUrlSave : 'addRoom',
-        componentId: 'roomComponent',
+        dataUrl: 'room/getRooms',/*
+        dataUrlSave : 'addRoom',*/
+        contentId:'module-content',/*
+        componentId: 'roomComponent',*/
         gridStyle:'customers',
         formContentType: 'application/json',
         gridColumns:[{
@@ -22,7 +23,7 @@
             label: 'Add room',
             cssClass: 'btn btn-info add-new fa fa-plus',
             id: 'org-addButton',
-        }],
+        }]/*,
         formField:[{
             label: 'Room ID',
             name: 'roomId',
@@ -33,21 +34,11 @@
             name: 'contact.rType',
             type: 'text',
             id: 'org-name'
-        }]
+        }]*/
     });
 })();
-document.getElementById("saveRoom").addEventListener('click', event => {
-    event.preventDefault();
 
-    var roomId = document.getElementById('roomId');
-    var rType = document.getElementById('rType');
 
-    var formData = {
-        roomId:roomId,
-        rType:rType
-    }
 
-    submitForm(formData, 'application/json');
-});
 
 
