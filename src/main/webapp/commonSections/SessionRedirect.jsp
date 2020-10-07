@@ -13,14 +13,14 @@
 
 
     if(user ==null){
-        response.sendRedirect("../signIn_register/temp.jsp");
+        response.sendRedirect("../sign_in/sign_in.jsp");
     }//redirect based on user roles
     else {
         if(user.getRole().equals("Admin")){
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect("../Cashier/cashier-dashboard.jsp");
         }
         else if(user.getRole().equals("Doctor")){
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect("../doctor/doctor-dashboard.jsp");
         }
         else if(user.getRole().equals("Cashier")){
             response.sendRedirect(request.getContextPath());

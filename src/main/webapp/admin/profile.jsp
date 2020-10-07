@@ -75,7 +75,7 @@
 										</a>
 									</div>
 									<div class="col ml-md-n2 profile-user-info">
-										<h4 class="user-name mb-0"><%--<%=user.getName()%>--%></h4>
+										<h4 class="user-name mb-0"><%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h4>
 										<h6 class="text-muted"><%=user.getUserName()%></h6>
 										<h6 class="about-text"></br><%=user.getRole()%></h6>
 									</div>
@@ -113,7 +113,7 @@
 													</h5>
 													<div class="row">
 														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Name</p>
-														<p class="col-sm-10"><%--<%=user.getName()%>--%></p>
+														<p class="col-sm-10"><%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></p>
 													</div>
 													<div class="row">
 														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">User name</p>
@@ -142,7 +142,7 @@
 																	<div class="col-12 ">
 																		<div class="form-group">
 																			<label>Name</label>
-																			<input type="text" class="form-control" value="<%--<%=user.getName()%>--%>">
+																			<input type="text" class="form-control" value="<%=user.getBioData().getFirstName()%>">
 																		</div>
 																	</div>
 																	<div class="col-12">
@@ -183,7 +183,7 @@
 								
 								<!-- Change Password Tab -->
 								<div id="password_tab" class="tab-pane fade">
-								
+
 									<div class="card">
 										<div class="card-body">
 											<h5 class="card-title">Change Password</h5>

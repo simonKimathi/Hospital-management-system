@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>Doccure - Dashboard</title>
+    <title> MRS</title>
 
 
     <script src="<%=request.getContextPath()%>/js/app.js"></script>
@@ -163,7 +163,7 @@
                             <img src="../adminAssets/img/profiles/avatar-01.jpg" alt="User Image" class="avatar-img rounded-circle">
                         </div>
                         <div class="user-text">
-                            <h6><%--<%=user.getName()%>--%></h6>
+                            <h6><%=user.getUserName()%></h6>
                             <p class="text-muted mb-0"><%=user.getRole()%></p>
                         </div>
                     </div>

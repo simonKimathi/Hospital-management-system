@@ -31,6 +31,9 @@ public class User extends BaseEntity{
     @Column
     String role;
 
+    @Column
+    String roomAssigned;
+
 
     @Column
     String password;
@@ -84,6 +87,14 @@ public class User extends BaseEntity{
 
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    public String getRoomAssigned() {
+        return roomAssigned;
+    }
+
+    public void setRoomAssigned(String roomAssigned) {
+        this.roomAssigned = roomAssigned;
     }
 
     public String getPassword() {

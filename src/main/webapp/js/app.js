@@ -58,11 +58,12 @@ HospitalSystemJsLib.showGrid = function(){
         tableContent += `<tr class="table-row" data-href="${hrefValue}">`;
 
         ///finding out which data row belongs to which header or column and appending it
+
+        var rowDataContent;
         me.gridColumns.forEach(col => {
 
             var objectDrillDown = (col.dataIndex).split('.');
 
-            var rowDataContent;
             var rowObj = true;
             objectDrillDown.forEach(arrEl => {
                 if (rowObj){

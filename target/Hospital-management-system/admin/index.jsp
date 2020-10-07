@@ -22,7 +22,10 @@
 							<li> 
 								<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
 							</li>
-							<li> 
+							<li>
+								<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
+							</li>
+							<li>
 								<a href="reviews.html"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
 							</li>
 							<li> 
@@ -55,7 +58,7 @@
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-12">
-								<h3 class="page-title">Welcome<%-- <%=user.getName()%>--%></h3>
+								<h3 class="page-title">Welcome <%=user.getUserName()%></h3>
 								<ul class="breadcrumb">
 									<li class="breadcrumb-item active">Dashboard</li>
 								</ul>
@@ -263,6 +266,14 @@
 		
 		<!-- Custom JS -->
 		<script  src="../adminAssets/js/script.js"></script>
+
+	<script>
+		$(document).ready(function($) {
+			$(".table-row").click(function() {
+				window.document.location = $(this).data("href");
+			});
+		});
+	</script>
 		
     </body>
 

@@ -82,7 +82,7 @@
 											<a class="btn btn-primary" data-toggle="modal" href="#add_user"><i class="fa fa-edit mr-1"></i>Add User</a>
 										</h5>
 										<div class="table-responsive" >
-											<div id="usersTable">
+											<div id="module-content">
 												...loading
 											</div>
 										</div>
@@ -236,6 +236,9 @@
 </div>
 <!-- /Main Wrapper -->
 
+<%--custom js--%>
+<script src="../js/User.js"></script>
+
 <!-- jQuery -->
 <script src="../adminAssets/js/jquery-3.2.1.min.js"></script>
 
@@ -248,6 +251,13 @@
 
 <!-- Custom JS -->
 <script  src="../adminAssets/js/script.js"></script>
+<script>
+	$(document).ready(function($) {
+		$(".table-row").click(function() {
+			window.document.location = $(this).data("href");
+		});
+	});
+</script>
 
 </body>
 

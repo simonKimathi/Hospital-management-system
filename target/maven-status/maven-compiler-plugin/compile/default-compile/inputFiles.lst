@@ -33,10 +33,12 @@
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/DoctorServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/MedicalRecord.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/LogIn.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Prescriptions.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Employee.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/RoomServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/EJB/PatientBean.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/InvoiceLine.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Message.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Receptionist.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/commonClasses/Contact.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/User.java

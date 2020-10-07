@@ -8,4 +8,5 @@ import java.io.Serializable;
 @Table(name = "hospital_pharmacist")
 public class Pharmacist extends Employee {
 
+
 }

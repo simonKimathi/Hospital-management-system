@@ -12,7 +12,7 @@
 
 
     if(user ==null){
-        response.sendRedirect("../signIn_register/temp.jsp");
+        response.sendRedirect("../sign_in/sign_in.jsp");
     }
 
 %>

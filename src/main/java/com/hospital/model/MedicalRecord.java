@@ -21,13 +21,50 @@ public class MedicalRecord extends BaseEntity {
     private String Diagnosis;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @NotFound( action = NotFoundAction.IGNORE)
+    @Column
+    private String prescriptions;
+
+
+    @ManyToOne()
     private Patient patient;
 
+    public PatientVitals getPatientVitals() {
+        return patientVitals;
+    }
 
+    public void setPatientVitals(PatientVitals patientVitals) {
+        this.patientVitals = patientVitals;
+    }
 
-    @Transient
-    private int patientId;
+    public String getExamination() {
+        return Examination;
+    }
 
+    public void setExamination(String examination) {
+        Examination = examination;
+    }
+
+    public String getDiagnosis() {
+        return Diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        Diagnosis = diagnosis;
+    }
+
+    public String getPrescriptions() {
+        return prescriptions;
+    }
+
+    public void setPrescriptions(String prescriptions) {
+        this.prescriptions = prescriptions;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
 }

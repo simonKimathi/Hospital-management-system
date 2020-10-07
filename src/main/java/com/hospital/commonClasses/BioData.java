@@ -19,7 +19,7 @@ public class BioData implements Serializable {
     private String surName;
 
     @Column
-    private int nationalId;
+    private String nationalId;
 
     @Column
     private String DOB;
@@ -54,11 +54,11 @@ public class BioData implements Serializable {
         this.surName = surName;
     }
 
-    public int getNationalId() {
+    public String getNationalId() {
         return nationalId;
     }
 
-    public void setNationalId(int nationalId) {
+    public void setNationalId(String nationalId) {
         this.nationalId = nationalId;
     }
 

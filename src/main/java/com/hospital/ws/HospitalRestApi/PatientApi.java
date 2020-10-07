@@ -24,7 +24,7 @@ public class PatientApi {
     @GET
     @Path("/getPatientById/{param}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPatientById(@PathParam("param") int id){
+    public Response getPatientById(@PathParam("param") String id){
         return Response.status(200).entity(patientBean.getPatientById(id)).build();
     }
 

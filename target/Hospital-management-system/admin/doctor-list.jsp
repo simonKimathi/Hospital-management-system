@@ -111,6 +111,14 @@
 <!-- Custom JS -->
 <script  src="../adminAssets/js/script.js"></script>
 
+<script>
+	$(document).ready(function($) {
+		$(".table-row").click(function() {
+			window.document.location = $(this).data("href");
+		});
+	});
+</script>
+
 </body>
 
 </html>

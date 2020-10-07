@@ -33,6 +33,9 @@ public class PatientVisits extends BaseEntity {
     @Column(name = "doctors_notes")
     private String doctorsNote;
 
+    @Column
+    private String status;
+
     public Doctor getDoctor() {
         return doctor;
     }
@@ -79,5 +82,13 @@ public class PatientVisits extends BaseEntity {
 
     public void setDoctorsNote(String doctorsNote) {
         this.doctorsNote = doctorsNote;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -36,14 +36,14 @@
 								<div class="widget-profile pro-widget-content">
 									<div class="profile-info-widget">
 										<a href="#" class="booking-doc-img">
-											<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+											<img src="../assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 										</a>
 										<div class="profile-det-info">
-											<%--<h3>Dr. <%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h3>
+											<h3>Dr. <%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h3>
 											
 											<div class="patient-details">
 												<h5 class="mb-0"><%=user.getDesignation()%> - <%=user.getSpecialty()%></h5>
-											</div>--%>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -57,13 +57,13 @@
 												</a>
 											</li>
 											<li>
-												<a href="my-patients.html">
+												<a href="my-patients.jsp">
 													<i class="fas fa-user-injured"></i>
-													<span>My Patients</span>
+													<span>Pending Patients</span>
 												</a>
 											</li>
 											<li>
-												<a href="doctor-change-password.html">
+												<a href="../signIn_register/temp.jsp">
 													<i class="fas fa-lock"></i>
 													<span>Change Password</span>
 												</a>
@@ -93,7 +93,7 @@
 													<div class="dash-widget dct-border-rht">
 														<div class="circle-bar circle-bar1">
 															<div class="circle-graph1" data-percent="75">
-																<img src="assets/img/icon-01.png" class="img-fluid" alt="patient">
+																<img src="../assets/img/icon-01.png" class="img-fluid" alt="patient">
 															</div>
 														</div>
 														<div class="dash-widget-info">

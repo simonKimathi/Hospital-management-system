@@ -6,7 +6,7 @@
         dataHref:'PatientProfile.jsp',
         gridColumns:[{
             header:'id number',
-            dataIndex:'id'
+            dataIndex:'bioData.nationalId'
         },{
             header:'first name',
             dataIndex:'bioData.firstName'
@@ -21,7 +21,7 @@
             dataIndex:'bioData.gender'
         },{
             header:'date of birth',
-            dataIndex:'dob'
+            dataIndex:'bioData.DOB'
         },{
             header:'contact',
             dataIndex:'contact.phoneNumber'

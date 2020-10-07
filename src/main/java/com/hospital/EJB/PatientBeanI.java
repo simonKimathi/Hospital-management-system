@@ -9,7 +9,7 @@ public interface PatientBeanI {
     public String add( Patient patient);
     public List<Patient> list();
 
-    List<Patient> getPatientById(int Id);
+    List<Patient> getPatientById(String Id);
 
     List<Patient> getPatientByName(String name);
 

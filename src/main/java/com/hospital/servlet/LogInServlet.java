@@ -6,6 +6,7 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -47,12 +48,10 @@ public class LogInServlet extends HttpServlet {
 
                 //redirect based on user roles
                 if(user1.getRole().equals("Admin")){
-                    String url="admin/index.jsp";
-                    resp.sendRedirect("admin/index.jsp");
-                    //resp.sendRedirect("doctor/doctor-dashboard.jsp");
+                    resp.sendRedirect("Cashier/cashier-dashboard.jsp");
                 }
                 else if(user1.getRole().equals("Doctor")){
-                    resp.sendRedirect(req.getContextPath());
+                    resp.sendRedirect("doctor/doctor-dashboard.jsp");
                 }
                 else if(user1.getRole().equals("Cashier")){
                     resp.sendRedirect(req.getContextPath());
@@ -66,17 +65,26 @@ public class LogInServlet extends HttpServlet {
 
             }
             else {
+/*
+                resp.sendRedirect("sign_in/sign_in.jsp");*/
                 PrintWriter out = resp.getWriter();
-                out.println("<script type=\"text/javascript\">");
-                out.println("alert('User or password incorrect');");
-                out.println("location='signIn_register/temp.jsp';");
+                out.println("<script src='Sweet_JS/sweetalert2.js'></script>");
+                out.println("<script src='assets/js/jquery-3.2.1.min.js'></script>");
+                out.println("<script>");
+                out.println("$(document).ready(function(){");
+                out.println("swal ( 'incorrect user name or password !' ,  'contact system admin if error persists' ,  'error' );");
+                out.println("});");
                 out.println("</script>");
+
+                RequestDispatcher rd = req.getRequestDispatcher("sign_in/sign_in.jsp");
+                rd.include(req, resp);
+
             }
 
         } catch (IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }
 
-        resp.sendRedirect("signIn_register/temp.jsp");
+
     }
 }

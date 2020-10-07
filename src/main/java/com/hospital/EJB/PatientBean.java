@@ -30,7 +30,7 @@ public class PatientBean implements PatientBeanI {
     }
 
     @Override
-    public List<Patient> getPatientById(int nationalId) {
+    public List<Patient> getPatientById(String nationalId) {
         return  entityManager.createQuery("FROM Patient p Where p.bioData.nationalId = :nationalId")
                 .setParameter("nationalId",nationalId)
                 .getResultList();
@@ -40,7 +40,7 @@ public class PatientBean implements PatientBeanI {
     @Override
     public List<Patient> getPatientByName(String name) {
 
-        return entityManager.createQuery("FROM Patient p Where p.bioData.firstName = :name or p.bioData.lastName = :name or p.bioData.surName = :name")
+        return entityManager.createQuery("FROM Patient p Where p.bioData.firstName = :name or p.bioData.lastName = :name or p.bioData.surName = :name or p.bioData.nationalId = :name")
                 .setParameter("name",name)
                 .getResultList();
     }
