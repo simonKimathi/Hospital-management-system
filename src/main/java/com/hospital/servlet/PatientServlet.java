@@ -9,13 +9,17 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import javax.ejb.EJB;
 import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/patient")
 public class PatientServlet extends HttpServlet {
@@ -57,7 +61,9 @@ public class PatientServlet extends HttpServlet {
             e.printStackTrace();
         }
 
+        String tmpId = patient.getBioData().getNationalId();
         response.getWriter().print(patientBean.add(patient));
-        response.sendRedirect("Patient/viewPatients.jsp");
+
+        response.sendRedirect("Registration/patient-profile.jsp?id="+tmpId);
     }
 }

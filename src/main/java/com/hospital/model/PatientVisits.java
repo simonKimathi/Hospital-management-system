@@ -13,6 +13,7 @@ public class PatientVisits extends BaseEntity {
 
 
 
+/*
     @ManyToOne
     private Doctor doctor;
 
@@ -21,6 +22,19 @@ public class PatientVisits extends BaseEntity {
 
     @ManyToOne
     private Room room;
+*/
+
+
+    @Column
+    private String patientId;
+
+
+    @Column
+    private String doctorId;
+
+
+    @Column
+    private String roomId;
 
     @Column
     @CreationTimestamp
@@ -36,7 +50,10 @@ public class PatientVisits extends BaseEntity {
     @Column
     private String status;
 
-    public Doctor getDoctor() {
+    @Column
+    private String type;
+
+/*    public Doctor getDoctor() {
         return doctor;
     }
 
@@ -58,6 +75,31 @@ public class PatientVisits extends BaseEntity {
 
     public void setRoom(Room room) {
         this.room = room;
+    }*/
+
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(String patientId) {
+        this.patientId = patientId;
+    }
+
+    public String getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(String doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public String getRoomId() {
+        return roomId;
+    }
+
+    public void setRoomId(String roomId) {
+        this.roomId = roomId;
     }
 
     public Date getFromDate() {
@@ -90,5 +132,14 @@ public class PatientVisits extends BaseEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

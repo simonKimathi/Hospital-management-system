@@ -26,12 +26,6 @@
             header:'contact',
             dataIndex:'contact.phoneNumber'
         }],
-        gridButtons:[{
-            linkAddress:'#add_user',
-            label: 'addUser',
-            cssClass: 'btn btn-info add-new fa fa-plus',
-            id: 'org-addButton',
-        }],
         gridData:[{
             dataHref:'../PatientProfile.jsp'
         }]

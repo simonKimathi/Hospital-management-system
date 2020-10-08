@@ -1289,6 +1289,14 @@ button.bg-danger:hover {
 	border-width: 2px 0 0 0;
 }
 
+.top-nav-search {
+	display: none;
+}
+.top-nav-search {
+	float: left;
+	margin-left: 15px;
+}
+
 /*-----------------
 	7. Modal
 -----------------------*/

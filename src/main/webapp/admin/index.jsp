@@ -267,6 +267,7 @@
 		<!-- Custom JS -->
 		<script  src="../adminAssets/js/script.js"></script>
 
+	<%--clickable table row js--%>
 	<script>
 		$(document).ready(function($) {
 			$(".table-row").click(function() {
@@ -274,6 +275,7 @@
 			});
 		});
 	</script>
+
 		
     </body>
 

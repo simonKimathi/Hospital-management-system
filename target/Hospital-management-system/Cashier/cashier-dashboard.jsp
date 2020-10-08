@@ -83,12 +83,6 @@
 									</a>
 								</li>
 								<li>
-									<a href="addPatient.jsp">
-										<i class="fas fa-user-injured"></i>
-										<span>Add Patient</span>
-									</a>
-								</li>
-								<li>
 									<a href="searchPatient.jsp">
 										<i class="fas fa-user-injured"></i>
 										<span>search Patients</span>
@@ -185,20 +179,6 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-xl-4 col-sm-6 py-2 ">
-						<a href="addPatient.jsp">
-							<div class="card bg-white text-black-50 h-100 w-100">
-								<div class="card-body bg-white">
-									<div class="rotate">
-										<i class="fa fa-user fa-4x"></i>
-									</div>
-									<h4 class="">Add a Patient</h4>
-								</div>
-							</div>
-						</a>
-					</div>
-
 					<div class="col-xl-4 col-sm-6 py-2 ">
 						<a href="#">
 							<div class="card bg-white text-white h-100 w-100">
@@ -220,6 +200,21 @@
 										<i class="fa fa-user fa-4x"></i>
 									</div>
 									<h4 class="">search invoice</h4>
+								</div>
+							</div>
+						</a>
+					</div>
+
+
+
+					<div class="col-xl-4 col-sm-6 py-2 ">
+						<a href="#">
+							<div class="card bg-white text-white h-100 w-100">
+								<div class="card-body bg-white">
+									<div class="rotate">
+										<i class="fa fa-user fa-4x"></i>
+									</div>
+									<h4 class="">view Rooms</h4>
 								</div>
 							</div>
 						</a>

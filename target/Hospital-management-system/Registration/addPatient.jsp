@@ -13,6 +13,7 @@
 			<div class="col-md-12 col-12">
 				<nav aria-label="breadcrumb" class="page-breadcrumb">
 					<ol class="breadcrumb">
+
 						<li class="breadcrumb-item"><a href="index-2.html">Cashier</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
 					</ol>
@@ -51,7 +52,7 @@
 						<nav class="dashboard-menu">
 							<ul>
 								<li >
-									<a href="cashier-dashboard.jsp">
+									<a href="registration-dashboard.jsp">
 										<i class="fas fa-columns"></i>
 										<span>Dashboard</span>
 									</a>
@@ -66,12 +67,6 @@
 									<a href="searchPatient.jsp">
 										<i class="fas fa-user-injured"></i>
 										<span>search Patients</span>
-									</a>
-								</li>
-								<li>
-									<a href="searchInvoice.jsp">
-										<i class="fas fa-user-injured"></i>
-										<span>search invoice</span>
 									</a>
 								</li>
 								<li>
@@ -104,33 +99,39 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<form  method="post" action="<%=request.getContextPath()%>/register">
+
+						<div class="card card-table">
+							<div class="card-header">
+								<h4 class="card-title text-success">add a patient</h4>
+							</div>
+							<div class="card-body">
+								<form style="padding: 15px"  method="post" action="<%=request.getContextPath()%>/patient">
 							<div class="row form-row">
-								<div class="col-12 col-sm-6">
+								<div class="col-12 col-sm-4">
 									<div class="form-group">
 										<label>First Name</label>
 										<input type="text" class="form-control" name="firstName">
 									</div>
 								</div>
-								<div class="col-12 col-sm-6">
+								<div class="col-12 col-sm-4">
 									<div class="form-group">
 										<label>sur Name</label>
 										<input type="text"  class="form-control" name="surName">
 									</div>
 								</div>
-								<div class="col-12 col-sm-6">
+								<div class="col-12 col-sm-4">
 									<div class="form-group">
 										<label>last Name</label>
 										<input type="text"  class="form-control" name="lastName">
 									</div>
 								</div>
-								<div class="col-12 col-sm-6">
+								<div class="col-12 col-sm-4">
 									<div class="form-group">
 										<label>National Id</label>
 										<input type="text"  class="form-control" name="nationalId">
 									</div>
 								</div>
-								<div class="col-12 col-sm-6">
+								<div class="col-12 col-sm-4">
 									<div class="form-group">
 										<label>Gender</label>
 										<select class="form-control select" name="gender">
@@ -140,13 +141,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-12 col-sm-6">
-									<div class="form-group">
-										<label>user name</label>
-										<input type="text" class="form-control" name="userName">
-									</div>
-								</div>
-								<div class="col-12">
+								<div class="col-12 col-sm-4">
 									<div class="form-group">
 										<label>Date of Birth</label>
 										<div class="cal-icon">
@@ -154,6 +149,13 @@
 										</div>
 									</div>
 								</div>
+
+								<div class="col-12 ">
+									<h5 class="form-title"><span>Contact details</span></h5>
+								</div>
+
+								<hr>
+
 								<div class="col-12 col-sm-6">
 									<div class="form-group">
 										<label>Email </label>
@@ -163,11 +165,8 @@
 								<div class="col-12 col-sm-6">
 									<div class="form-group">
 										<label>Mobile</label>
-										<input type="text" name="phoneNumber" class="form-control">
+										<input type="text" class="form-control" name="phoneNumber" >
 									</div>
-								</div>
-								<div class="col-12">
-									<h5 class="form-title"><span>Address</span></h5>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
@@ -176,42 +175,38 @@
 									</div>
 								</div>
 								<div class="col-12">
+									<div class="form-group">
+										<label>Emergency Contact</label>
+										<input type="text" class="form-control" name="emergencyContact">
+									</div>
+								</div>
+								<div class="col-12">
 									<h5 class="form-title"><span>Other details</span></h5>
 								</div>
+								<hr>
 								<div class="col-12 col-sm-6">
 									<div class="form-group">
-										<label>Designation</label>
-										<input type="text" class="form-control" name="designation">
-									</div>
-								</div>
-								<div class="col-12">
-									<div class="form-group">
-										<label>Specialty</label>
-										<input type="text" class="form-control" name="specialty">
+										<label>County</label>
+										<input type="text" class="form-control" name="county">
 									</div>
 								</div>
 								<div class="col-12 col-sm-6">
 									<div class="form-group">
-										<label>Role</label>
-										<select class="form-control select" name="role">
-											<option>Select</option>
-											<option>Admin</option>
-											<option>Doctor</option>
-											<option>Cashier</option>
-											<option>Pharmacist</option>
-											<option>Lab</option>
-										</select>
+										<label>Sub-County</label>
+										<input type="text" class="form-control" name="subCounty">
 									</div>
 								</div>
-								<div class="col-12">
+								<div class="col-12 col-sm-6">
 									<div class="form-group">
-										<label>login Password</label>
-										<input type="password" class="form-control" name="password">
+										<label>Village</label>
+										<input type="text" class="form-control" name="village">
 									</div>
 								</div>
 							</div>
 							<button type="submit" class="btn btn-primary btn-block">submit</button>
 						</form>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

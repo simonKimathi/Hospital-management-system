@@ -11,6 +11,9 @@
 </div>
 <!-- /Main Wrapper -->
 
+
+
+<script src="<%=request.getContextPath()%>/js/searchPatient.js"></script>
 <!-- jQuery -->
 <script src="../assets/js/jquery.min.js"></script>
 

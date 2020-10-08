@@ -28,11 +28,11 @@ HospitalSystemJsLib.showGrid = function(){
     me.gridData = requestResponse;
 
     var tableContent = ``;
-
+/*
     //add buttons on top of the table, that is add button
     me.gridButtons.forEach(button => {
         tableContent += `<a href="${button.linkAddress}"><button class="${button.cssClass}" id="${button.id}"><i class="fa ${button.fontAwesomeIcon}"></i> ${button.label}</button></a>`;
-    });
+    });*/
 
     //beginning of creating the table html
     tableContent += `<br/><table class='${me.gridStyle}'><tr>`;
@@ -53,7 +53,12 @@ HospitalSystemJsLib.showGrid = function(){
     the table rows */
     me.gridData.forEach(row => {
 
-        var hrefValue=me.dataHref+"?id="+row.id;
+        /*if(!row.bioData.nationalId){
+
+            row.bioData.nationalId = 0;
+        }*/
+        hrefValue=me.dataHref+"?id="+row.bioData.nationalId;
+
 
         tableContent += `<tr class="table-row" data-href="${hrefValue}">`;
 
@@ -130,6 +135,7 @@ HospitalSystemJsLib.showGrid = function(){
     }
 
 
+/*
     //adding events listeners to the button on top of the table, that is add button
     me.gridButtons.forEach(button => {
         if (button.handler == 'addButton'){
@@ -141,6 +147,7 @@ HospitalSystemJsLib.showGrid = function(){
             }
         }
     });
+*/
 
     //adding events listeners to each row of the table, from actionEvents store
    /* actionEvents.forEach(button => {

@@ -48,7 +48,7 @@ public class LogInServlet extends HttpServlet {
 
                 //redirect based on user roles
                 if(user1.getRole().equals("Admin")){
-                    resp.sendRedirect("Cashier/cashier-dashboard.jsp");
+                    resp.sendRedirect("Registration/addPatient.jsp");
                 }
                 else if(user1.getRole().equals("Doctor")){
                     resp.sendRedirect("doctor/doctor-dashboard.jsp");

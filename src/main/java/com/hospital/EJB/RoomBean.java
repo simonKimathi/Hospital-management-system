@@ -53,12 +53,12 @@ public class RoomBean implements RoomBeanI {
 
     @Override
     public Room getRoomByType(String rType) {
-        return entityManager.find(Room.class, rType);
+        return entityManager.find(Room.class, rType);//wrong
     }
 
     @Override
     public Room getRoomById(int roomId) {
-        return entityManager.find(Room.class, roomId);
+        return entityManager.find(Room.class, roomId);//wrong
     }
 
 }

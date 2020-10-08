@@ -26,12 +26,6 @@
             header:'contact',
             dataIndex:'contact.phoneNumber'
         }],
-        gridButtons:[{
-            linkAddress:'../admin/doctor-list.jsp',
-            label: 'view Doctors',
-            cssClass: 'btn btn-info add-new fa fa-menu',
-            id: 'org-addButton',
-        }],
         gridData:[{
             dataHref:'../doctorProfile.jsp'
         }]
@@ -65,12 +59,6 @@
         },{
             header:'contact',
             dataIndex:'contact.phoneNumber'
-        }],
-        gridButtons:[{
-            linkAddress:'../admin/patient-list.jsp',
-            label: 'view Patients',
-            cssClass: 'btn btn-info add-new fa fa-plus',
-            id: 'org-addButton',
         }],
         gridData:[{
             dataHref:'../PatientProfile.jsp'

@@ -1,9 +1,6 @@
 package com.hospital.ws.HospitalRestApi;
 
-import com.hospital.EJB.PatientBeanI;
 import com.hospital.EJB.UserBeanI;
-import com.hospital.model.Patient;
-import com.hospital.model.Room;
 import com.hospital.model.User;
 
 import javax.ejb.EJB;

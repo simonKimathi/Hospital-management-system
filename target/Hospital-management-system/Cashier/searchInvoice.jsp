@@ -56,12 +56,6 @@
 									</a>
 								</li>
 								<li>
-									<a href="addPatient.jsp">
-										<i class="fas fa-user-injured"></i>
-										<span>Add Patient</span>
-									</a>
-								</li>
-								<li>
 									<a href="searchPatient.jsp">
 										<i class="fas fa-user-injured"></i>
 										<span>search Patients</span>

@@ -55,11 +55,6 @@
 										<span>Dashboard</span>
 									</a>
 								</li>
-								<li>
-									<a href="addPatient.jsp">
-										<i class="fas fa-user-injured"></i>
-										<span>Add Patient</span>
-									</a>
 								</li>
 								<li class="active">
 									<a href="searchPatient.jsp">

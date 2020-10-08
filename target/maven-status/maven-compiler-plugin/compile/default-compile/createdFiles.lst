@@ -3,8 +3,10 @@ com/hospital/model/Receptionist.class
 com/hospital/model/Nurse.class
 com/hospital/model/User.class
 com/hospital/servlet/RoomServlet.class
+com/hospital/servlet/PatientVisitsServlet.class
 com/hospital/commonClasses/Contact.class
 com/hospital/EJB/RoomBeanI.class
+com/hospital/EJB/PatientVisitBean.class
 com/hospital/EJB/DoctorBeanI.class
 com/hospital/model/Patient.class
 com/hospital/model/Message.class
@@ -18,8 +20,10 @@ com/hospital/EJB/PatientBean.class
 com/hospital/servlet/PatientServlet.class
 com/hospital/model/Pharmacist.class
 com/hospital/model/CryptoConverter.class
+com/hospital/EJB/InvoiceLineBean.class
 com/hospital/ws/HospitalSoapApi/HospitalSoapApi.class
 com/hospital/model/Hospital.class
+com/hospital/EJB/PatientVisitBeanI.class
 com/hospital/model/Medicine.class
 com/hospital/ws/HospitalRestApi/LabApi.class
 com/hospital/servlet/assignRoom.class
@@ -35,6 +39,7 @@ com/hospital/model/InvoiceLine.class
 com/hospital/EJB/UserBeanI.class
 com/hospital/commonClasses/BaseEntity.class
 com/hospital/EJB/DoctorBean.class
+com/hospital/ws/HospitalRestApi/PatientsVisitsApi.class
 com/hospital/model/Clerk.class
 com/hospital/commonClasses/BioData.class
 com/hospital/model/PatientVisits.class
@@ -45,4 +50,5 @@ com/hospital/model/Encription.class
 com/hospital/model/MedicalRecord.class
 com/hospital/ws/HospitalRestApi/UserApi.class
 com/hospital/model/Room.class
+com/hospital/EJB/InvoiceLineBeanI.class
 com/hospital/model/Prescriptions.class

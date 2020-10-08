@@ -26,12 +26,6 @@
             header:'contact',
             dataIndex:'contact.phoneNumber'
         }],
-        gridButtons:[{
-            linkAddress:'../doctor/addDoctor.jsp',
-            label: 'Add a doctor',
-            cssClass: 'btn btn-info add-new fa fa-plus',
-            id: 'org-addButton',
-        }],
         gridData:[{
             dataHref:'../doctorProfile.jsp'
         }]

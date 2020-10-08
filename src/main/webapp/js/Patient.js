@@ -25,15 +25,6 @@
         },{
             header:'contact',
             dataIndex:'contact.phoneNumber'
-        }],
-        gridButtons:[{
-            linkAddress:'../Patient/addPatient.jsp',
-            label: 'Add a Patient',
-            cssClass: 'btn btn-info add-new fa fa-plus',
-            id: 'org-addButton',
-        }],
-        gridData:[{
-            dataHref:'../PatientProfile.jsp'
         }]
     });
 })();
