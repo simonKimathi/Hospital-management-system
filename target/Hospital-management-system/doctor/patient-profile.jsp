@@ -108,17 +108,17 @@
 												<a class="nav-link" href="#medical" data-toggle="tab"><span class="med-records">Medical Records</span></a>
 											</li>
 											<li class="nav-item">
+												<a class="nav-link" href="#medical-Record" data-toggle="tab"><span>Medical record</span></a>
+											</li>
+											<li class="nav-item">
 												<a class="nav-link" href="#billing" data-toggle="tab"><span>Billing</span></a>
-											</li> 
+											</li>
 										</ul>
 									</div>
 									<div class="tab-content">
 										
 										<!-- Appointment Tab -->
 										<div id="medical" class="tab-pane fade show active">
-											<div class="text-right">
-												<a href="#" class="add-new-btn" onclick="return confirm('are you sure you want to add a new bill?')" data-toggle="modal" data-target="#add_med">Add a Medical Record</a>
-											</div>
 											<div class="card card-table mb-0">
 												<div class="card-body">
 													<div class="table-responsive">
@@ -187,7 +187,7 @@
 										<!-- /Appointment Tab -->
 
 										<!-- billing Tab -->
-										<div id="billing" class="tab-pane fade show active">
+										<div id="billing" class="tab-pane fade">
 											<div class="card card-table mb-0">
 												<div class="card-body">
 													<div class="table-responsive">
@@ -279,6 +279,80 @@
 										</div>
 										<!-- /billing Tab -->
 
+										<!-- billing Tab -->
+										<div id="medical-Record" class="tab-pane fade">
+											<div class="text-right">
+												<a href="#" class="add-new-btn" onclick="return confirm('are you sure you want to add a new medical record?')" data-toggle="modal" data-target="#add_med">Add a Medical Record</a>
+											</div>
+											<div class="card card-table mb-0">
+												<div class="card-body">
+													<div class="table-responsive">
+														<div >
+															<div >
+
+
+																<table class="table table-hover table-center mb-0">
+																	<thead>
+																	<tr>
+																		<th>Date</th>
+																		<th>Symptoms</th>
+																		<th>diagnosis</th>
+																		<th>prescriptions</th>
+																	</tr>
+																	</thead>
+																	<tbody>
+
+																	<%
+
+																		request.setAttribute("patient_id",id1);
+																		try
+																		{
+																			Context context1 = new InitialContext();
+																			DataSource dataSource1 = (DataSource)context1.lookup("java:jboss/datasources/mrs");
+																			Connection connection1 = dataSource1.getConnection();
+																			String query1 = "Select * from hospital_medical_record where patientID ="+id1;
+																			Statement statement1 = connection1.createStatement();
+																			ResultSet result1 = statement1.executeQuery(query1);
+																			while(result1.next())
+																			{
+
+																				String localDate= result1.getString("time_created");
+																				String tmpDate=localDate.substring(0,10);
+																				//<td><span class="badge badge-pill bg-success-light">Confirm</span></td>
+																	%>
+																	<tr>
+																		<td><%=tmpDate%></td>
+																		<td><%=result1.getString("symptoms")%></td>
+																		<td><%=result1.getString("diagnosis")%></td>
+																		<td>ksh <%=result1.getString("prescriptions")%></td>
+
+																	</tr>
+
+
+																	<%
+																			}
+																			connection1.close();
+																		}
+																		catch(Exception ex)
+																		{
+																			out.println("Exception:" +ex.getMessage());
+																			ex.printStackTrace();
+																		}
+
+																	%>
+																	</tbody>
+																</table>
+
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /billing Tab -->
+
 										<%
 												}
 												connection.close();
@@ -314,11 +388,11 @@
 				<h3 class="modal-title">Medical Records</h3>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
-			<form method="post" action="<%=request.getContextPath()%>/medical">
+			<form method="post" action="<%=request.getContextPath()%>/medical-record">
 				<div class="modal-body">
 					<div class="form-group" hidden>
 						<label>patient id </label>
-						<input type="text" class="form-control" name="patientId" value="<%=request.getAttribute("patient_id")%>">
+						<input type="text" class="form-control" name="patientID" value="<%=request.getAttribute("patient_id")%>">
 					</div>
 					<div class="form-group" >
 						<label>Symptoms</label>

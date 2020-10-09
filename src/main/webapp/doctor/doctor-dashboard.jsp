@@ -13,7 +13,7 @@
 						<div class="col-md-12 col-12">
 							<nav aria-label="breadcrumb" class="page-breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index-2.html">Home</a></li>
+									<li class="breadcrumb-item"><a href="doctor-dashboard.jsp">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
 								</ol>
 							</nav>
@@ -98,7 +98,11 @@
 														</div>
 														<div class="dash-widget-info">
 															<h6>Total Patient</h6>
-															<h3>1500</h3>
+															<h3>
+																<div id="patient_count">
+
+																</div>
+															</h3>
 															<p class="text-muted">Till Today</p>
 														</div>
 													</div>
@@ -113,7 +117,11 @@
 														</div>
 														<div class="dash-widget-info">
 															<h6>Today Patients</h6>
-															<h3>160</h3>
+															<h3>
+																<div id="patient_today_count">
+
+																</div>
+															</h3>
 															<%
 																LocalDate today=LocalDate.now();
 															%>
@@ -131,7 +139,11 @@
 														</div>
 														<div class="dash-widget-info">
 															<h6>Waiting Patients</h6>
-															<h3>85</h3>
+															<h3>
+																<div id="visit_today_count">
+
+																</div>
+															</h3>
 															<p class="text-muted"><%=today%></p>
 														</div>
 													</div>

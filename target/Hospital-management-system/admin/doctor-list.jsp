@@ -60,7 +60,7 @@
 					<ul class="breadcrumb">
 						<li class="breadcrumb-item"><a href="index.jsp">Dashboard</a></li>
 						<li class="breadcrumb-item"><a href="javascript:(0);">Users</a></li>
-						<li class="breadcrumb-item active">Patient</li>
+						<li class="breadcrumb-item active">Doctor</li>
 					</ul>
 				</div>
 			</div>

@@ -14,6 +14,9 @@ public interface PatientVisitBeanI {
 
     List<PatientVisits> list();
 
+
+    long todaysCount();
+
     List<PatientVisits> getVisitByDoctor(String id);
 
     List<PatientVisits> getVisitByPatient(String id);

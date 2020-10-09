@@ -73,7 +73,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <div class="table-responsive">
-                                <div id="module-content"> //datatable table table-hover table-center mb-0
+                                <div id="module-content">
                                     ...loading
                                 </div>
                             </div>

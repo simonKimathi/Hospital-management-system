@@ -43,3 +43,28 @@
 
 <!-- Custom JS -->
 <script src="../assets/js/script.js"></script>
+
+<!-- jQuery -->
+<script src="../adminAssets/js/jquery-3.2.1.min.js"></script>
+
+<%--clickable table row js--%>
+<script>
+
+    $.get( "http://localhost:8080/Hospital-management-system/rest/patient/getCount", function( data ) {
+        $('#patient_count').html(data);
+    });
+
+    $.get( "http://localhost:8080/Hospital-management-system/rest/patient/getTodayCount", function( data ) {
+        $('#patient_today_count').html(data);
+    });
+
+    $.get( "http://localhost:8080/Hospital-management-system/rest/patientsVisits/getTodayCount", function( data ) {
+        $('#visit_today_count').html(data);
+    });
+
+    $(document).ready(function($) {
+        $(".table-row").click(function() {
+            window.document.location = $(this).data("href");
+        });
+    });
+</script>

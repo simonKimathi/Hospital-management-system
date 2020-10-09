@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- /Header -->
-<%@ include file="../commonSections/CustomDoctorHeader.jsp" %>
+<%@ include file="../commonSections/CustomCashierHeader.jsp" %>
 <!-- /Header -->
 			
 			<!-- Breadcrumb -->
@@ -12,7 +12,7 @@
 						<div class="col-md-12 col-12">
 							<nav aria-label="breadcrumb" class="page-breadcrumb">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="doctor-dashboard.jsp">Home</a></li>
+									<li class="breadcrumb-item"><a href="../Cashier/cashier-dashboard.jsp">Home</a></li>
 									<li class="breadcrumb-item active" aria-current="page">patient Profile</li>
 								</ol>
 							</nav>

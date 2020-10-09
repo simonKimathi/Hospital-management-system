@@ -9,7 +9,7 @@
 <%@ include file="../commonSections/checkSession.jsp" %>
 <head>
     <meta charset="utf-8">
-    <title>Doccure</title>
+    <title>Nuru Hospital</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
     <!-- Favicons -->
@@ -30,6 +30,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- Main CSS -->
     <link rel="stylesheet" href="../adminAssets/css/style.css">
 
 
@@ -104,30 +105,31 @@
 								<span></span>
 							</span>
                 </a>
-                <a href="../doctor/doctor-dashboard.jsp" class="navbar-brand logo">
-                    <img src="../assets/img/logo.png" class="img-fluid" alt="Logo">
+                <a href="../Registration/registration-dashboard.jsp" class="navbar-brand logo">
+                    <h3>Nuru Hospital</h3>
                 </a>
             </div>
             <div class="main-menu-wrapper">
                 <div class="menu-header">
-                    <a href="../Cashier/cashier-dashboard.jsp" class="menu-logo">
-                        <h3>Nuru Hospital</h3>                    </a>
+                    <a href="../doctor/doctor-dashboard.jsp" class="menu-logo">
+                        <img src="../assets/img/logo.png" class="img-fluid" alt="Logo">
+                    </a>
                     <a id="menu_close" class="menu-close" href="javascript:void(0);">
                         <i class="fas fa-times"></i>
                     </a>
                 </div>
                 <ul class="main-nav">
                     <li>
-                        <a href="../Cashier/cashier-dashboard.jsp">Home</a>
+                        <a href="registration-dashboard.jsp">Home</a>
                     </li>
                     <li class="has-submenu active">
                         <a href="#">Quick Links <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
-                            <li class="active"><a href="../doctor/doctor-dashboard.jsp">Dashboard</a></li>
-                            <li><a href="../Cashier/searchPatient.jsp">find a patient</a></li>
-                            <li><a href="../Cashier/searchInvoice.jsp">find an invoice</a></li>
-                            <li><a href="../Cashier/viewRooms.jsp">rooms assignment</a></li>
-                            <li><a href="../Cashier/profile.jsp">my profile</a></li>
+                            <li class="active"><a href="../Registration/registration-dashboard.jsp">Dashboard</a></li>
+                            <li><a href="../Registration/addPatient.jsp">add a patient</a></li>
+                            <li><a href="../Registration/searchPatient.jsp">find a patient</a></li>
+                            <li><a href="../Registration/viewRooms.jsp">rooms assignment</a></li>
+                            <li><a href="../Registration/profile.jsp">My Profile</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -147,10 +149,10 @@
                             </div>
                             <div class="user-text">
                                 <%--<h6><%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h6>--%>
-                                <p class="text-muted mb-0">Cashier</p>
+                                <p class="text-muted mb-0">Secretary</p>
                             </div>
                         </div>
-                        <a class="dropdown-item" href="../Cashier/cashier-dashboard.jsp">Dashboard</a>
+                        <a class="dropdown-item" href="../Registration/registration-dashboard.jsp">Dashboard</a>
                         <%--<a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>--%>
                         <a class="dropdown-item" href="../sign_in/sign_in.jsp">Logout</a>
                     </div>

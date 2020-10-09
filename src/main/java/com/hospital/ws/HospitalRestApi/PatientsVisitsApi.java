@@ -25,6 +25,12 @@ public class PatientsVisitsApi {
     }
 
     @GET
+    @Path("/getTodayCount")
+    public long getTodayCount(){
+        return patientVisitBean.todaysCount();
+    }
+
+    @GET
     @Path("/getVisitByPatient/{param}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getVisitByPatient(@PathParam("param") String id){

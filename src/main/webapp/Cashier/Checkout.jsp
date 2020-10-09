@@ -10,7 +10,7 @@
 <html lang="en">
 
 <!-- /Header -->
-<%@ include file="../commonSections/CustomDoctorHeader.jsp" %>
+<%@ include file="../commonSections/CustomCashierHeader.jsp" %>
 <!-- /Header -->
 
     <!-- Breadcrumb -->

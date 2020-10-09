@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- /Header -->
-<%@ include file="../commonSections/CustomCashierHeader.jsp" %>
+<%@ include file="../commonSections/CustomDoctorHeader.jsp" %>
 <!-- /Header -->
 <!-- Breadcrumb -->
 <div class="breadcrumb-bar">
@@ -12,8 +12,8 @@
 			<div class="col-md-12 col-12">
 				<nav aria-label="breadcrumb" class="page-breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index-2.html">Cashier</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+						<li class="breadcrumb-item"><a href="doctor-dashboard.jsp">home</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Search Patient</li>
 					</ol>
 				</nav>
 				<h2 class="breadcrumb-title">Dashboard</h2>
@@ -38,45 +38,58 @@
 								<img src="../assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 							</a>
 							<div class="profile-det-info">
-								<h3><%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h3>
+								<h3>Dr. <%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h3>
 
-                                <div class="patient-details">
-                                    <h5 class="mb-0"><%=user.getDesignation()%> - <%=user.getSpecialty()%></h5>
-                                </div>
+								<div class="patient-details">
+									<h5 class="mb-0"><%=user.getDesignation()%> - <%=user.getSpecialty()%></h5>
+								</div>
 							</div>
 						</div>
 					</div>
 					<div class="dashboard-widget">
-						<ul class="dashboard-menu">
-							<li >
-								<a href="doctor-dashboard.jsp">
-									<i class="fas fa-columns"></i>
-									<span>Dashboard</span>
-								</a>
-							</li>
-							<li>
-								<a href="my-patients.jsp">
-									<i class="fas fa-user-injured"></i>
-									<span>Pending Patients</span>
-								</a>
-							</li>
-							<li class="active">
-								<a href="searchPatient.jsp">
-									<i class="fas fa-eye"></i>
-									<span>Search patient</span>
-								</a>
-							</li>
-							<li>
-								<a href="../sign_in/sign_in.jsp">
-									<i class="fas fa-sign-out-alt"></i>
-									<span>Logout</span>
-								</a>
-							</li>
-						</ul>
+						<nav class="dashboard-menu">
+							<ul>
+								<li >
+									<a href="registration-dashboard.jsp">
+										<i class="fas fa-columns"></i>
+										<span>Dashboard</span>
+									</a>
+								</li>
+								<li>
+									<a href="addPatient.jsp">
+										<i class="fas fa-user-injured"></i>
+										<span>Add Patient</span>
+									</a>
+								</li>
+								<li  class="active">
+									<a href="searchPatient.jsp">
+										<i class="fas fa-user-injured"></i>
+										<span>search Patients</span>
+									</a>
+								</li>
+								<li>
+									<a href="viewRooms.jsp">
+										<i class="fas fa-user-injured"></i>
+										<span>room assignments</span>
+									</a>
+								</li>
+								<li>
+									<a href="profile.jsp">
+										<i class="fas fa-lock"></i>
+										<span>My profile</span>
+									</a>
+								</li>
+								<li>
+									<a href="../sign_in/sign_in.jsp">
+										<i class="fas fa-sign-out-alt"></i>
+										<span>Logout</span>
+									</a>
+								</li>
+							</ul>
 						</nav>
 					</div>
 				</div>
-				<!-- /Profile Sidebar -->
+				<!-- /Profile Sidebar -->>
 
 			</div>
 			<div class="col-md-7 col-lg-8 col-xl-9">
@@ -118,12 +131,12 @@
 
 
 
-		</div>
 
 	</div>
 
 </div>
 	</div>
+</div>
 </div>
 <!-- /Page Content -->
 

@@ -124,7 +124,10 @@
 											<i class="fe fe-calendar"></i>
 										</span>
 										<div class="dash-count">
-											<h3>485</h3>
+											<h3>
+												<div id="visit_today_count">
+												</div>
+											</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
@@ -145,7 +148,8 @@
 											<i class="fe fe-key"></i>
 										</span>
 										<div class="dash-count">
-											<h3>$62523</h3>
+											<h3> 1
+											</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
@@ -227,8 +231,6 @@
 
 
 		<script src="../js/adminIndex.js"></script>
-		<!-- jQuery -->
-        <script src="../adminAssets/js/jquery-3.2.1.min.js"></script>
 		
 		<!-- Bootstrap Core JS -->
         <script src="../adminAssets/js/popper.min.js"></script>
@@ -244,6 +246,10 @@
 		<!-- Custom JS -->
 		<script  src="../adminAssets/js/script.js"></script>
 
+
+	<!-- jQuery -->
+	<script src="../adminAssets/js/jquery-3.2.1.min.js"></script>
+
 	<%--clickable table row js--%>
 	<script>
 
@@ -253,6 +259,10 @@
 
 		$.get( "http://localhost:8080/Hospital-management-system/rest/patient/getTodayCount", function( data ) {
 			$('#patient_today_count').html(data);
+		});
+
+		$.get( "http://localhost:8080/Hospital-management-system/rest/patientsVisits/getTodayCount", function( data ) {
+			$('#visit_today_count').html(data);
 		});
 
 		$(document).ready(function($) {

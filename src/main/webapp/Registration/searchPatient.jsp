@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- /Header -->
-<%@ include file="../commonSections/CustomCashierHeader.jsp" %>
+<%@ include file="../commonSections/CustomRegistrationHeader.jsp" %>
 
 
 <!-- /Header -->
@@ -14,7 +14,7 @@
 			<div class="col-md-12 col-12">
 				<nav aria-label="breadcrumb" class="page-breadcrumb">
 					<ol class="breadcrumb">
-						<li class="breadcrumb-item"><a href="index-2.html">Cashier</a></li>
+						<li class="breadcrumb-item"><a href="registration-dashboard.jsp">home</a></li>
 						<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
 					</ol>
 				</nav>

@@ -7,6 +7,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -46,6 +47,13 @@ public class PatientVisitBean implements PatientVisitBeanI{
     @Override
     public List<PatientVisits> getVisitByDoctor(String id) {
         return null;
+    }
+
+    @Override
+    public long todaysCount() {
+        Query query = entityManager.createQuery("SELECT count(*) FROM PatientVisits p where p.status = : status and DATE_FORMAT(time_created,'%Y%c%d')=DATE_FORMAT(now(),'%Y%c%d')")
+                .setParameter("status","inProgress");
+        return  (long) query.getSingleResult();
     }
 
     @Override

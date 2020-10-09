@@ -9,7 +9,7 @@
 <%@ include file="../commonSections/checkSession.jsp" %>
 <head>
     <meta charset="utf-8">
-    <title>Doccure</title>
+    <title>Nuru Hospital</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 
     <!-- Favicons -->
@@ -35,6 +35,53 @@
     <script src="../assets/js/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        .topnav .search-container {
+            float: right;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 800px) {
+            .topnav .search-container {
+                float: none;
+            }
+
+            .topnav a, .topnav input[type=text], .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
@@ -53,7 +100,7 @@
 							</span>
                 </a>
                 <a href="../doctor/doctor-dashboard.jsp" class="navbar-brand logo">
-                    <img src="../assets/img/logo.png" class="img-fluid" alt="Logo">
+                    <h3>Nuru Hospital</h3>
                 </a>
             </div>
             <div class="main-menu-wrapper">
@@ -73,7 +120,9 @@
                         <a href="#">Doctors <i class="fas fa-chevron-down"></i></a>
                         <ul class="submenu">
                             <li class="active"><a href="../doctor/doctor-dashboard.jsp">Doctor Dashboard</a></li>
-                            <li><a href="my-patients.html">Patients List</a></li>
+                            <li><a href="../doctor/my-patients.jsp">Pending Patients</a></li>
+                            <li><a href="../doctor/searchPatient.jsp">Search Patients</a></li>
+                            <li><a href="../doctor/profile.jsp">My profile</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -98,7 +147,7 @@
                         </div>
                         <a class="dropdown-item" href="doctor-dashboard.jsp">Dashboard</a>
                         <%--<a class="dropdown-item" href="doctor-profile-settings.html">Profile Settings</a>--%>
-                        <a class="dropdown-item" href="login.html">Logout</a>
+                        <a class="dropdown-item" href="../sign_in/sign_in.jsp">Logout</a>
                     </div>
                 </li>
                 <!-- /User Menu -->
