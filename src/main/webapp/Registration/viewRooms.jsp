@@ -35,7 +35,7 @@
 					<div class="widget-profile pro-widget-content">
 						<div class="profile-info-widget">
 							<a href="#" class="booking-doc-img">
-								<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+								<img src="../assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 							</a>
 							<div class="profile-det-info">
 								<h3><%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h3>
@@ -63,20 +63,20 @@
 								</li>
 								<li>
 									<a href="searchPatient.jsp">
-										<i class="fas fa-user-injured"></i>
+										<i class="fas fa-eye"></i>
 										<span>search Patients</span>
 									</a>
 								</li>
-								<li class="active">
+								<li class="active" >
 									<a href="viewRooms.jsp">
-										<i class="fas fa-user-injured"></i>
+										<i class="fas fa-eyedropper"></i>
 										<span>room assignments</span>
 									</a>
 								</li>
 								<li>
-									<a href="../sign_in/changePassword.jsp">
+									<a href="profile.jsp">
 										<i class="fas fa-lock"></i>
-										<span>Change Password</span>
+										<span>My profile</span>
 									</a>
 								</li>
 								<li>

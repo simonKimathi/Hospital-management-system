@@ -101,9 +101,9 @@
 									</a>
 								</li>
 								<li>
-									<a href="../sign_in/changePassword.jsp">
+									<a href="profile.jsp">
 										<i class="fas fa-lock"></i>
-										<span>Change Password</span>
+										<span>My profile</span>
 									</a>
 								</li>
 								<li>

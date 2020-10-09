@@ -18,5 +18,7 @@ public interface UserBeanI {
 
     User changePassword(User user);
 
+    String changePassword(String user, String p);
+
     public String registerUser(User user);
 }

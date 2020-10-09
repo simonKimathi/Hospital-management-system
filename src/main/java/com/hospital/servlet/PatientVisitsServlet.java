@@ -66,5 +66,7 @@ public class PatientVisitsServlet extends HttpServlet {
         response.getWriter().print(patientVisitBean.add(patientVisits));
 
         response.getWriter().print(invoiceLineBean.add(invoiceLine));
+
+        response.sendRedirect("Registration/registration-dashboard.jsp");
     }
 }

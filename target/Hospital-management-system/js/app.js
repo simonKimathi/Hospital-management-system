@@ -57,7 +57,18 @@ HospitalSystemJsLib.showGrid = function(){
 
             row.bioData.nationalId = 0;
         }*/
-        hrefValue=me.dataHref+"?id="+row.bioData.nationalId;
+
+
+        if(me.idFieldName){
+            hrefValue=me.dataHref+"?id="+me.idFieldName;
+
+        }else if (me.rowFieldName){
+            hrefValue=me.dataHref+"?id="+row.rowFieldName;
+        }else {
+            hrefValue=me.dataHref+"?id="+row.bioData.nationalId;
+
+        }
+
 
 
         tableContent += `<tr class="table-row" data-href="${hrefValue}">`;

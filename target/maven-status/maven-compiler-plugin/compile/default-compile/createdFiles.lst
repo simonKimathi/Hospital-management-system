@@ -16,10 +16,12 @@ com/hospital/EJB/RoomBean.class
 com/hospital/EJB/UserBean.class
 com/hospital/model/PatientVitals.class
 com/hospital/servlet/LogInServlet.class
+com/hospital/servlet/changePasswordServlet.class
 com/hospital/EJB/PatientBean.class
 com/hospital/servlet/PatientServlet.class
 com/hospital/model/Pharmacist.class
 com/hospital/model/CryptoConverter.class
+com/hospital/EJB/medicalRecordBean.class
 com/hospital/EJB/InvoiceLineBean.class
 com/hospital/ws/HospitalSoapApi/HospitalSoapApi.class
 com/hospital/model/Hospital.class
@@ -36,10 +38,13 @@ com/hospital/ws/HospitalRestApi/RoomApi.class
 com/hospital/model/Invoice.class
 com/hospital/ws/HospitalRestApi/PharmacyApi.class
 com/hospital/model/InvoiceLine.class
+com/hospital/servlet/MedicalRecordServlet.class
 com/hospital/EJB/UserBeanI.class
 com/hospital/commonClasses/BaseEntity.class
 com/hospital/EJB/DoctorBean.class
+com/hospital/EJB/medicalRecordBeanI.class
 com/hospital/ws/HospitalRestApi/PatientsVisitsApi.class
+com/hospital/servlet/payBill.class
 com/hospital/model/Clerk.class
 com/hospital/commonClasses/BioData.class
 com/hospital/model/PatientVisits.class

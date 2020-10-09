@@ -1,3 +1,9 @@
+<%@ page import="javax.naming.Context" %>
+<%@ page import="javax.naming.InitialContext" %>
+<%@ page import="javax.sql.DataSource" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,35 +35,66 @@
 
 					<div class="row">
 						<div class="col-md-5 col-lg-4 col-xl-3 theiaStickySidebar dct-dashbd-lft">
-						
+
 							<!-- Profile Widget -->
 							<div class="card widget-profile pat-widget-profile">
 								<div class="card-body">
+									<%
+
+										String id=request.getParameter("id");
+
+										try
+										{
+
+
+
+											Context context = new InitialContext();
+											DataSource dataSource = (DataSource)context.lookup("java:jboss/datasources/mrs");
+											Connection connection = dataSource.getConnection();
+											String query = "Select * from hospital_patient where nationalId="+id;
+											Statement statement = connection.createStatement();
+											ResultSet result = statement.executeQuery(query);
+											while(result.next())
+											{
+												String name= result.getString("firstName") +" "+result.getString("lastName") +" "+result.getString("surName");
+
+									%>
+
+
 									<div class="pro-widget-content">
 										<div class="profile-info-widget">
 											<a href="#" class="booking-doc-img">
 												<img src="../assets/img/patients/patient.jpg" alt="User Image">
 											</a>
 											<div class="profile-det-info">
-												<h3>Richard Wilson</h3>
-												
+												<h3><%=name%></h3>
+
 												<div class="patient-details">
-													<h5><b>Patient ID :</b> PT0016</h5>
-													<h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> Newyork, United States</h5>
+													<h5><b>National ID :</b> <%=result.getString("nationalId")%></h5>
+													<h5 class="mb-0"><i class="fas fa-map-marker-alt"></i> <%=result.getString("address")%></h5>
+													<h5 class="mb-0"><%=result.getString("email")%></h5>
+													<form hidden>
+														<input id="pid" value="<%=result.getString("nationalId")%>" hidden>
+													</form>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="patient-info">
 										<ul>
-											<li>Phone <span>+1 952 001 8563</span></li>
-											<li>Age <span>38 Years, Male</span></li>
-											<li>Blood Group <span>AB+</span></li>
+											<li>Phone Number<span><%=result.getString("phoneNumber")%></span></li>
+											<li>Emergency Number<span><%=result.getString("emergencyContact")%></span></li>
+											<li>Date Of Birth <span><%=result.getString("DOB")%>, <%=result.getString("gender")%></span></li>
+											<li>County<span><%=result.getString("county")%></span></li>
+											<li>Sub-County<span><%=result.getString("subCounty")%></span></li>
+											<li>Village<span><%=result.getString("village")%></span></li>
+
 										</ul>
 									</div>
+
 								</div>
 							</div>
-							<!-- /Profile Widget -->
+							<!-- /Profile Wi-->
 
 							
 						</div>
@@ -67,13 +104,7 @@
 								<div class="card-body pt-0">
 									<div class="user-tabs">
 										<ul class="nav nav-tabs nav-tabs-bottom nav-justified flex-wrap">
-											<li class="nav-item">
-												<a class="nav-link active" href="#pat_appointments" data-toggle="tab">Appointments</a>
-											</li>
-											<li class="nav-item">
-												<a class="nav-link" href="#pres" data-toggle="tab"><span>Prescription</span></a>
-											</li>
-											<li class="nav-item">
+											<li class="nav-item active">
 												<a class="nav-link" href="#medical" data-toggle="tab"><span class="med-records">Medical Records</span></a>
 											</li>
 											<li class="nav-item">
@@ -84,18 +115,181 @@
 									<div class="tab-content">
 										
 										<!-- Appointment Tab -->
-										<div id="pat_appointments" class="tab-pane fade show active">
+										<div id="medical" class="tab-pane fade show active">
+											<div class="text-right">
+												<a href="#" class="add-new-btn" onclick="return confirm('are you sure you want to add a new bill?')" data-toggle="modal" data-target="#add_med">Add a Medical Record</a>
+											</div>
 											<div class="card card-table mb-0">
 												<div class="card-body">
 													<div class="table-responsive">
-														<div id="patientVisit">
-															..loading
+														<div >
+
+
+															<table class="table table-hover table-center mb-0">
+																<thead>
+																<tr>
+																	<th>Date</th>
+																	<th>reason for visit</th>
+																	<th>Status</th>
+																</tr>
+																</thead>
+																<tbody>
+
+																<%
+																	String id1=result.getString("nationalId");
+
+																	request.setAttribute("patient_id",id1);
+																	try
+																	{
+																		Context context1 = new InitialContext();
+																		DataSource dataSource1 = (DataSource)context1.lookup("java:jboss/datasources/mrs");
+																		Connection connection1 = dataSource1.getConnection();
+																		String query1 = "Select * from hospital_visit where patientId ="+id1;
+																		Statement statement1 = connection1.createStatement();
+																		ResultSet result1 = statement1.executeQuery(query1);
+																		while(result1.next())
+																		{
+
+																			String localDate= result1.getString("time_created");
+																			String tmpDate=localDate.substring(0,10);
+																			//<td><span class="badge badge-pill bg-success-light">Confirm</span></td>
+																%>
+																<tr>
+																	<td><%=tmpDate%></td>
+																	<td><%=result1.getString("type")%></td>
+																	<td><%=result1.getString("status")%></td>
+
+																</tr>
+
+
+																<%
+																		}
+																		connection1.close();
+																	}
+																	catch(Exception ex)
+																	{
+																		out.println("Exception:" +ex.getMessage());
+																		ex.printStackTrace();
+																	}
+
+																%>
+																</tbody>
+															</table>
+
+
+
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
+
 										<!-- /Appointment Tab -->
+
+										<!-- billing Tab -->
+										<div id="billing" class="tab-pane fade show active">
+											<div class="card card-table mb-0">
+												<div class="card-body">
+													<div class="table-responsive">
+														<div >
+															<div >
+
+
+																<table class="table table-hover table-center mb-0">
+																	<thead>
+																	<tr>
+																		<th>Date</th>
+																		<th>Particular</th>
+																		<th>Quantity</th>
+																		<th>price</th>
+																		<th>Bill status</th>
+																	</tr>
+																	</thead>
+																	<tbody>
+
+																	<%
+
+																		request.setAttribute("patient_id",id1);
+																		try
+																		{
+																			Context context1 = new InitialContext();
+																			DataSource dataSource1 = (DataSource)context1.lookup("java:jboss/datasources/mrs");
+																			Connection connection1 = dataSource1.getConnection();
+																			String query1 = "Select * from hospital_invoice where patientId ="+id1;
+																			Statement statement1 = connection1.createStatement();
+																			ResultSet result1 = statement1.executeQuery(query1);
+																			while(result1.next())
+																			{
+
+																				String localDate= result1.getString("time_created");
+																				String tmpDate=localDate.substring(0,10);
+																				//<td><span class="badge badge-pill bg-success-light">Confirm</span></td>
+																	%>
+																	<tr>
+																		<td><%=tmpDate%></td>
+																		<td><%=result1.getString("particular")%></td>
+																		<td><%=result1.getString("quantity")%></td>
+																		<td>ksh <%=result1.getString("status")%></td>
+
+																		<%
+																			if(result1.getString("status").equals("Not Paid")){
+																		%>
+																		<td><%=result1.getString("status")%></td>
+																		<td class="text-right" >
+																			<div class="table-action">
+																				<a  href="<%=request.getContextPath()%>/payBill?id=<%=result1.getString("id")%>" onclick="return confirm('are you sure the bill is paid?')"  class="btn btn-sm bg-info-light" disabled="true">
+																					<i class="far fa-dollar"></i> pay
+																				</a>
+																			</div>
+																		</td>
+																		<%
+																		}
+																		else{
+																		%>
+																		<td><%=result1.getString("price")%></td>
+																		<td></td>
+																		<%
+																			}
+																		%>
+
+																	</tr>
+
+
+																	<%
+																			}
+																			connection1.close();
+																		}
+																		catch(Exception ex)
+																		{
+																			out.println("Exception:" +ex.getMessage());
+																			ex.printStackTrace();
+																		}
+
+																	%>
+																	</tbody>
+																</table>
+
+
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- /billing Tab -->
+
+										<%
+												}
+												connection.close();
+											}
+											catch(Exception ex)
+											{
+												out.println("Exception:" +ex.getMessage());
+												ex.printStackTrace();
+											}
+
+										%>
 
 												
 									</div>
@@ -112,7 +306,48 @@
 		</div>
 		<!-- /Main Wrapper -->
 
-	  
+<!-- Add Medical Records Modal -->
+<div class="modal fade custom-modal" id="add_med">
+	<div class="modal-dialog modal-dialog-centered modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 class="modal-title">Medical Records</h3>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<form method="post" action="<%=request.getContextPath()%>/medical">
+				<div class="modal-body">
+					<div class="form-group" hidden>
+						<label>patient id </label>
+						<input type="text" class="form-control" name="patientId" value="<%=request.getAttribute("patient_id")%>">
+					</div>
+					<div class="form-group" >
+						<label>Symptoms</label>
+						<textarea  class="form-control" name="symptoms"></textarea>
+					</div>
+					<div class="form-group" >
+						<label>Diagnosis</label>
+						<textarea  class="form-control" name="diagnosis"></textarea>
+					</div>
+					<div class="form-group" >
+						<label>Prescriptions</label>
+						<textarea  class="form-control" name="prescriptions"></textarea>
+					</div>
+
+					<div class="submit-section text-center">
+						<button type="submit" class="btn btn-primary submit-btn">Submit</button>
+						<button type="button" class="btn btn-secondary submit-btn" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- /Add Medical Records Modal -->
+
+
+
+		<script src="../js/patientViewRegistration.js"></script>
+
 		<!-- jQuery -->
 		<script src="../assets/js/jquery.min.js"></script>
 		

@@ -7,6 +7,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.time.LocalDate;
 import java.util.List;
 
 @Stateless
@@ -51,6 +52,39 @@ public class PatientVisitBean implements PatientVisitBeanI{
     public List<PatientVisits> getVisitByPatient(String id) {
         return  entityManager.createQuery("FROM PatientVisits p Where p.patientId = :nationalId")
                 .setParameter("nationalId",id)
+                .getResultList();
+    }
+
+    @Override
+    public List<PatientVisits> doctorsPendingPatients(String id) {
+
+        return entityManager.createQuery("FROM PatientVisits p where p.doctorId = : id and DATE_FORMAT(time_created,'%Y%c%d')=DATE_FORMAT(now(),'%Y%c%d') and p.status = : status")
+                .setParameter("id",id)
+                .setParameter("status","inProgress")
+                .getResultList();
+    }
+
+    @Override
+    public List<PatientVisits> doctorTodayPatients(String id) {
+
+        return entityManager.createQuery("FROM PatientVisits p where p.doctorId= : id and DATE_FORMAT(time_created,'%Y%c%d')=DATE_FORMAT(now(),'%Y%c%d')")
+                .setParameter("id",id)
+                .getResultList();
+    }
+
+    @Override
+    public List<PatientVisits> patientVisits(String id) {
+
+        return entityManager.createQuery("FROM PatientVisits p where p.patientId = : id")
+                .setParameter("id",id)
+                .getResultList();
+    }
+
+    @Override
+    public List<PatientVisits> patientVisitsInProgress(String id) {
+        return entityManager.createQuery("FROM PatientVisits p where p.patientId = : id and p.status = : status")
+                .setParameter("id",id)
+                .setParameter("status","inProgress")
                 .getResultList();
     }
 

@@ -45,7 +45,14 @@ public class UserBean implements UserBeanI {
 
     @Override
     public User getUserByName(String name) {
-        return entityManager.find(User.class, name);
+        try {
+            Query q = entityManager.createQuery("SELECT u FROM User u WHERE u.userName = :user");
+            q.setParameter("user", name);
+            return (User) q.getSingleResult();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            return null;
+        }
     }
 
     @Override
@@ -72,6 +79,18 @@ public class UserBean implements UserBeanI {
                 .executeUpdate();
 
         return user;
+    }
+
+    @Override
+    public String changePassword(String user, String p) {
+                int updatedEntities = entityManager.createQuery(
+                "update User u " +
+                        "set u.password = :newPassword " +
+                        "where u.userName = :userName" )
+                .setParameter( "newPassword", p )
+                .setParameter( "userName", user )
+                .executeUpdate();
+                return "ok";
     }
 
     @Override

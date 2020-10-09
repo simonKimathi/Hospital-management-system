@@ -5,52 +5,7 @@
 <!-- /Header -->
 <%@ include file="../commonSections/CustomCashierHeader.jsp" %>
 
-<style>
-	.topnav .search-container {
-		float: right;
-	}
 
-	.topnav input[type=text] {
-		padding: 6px;
-		margin-top: 8px;
-		font-size: 17px;
-		border: none;
-	}
-
-	.topnav .search-container button {
-		float: right;
-		padding: 6px 10px;
-		margin-top: 8px;
-		margin-right: 16px;
-		background: #ddd;
-		font-size: 17px;
-		border: none;
-		cursor: pointer;
-	}
-
-	.topnav .search-container button:hover {
-		background: #ccc;
-	}
-
-	@media screen and (max-width: 800px) {
-		.topnav .search-container {
-			float: none;
-		}
-
-		.topnav a, .topnav input[type=text], .topnav .search-container button {
-			float: none;
-			display: block;
-			text-align: left;
-			width: 100%;
-			margin: 0;
-			padding: 14px;
-		}
-
-		.topnav input[type=text] {
-			border: 1px solid #ccc;
-		}
-	}
-</style>
 <!-- /Header -->
 <!-- Breadcrumb -->
 <div class="breadcrumb-bar">
@@ -121,9 +76,9 @@
 									</a>
 								</li>
 								<li>
-									<a href="../sign_in/changePassword.jsp">
+									<a href="profile.jsp">
 										<i class="fas fa-lock"></i>
-										<span>Change Password</span>
+										<span>My profile</span>
 									</a>
 								</li>
 								<li>
@@ -149,7 +104,7 @@
 								<div class="topnav">
 									<div class="search-container">
 										<form action="#">
-											<input type="text" placeholder="Search.." id="search-input">
+											<input type="text" placeholder="Search by name or id .." id="search-input">
 											<button type="submit" id="search_patient_button"><i class="fa fa-search"></i></button>
 										</form>
 									</div>
@@ -165,7 +120,7 @@
 										<div class="table-responsive">
 											<div class="table-responsive">
 												<div id="module-content">
-
+													search data
 												</div>
 											</div>
 										</div>

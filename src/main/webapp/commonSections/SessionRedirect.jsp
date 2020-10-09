@@ -17,16 +17,16 @@
     }//redirect based on user roles
     else {
         if(user.getRole().equals("Admin")){
-            response.sendRedirect("../Cashier/cashier-dashboard.jsp");
+            response.sendRedirect("../admin/index.jsp");
         }
         else if(user.getRole().equals("Doctor")){
             response.sendRedirect("../doctor/doctor-dashboard.jsp");
         }
         else if(user.getRole().equals("Cashier")){
-            response.sendRedirect(request.getContextPath());
+            response.sendRedirect("../Cashier/cashier-dashboard.jsp");
         }
-        else if(user.getRole().equals("Pharmacist")){
-            response.sendRedirect(request.getContextPath());
+        else if(user.getRole().equals("Reception")){
+            response.sendRedirect("../Registration/registration-dashboard.jsp");
         }
         else {
             response.sendRedirect(request.getContextPath());

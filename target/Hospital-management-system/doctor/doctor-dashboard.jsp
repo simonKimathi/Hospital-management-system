@@ -63,13 +63,13 @@
 												</a>
 											</li>
 											<li>
-												<a href="../signIn_register/temp.jsp">
-													<i class="fas fa-lock"></i>
-													<span>Change Password</span>
+												<a href="searchPatient.jsp">
+													<i class="fas fa-eye"></i>
+													<span>Search patient</span>
 												</a>
 											</li>
 											<li>
-												<a href="index-2.html">
+												<a href="../sign_in/sign_in.jsp">
 													<i class="fas fa-sign-out-alt"></i>
 													<span>Logout</span>
 												</a>

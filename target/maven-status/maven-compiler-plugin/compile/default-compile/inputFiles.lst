@@ -11,6 +11,7 @@
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Medicine.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/EJB/PatientBeanI.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Shifts.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/payBill.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/PatientServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/LogInServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/EJB/UserBean.java
@@ -19,7 +20,9 @@
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/ws/HospitalRestApi/PatientsVisitsApi.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/DoctorServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/MedicalRecord.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/EJB/medicalRecordBean.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/LogIn.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/EJB/medicalRecordBeanI.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Prescriptions.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Employee.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/RoomServlet.java
@@ -50,5 +53,7 @@
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Message.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Receptionist.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/EJB/InvoiceLineBean.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/MedicalRecordServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/User.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/changePasswordServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/EJB/RoomBeanI.java

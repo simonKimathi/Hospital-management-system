@@ -84,26 +84,26 @@
 								</li>
 								<li>
 									<a href="searchPatient.jsp">
-										<i class="fas fa-user-injured"></i>
+										<i class="fas fa-eye"></i>
 										<span>search Patients</span>
 									</a>
 								</li>
 								<li>
 									<a href="searchInvoice.jsp">
-										<i class="fas fa-user-injured"></i>
+										<i class="fas fa-dollar"></i>
 										<span>search invoice</span>
 									</a>
 								</li>
 								<li>
 									<a href="viewRooms.jsp">
-										<i class="fas fa-user-injured"></i>
+										<i class="fas fa-eyedropper"></i>
 										<span>room assignments</span>
 									</a>
 								</li>
 								<li>
-									<a href="../sign_in/changePassword.jsp">
+									<a href="profile.jsp">
 										<i class="fas fa-lock"></i>
-										<span>Change Password</span>
+										<span>My profile</span>
 									</a>
 								</li>
 								<li>
@@ -177,10 +177,9 @@
 							</div>
 						</div>
 					</div>
-				</div>
 
 					<div class="col-xl-4 col-sm-6 py-2 ">
-						<a href="#">
+						<a href="searchPatient.jsp">
 							<div class="card bg-white text-white h-100 w-100">
 								<div class="card-body bg-white">
 									<div class="rotate">
@@ -219,6 +218,8 @@
 							</div>
 						</a>
 					</div>
+
+				</div>
 
 
 					<%--<!-- Edit Details Modal -->

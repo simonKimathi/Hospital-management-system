@@ -59,20 +59,9 @@ public class UserServlet extends HttpServlet {
 
         response.getWriter().print(userBean.registerUser(user));
 
-        PrintWriter out = response.getWriter();
-        out.println("<script src='Sweet_JS/sweetalert2.js'></script>");
-        out.println("<script src='assets/js/jquery-3.2.1.min.js'></script>");
-        out.println("<script>");
-        out.println("$(document).ready(function(){");
-        out.println("swal ( 'account created successfully!' ,  '' ,  'success' );");
-        out.println("});");
-        out.println("</script>");
-
-        RequestDispatcher rd = request.getRequestDispatcher("admin/manageUsers.jsp");
-        rd.include(request, response);
+        response.sendRedirect("admin/manageUsers.jsp");
 
 
-
-        //response.sendRedirect("signIn_register/sign_in.jsp");
+        //
     }
 }

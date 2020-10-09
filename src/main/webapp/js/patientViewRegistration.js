@@ -9,6 +9,7 @@
         gridStyle:'datatable table table-hover table-center mb-0',
         contentId:'medical_record',
         dataHref:'',
+        idFieldName:pid,
         gridColumns:[{
             header:'visit Id',
             dataIndex:'id'

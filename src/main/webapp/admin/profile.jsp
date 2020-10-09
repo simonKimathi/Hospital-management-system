@@ -13,35 +13,37 @@
 					<li class="menu-title">
 						<span>Main</span>
 					</li>
-					<li>
+					<li >
 						<a href="index.jsp"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 					</li>
 					<li>
-						<a href="doctor-list.html"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
+						<a href="doctor-list.jsp"><i class="fe fe-user-plus"></i> <span>Doctors</span></a>
 					</li>
 					<li>
 						<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
 					</li>
 					<li>
-						<a href="reviews.html"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
+						<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
 					</li>
 					<li>
-						<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+						<a href="Patient-visits.jsp"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
+					</li>
+					<li>
+						<a href="transactions.jsp"><i class="fe fe-activity"></i> <span>Transactions</span></a>
 					</li>
 					<li class="submenu">
 						<a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span class="menu-arrow"></span></a>
 						<ul style="display: none;">
-							<li><a href="invoice-report.html">Invoice Reports</a></li>
+							<li><a href="invoice-report.jsp">Invoice Reports</a></li>
 						</ul>
 					</li>
 					<li class="active">
 						<a href="profile.jsp"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
 					</li>
-					<li >
-						<a href="#"><i class="fe fe-document"></i> <span> Manage Users </span></a>
-
+					<li>
+						<a href="manageUsers.jsp"><i class="fe fe-document"></i> <span> Manage Users </span></a>
 					</li>
-				</ul>
+				</ul>>
 			</div>
 		</div>
 	</div>
@@ -151,17 +153,6 @@
 																			<input type="text" class="form-control" value="<%=user.getUserName()%>">
 																		</div>
 																	</div>
-																	<div class="col-12 col-sm-6">
-																		<div class="form-group">
-																			<select id="rType" class="form-control" 0>
-																				<option>Admin</option>
-																				<option>Doctor</option>
-																				<option>Cashier</option>
-																				<option>Pharmacist</option>
-																				<option>Lab</option>
-																			</select>
-																		</div>
-																	</div>
 																</div>
 
 																<button type="submit" class="btn btn-primary btn-block" id="saveProfile">Save Changes</button>
@@ -189,20 +180,23 @@
 											<h5 class="card-title">Change Password</h5>
 											<div class="row">
 												<div class="col-md-10 col-lg-6">
-													<form action="#">
-														<div class="form-group">
-															<label>Old Password</label>
-															<input type="password" class="form-control">
+													<form method="post" action="<%=request.getContextPath()%>/changePassword">
+														<div class="form-group" hidden>
+															<label>User Name</label>
+															<input type="text" class="form-control" name="userName" value="<%=user.getUserName()%>">
 														</div>
 														<div class="form-group">
 															<label>New Password</label>
-															<input type="password" class="form-control">
+															<input type="password" id="confirm_password" class="form-control" name="confirm_password">
 														</div>
 														<div class="form-group">
 															<label>Confirm Password</label>
-															<input type="password" class="form-control">
+															<input type="password" name="password" id="password" class="form-control">
 														</div>
-														<button class="btn btn-primary" type="submit" id="changePass">Save Changes</button>
+														<div class="form-group">
+															<span id='message'></span>
+														</div>
+														<button class="btn btn-primary" type="submit" id="changePass" disabled>Save Changes</button>
 													</form>
 												</div>
 											</div>
@@ -221,6 +215,21 @@
 		
         </div>
 		<!-- /Main Wrapper -->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+	<script>
+
+		$('#confirm_password,#password').on('keyup', function () {
+			if ($('#confirm_password').val() == $('#password').val()) {
+				$('#message').html('').css('color', 'green');
+				$('#changePass').prop('disabled', false);
+			} else{
+				$('#message').html('password doesn\'t Matching').css('color', 'red');
+				$('#changePass').prop('disabled', true);
+			}
+		});
+	</script>
 		
 		<!-- jQuery -->
         <script src="../adminAssets/js/jquery-3.2.1.min.js"></script>

@@ -4,6 +4,7 @@
         gridStyle:'datatable table table-hover table-center mb-0',
         contentId:'doctorsTable',
         dataHref:'doctorProfile.jsp',
+        dataRowId:'row.bioData.nationalId',
         gridColumns:[{
             header:'id number',
             dataIndex:'bioData.nationalId'

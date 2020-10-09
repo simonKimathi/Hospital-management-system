@@ -2,7 +2,6 @@ package com.hospital.ws.HospitalRestApi;
 
 import com.hospital.EJB.PatientBeanI;
 import com.hospital.model.Patient;
-import com.hospital.model.User;
 
 import javax.ejb.EJB;
 import javax.ws.rs.*;
@@ -22,11 +21,24 @@ public class PatientApi {
     }
 
     @GET
+    @Path("/getCount")
+    public long count(){
+        return patientBean.count();
+    }
+
+    @GET
+    @Path("/getTodayCount")
+    public long getTodayCount(){
+        return patientBean.todaysCount();
+    }
+
+    @GET
     @Path("/getPatientById/{param}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getPatientById(@PathParam("param") String id){
         return Response.status(200).entity(patientBean.getPatientById(id)).build();
     }
+
 
     @GET
     @Path("/getPatientByName/{param}")

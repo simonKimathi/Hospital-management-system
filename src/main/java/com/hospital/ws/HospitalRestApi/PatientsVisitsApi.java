@@ -38,6 +38,36 @@ public class PatientsVisitsApi {
         return Response.status(200).entity(patientVisitBean.getVisitByDoctor(id)).build();
     }
 
+    @GET
+    @Path("/doctorsPendingPatients/{param}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response pendingPatients(@PathParam("param") String id){
+        return Response.status(200).entity(patientVisitBean.doctorsPendingPatients(id)).build();
+    }
+
+    @GET
+    @Path("/doctorTodayPatients/{param}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response todayPatients(@PathParam("param") String id){
+        return Response.status(200).entity(patientVisitBean.doctorTodayPatients(id)).build();
+    }
+
+
+    @GET
+    @Path("/patientVisitsAll/{param}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response patientVisits(@PathParam("param") String id){
+        return Response.status(200).entity(patientVisitBean.patientVisits(id)).build();
+    }
+
+
+    @GET
+    @Path("/patientVisitsInProgress/{param}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response patientVisitsInProgress(@PathParam("param") String id){
+        return Response.status(200).entity(patientVisitBean.patientVisitsInProgress(id)).build();
+    }
+
     @POST
     @Path("/deleteVisit")
     @Produces(MediaType.APPLICATION_JSON)

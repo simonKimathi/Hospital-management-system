@@ -114,7 +114,7 @@
 									<div class="user-tabs">
 										<ul class="nav nav-tabs nav-tabs-bottom nav-justified flex-wrap">
 											<li class="nav-item active">
-												<a class="nav-link" href="#medical" data-toggle="tab"><span class="med-records">Medical Records</span></a>
+												<a class="nav-link" href="#medical" data-toggle="tab"><span class="med-records">Patient Visits</span></a>
 											</li>
 										</ul>
 									</div>
@@ -123,9 +123,9 @@
 
 
 										<!-- Medical Records Tab -->
-										<div class="tab-pane fade" id="medical">
+										<div class="tab-pane fade show active" id="medical">
 											<div class="text-right">
-												<a href="#" class="add-new-btn" data-toggle="modal" data-target="#add_medical_records">Add a visit</a>
+												<a href="#" class="add-new-btn" onclick="return confirm('are you sure you want to add new visit?')" data-toggle="modal" data-target="#add_medical_records">Add a visit</a>
 											</div>
 											<div class="card card-table mb-0">
 												<div class="card-body">
@@ -196,6 +196,19 @@
 		%>
 
 
+
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+		<!-- jQuery -->
+		<script src="../adminAssets/js/jquery-3.2.1.min.js"></script>
+
+
+
+
 		<!-- custom js -->
 		<script src="../js/patientViewRegistration.js"></script>
 
@@ -223,6 +236,4 @@
 	</body>
 
 
-
-<!-- doccure/patient-profile.html  30 Nov 2019 04:12:13 GMT -->
 </html>

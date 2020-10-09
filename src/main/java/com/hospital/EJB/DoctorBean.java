@@ -28,12 +28,13 @@ public class DoctorBean implements DoctorBeanI {
 
     @Override
     public List<Doctor> list() {
-        return entityManager.createQuery("FROM Doctor d").getResultList();
+        return entityManager.createQuery("FROM User u where u.role = : role").setParameter("role","Doctor").getResultList();
     }
 
     @Override
     public List<Doctor> getDoctorById(String nationalId) {
-        return  entityManager.createQuery("FROM Doctor d Where d.bioData.nationalId = :nationalId")
+        return  entityManager.createQuery("FROM User User u Where u.bioData.nationalId = :nationalId and u.role = : role")
+                .setParameter("role","Doctor")
                 .setParameter("nationalId",nationalId)
                 .getResultList();
     }
@@ -42,7 +43,8 @@ public class DoctorBean implements DoctorBeanI {
     @Override
     public List<Doctor> getDoctorByName(String name) {
 
-        return entityManager.createQuery("FROM Doctor d Where d.bioData.firstName = :name or d.bioData.Lastname = :name or d.bioData.surName = :name")
+        return entityManager.createQuery("FROM User u Where u.bioData.firstName = :name or u.bioData.lastName = :name or u.bioData.surName = :name or u.bioData.nationalId = :name and u.role = : role")
+                .setParameter("role","Doctor")
                 .setParameter("name",name)
                 .getResultList();
     }

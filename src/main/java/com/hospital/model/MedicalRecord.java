@@ -1,55 +1,60 @@
 package com.hospital.model;
 
 import com.hospital.commonClasses.BaseEntity;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-@Table(name = "Hospital_medical_record")
+@Table(name = "hospital_medical_record")
 public class MedicalRecord extends BaseEntity {
 
-    @Embedded
-    private PatientVitals patientVitals;
+/*    @Embedded
+    private PatientVitals patientVitals;*/
 
     @Column
-    private String Examination;
+    private String symptoms;
 
     @Column
-    private String Diagnosis;
+    private String diagnosis;
 
 
     @Column
     private String prescriptions;
 
 
-    @ManyToOne()
-    private Patient patient;
+    @Column
+    private String patientID;
 
+
+    @Column
+    private String visitId;
+
+/*
+    @ManyToOne()
+    private Patient patient;*/
+/*
     public PatientVitals getPatientVitals() {
         return patientVitals;
     }
 
     public void setPatientVitals(PatientVitals patientVitals) {
         this.patientVitals = patientVitals;
+    }*/
+
+    public String getSymptoms() {
+        return symptoms;
     }
 
-    public String getExamination() {
-        return Examination;
-    }
-
-    public void setExamination(String examination) {
-        Examination = examination;
+    public void setSymptoms(String symptoms) {
+        this.symptoms = symptoms;
     }
 
     public String getDiagnosis() {
-        return Diagnosis;
+        return diagnosis;
     }
 
     public void setDiagnosis(String diagnosis) {
-        Diagnosis = diagnosis;
+        this.diagnosis = diagnosis;
     }
 
     public String getPrescriptions() {
@@ -59,12 +64,28 @@ public class MedicalRecord extends BaseEntity {
     public void setPrescriptions(String prescriptions) {
         this.prescriptions = prescriptions;
     }
-
+/*
     public Patient getPatient() {
         return patient;
     }
 
     public void setPatient(Patient patient) {
         this.patient = patient;
+    }*/
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public String getVisitId() {
+        return visitId;
+    }
+
+    public void setVisitId(String visitId) {
+        this.visitId = visitId;
     }
 }

@@ -21,6 +21,7 @@ import static java.lang.Integer.parseInt;
 
 @WebServlet("/doctor")
 public class DoctorServlet extends HttpServlet {
+
     @EJB
     private DoctorBeanI doctorBean;
 

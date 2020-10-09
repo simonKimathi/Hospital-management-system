@@ -62,13 +62,13 @@
 												</a>
 											</li>
 											<li>
-												<a href="doctor-change-password.html">
+												<a href="profile.jsp">
 													<i class="fas fa-lock"></i>
-													<span>Change Password</span>
+													<span>My profile</span>
 												</a>
 											</li>
 											<li>
-												<a href="../signIn_register/temp.jsp">
+												<a href="../sign_in/sign_in.jsp">
 													<i class="fas fa-sign-out-alt"></i>
 													<span>Logout</span>
 												</a>

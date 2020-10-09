@@ -23,16 +23,16 @@ public class DoctorApi {
     }
 
     @GET
-    @Path("/getDoctorById")
+    @Path("/getDoctorById/{param}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getDoctorById(String id){
+    public Response getDoctorById(@PathParam("param") String id){
         return Response.status(200).entity(doctorBean.getDoctorById(id)).build();
     }
 
     @GET
-    @Path("/getDoctorByName")
+    @Path("/getDoctorByName/{param}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getDoctorByName(String name){
+    public Response getDoctorByName(@PathParam("param") String name){
         return Response.status(200).entity(doctorBean.getDoctorByName(name)).build();
     }
 

@@ -11,7 +11,20 @@
 </div>
 <!-- /Main Wrapper -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<script>
+
+    $('#confirm_password,#password').on('keyup', function () {
+        if ($('#confirm_password').val() == $('#password').val()) {
+            $('#message').html('').css('color', 'green');
+            $('#changePass').prop('disabled', false);
+        } else{
+            $('#message').html('password doesn\'t Matching').css('color', 'red');
+            $('#changePass').prop('disabled', true);
+        }
+    });
+</script>
 
 <script src="<%=request.getContextPath()%>/js/searchPatient.js"></script>
 <!-- jQuery -->

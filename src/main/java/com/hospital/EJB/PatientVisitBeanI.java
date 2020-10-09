@@ -18,5 +18,14 @@ public interface PatientVisitBeanI {
 
     List<PatientVisits> getVisitByPatient(String id);
 
+
+    List<PatientVisits> doctorsPendingPatients(String id);
+
+    List<PatientVisits> doctorTodayPatients(String id);
+
+    List<PatientVisits> patientVisits(String id);
+
+    List<PatientVisits> patientVisitsInProgress(String id);
+
     String deleteVisit(PatientVisits patientVisits);
 }

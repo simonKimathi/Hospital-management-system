@@ -35,7 +35,7 @@
 					<div class="widget-profile pro-widget-content">
 						<div class="profile-info-widget">
 							<a href="#" class="booking-doc-img">
-								<img src="assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
+								<img src="../assets/img/doctors/doctor-thumb-02.jpg" alt="User Image">
 							</a>
 							<div class="profile-det-info">
 								<h3><%=user.getBioData().getFirstName()%> <%=user.getBioData().getSurName()%> <%=user.getBioData().getLastName()%></h3>
@@ -74,12 +74,12 @@
 										<span>room assignments</span>
 									</a>
 								</li>
-								<li>
-									<a href="../sign_in/changePassword.jsp">
-										<i class="fas fa-lock"></i>
-										<span>Change Password</span>
-									</a>
-								</li>
+                                <li>
+                                    <a href="profile.jsp">
+                                        <i class="fas fa-lock"></i>
+                                        <span>My profile</span>
+                                    </a>
+                                </li>
 								<li>
 									<a href="../sign_in/sign_in.jsp">
 										<i class="fas fa-sign-out-alt"></i>
@@ -98,9 +98,35 @@
 
 				<div class="row">
 					<div class="col-md-12">
+						<div class="row" style="margin-bottom: 15px">
+							<div class="col-md-8">
+								<div class="topnav">
+									<div class="search-container">
+										<form action="#">
+											<input type="text" placeholder="Search.." id="search-input">
+											<button type="submit" id="search_patient_button"><i class="fa fa-search"></i></button>
+										</form>
+									</div>
+								</div>
+							</div>
 
-					</div>
-				</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="card">
+									<div class="card-body">
+										<div class="table-responsive">
+											<div class="table-responsive">
+												<div id="module-content">
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 			</div>
 
 
@@ -110,6 +136,8 @@
 
 	</div>
 
+</div>
+	</div>
 </div>
 <!-- /Page Content -->
 

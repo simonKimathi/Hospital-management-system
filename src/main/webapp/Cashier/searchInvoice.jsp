@@ -74,11 +74,11 @@
 									</a>
 								</li>
 								<li>
-									<a href="../sign_in/changePassword.jsp">
-										<i class="fas fa-lock"></i>
-										<span>Change Password</span>
-									</a>
-								</li>
+								<a href="profile.jsp">
+									<i class="fas fa-lock"></i>
+									<span>My profile</span>
+								</a>
+							</li>
 								<li>
 									<a href="../sign_in/sign_in.jsp">
 										<i class="fas fa-sign-out-alt"></i>

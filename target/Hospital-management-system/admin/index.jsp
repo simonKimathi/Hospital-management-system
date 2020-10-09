@@ -26,15 +26,15 @@
 								<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
 							</li>
 							<li>
-								<a href="reviews.html"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
+								<a href="Patient-visits.jsp"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
 							</li>
 							<li> 
-								<a href="transactions-list.html"><i class="fe fe-activity"></i> <span>Transactions</span></a>
+								<a href="transactions.jsp"><i class="fe fe-activity"></i> <span>Transactions</span></a>
 							</li>
 							<li class="submenu">
 								<a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="invoice-report.html">Invoice Reports</a></li>
+									<li><a href="invoice-report.jsp">Invoice Reports</a></li>
 								</ul>
 							</li>
 							<li> 
@@ -76,11 +76,15 @@
 											<i class="fe fe-users"></i>
 										</span>
 										<div class="dash-count">
-											<h3>168</h3>
+											<h3>
+												<div id="patient_count">
+
+												</div>
+											</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
-										<h6 class="text-muted">Doctors</h6>
+										<h6 class="text-muted">Total Patients</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-primary w-50"></div>
 										</div>
@@ -93,15 +97,18 @@
 								<div class="card-body">
 									<div class="dash-widget-header">
 										<span class="dash-widget-icon text-success">
-											<i class="fe fe-credit-card"></i>
+											<i class="fe fe-users"></i>
 										</span>
 										<div class="dash-count">
-											<h3>487</h3>
+											<h3>
+												<div id="patient_today_count">
+												</div>
+											</h3>
 										</div>
 									</div>
 									<div class="dash-widget-info">
 										
-										<h6 class="text-muted">Patients</h6>
+										<h6 class="text-muted">Total Patients today</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-success w-50"></div>
 										</div>
@@ -114,7 +121,7 @@
 								<div class="card-body">
 									<div class="dash-widget-header">
 										<span class="dash-widget-icon text-danger border-danger">
-											<i class="fe fe-money"></i>
+											<i class="fe fe-calendar"></i>
 										</span>
 										<div class="dash-count">
 											<h3>485</h3>
@@ -135,7 +142,7 @@
 								<div class="card-body">
 									<div class="dash-widget-header">
 										<span class="dash-widget-icon text-warning border-warning">
-											<i class="fe fe-folder"></i>
+											<i class="fe fe-key"></i>
 										</span>
 										<div class="dash-count">
 											<h3>$62523</h3>
@@ -143,7 +150,7 @@
 									</div>
 									<div class="dash-widget-info">
 										
-										<h6 class="text-muted">Revenue</h6>
+										<h6 class="text-muted">Active Users</h6>
 										<div class="progress progress-sm">
 											<div class="progress-bar bg-warning w-50"></div>
 										</div>
@@ -151,36 +158,6 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 col-lg-6">
-						
-							<!-- Sales Chart -->
-							<div class="card card-chart">
-								<div class="card-header">
-									<h4 class="card-title">Revenue</h4>
-								</div>
-								<div class="card-body">
-									<div id="morrisArea"></div>
-								</div>
-							</div>
-							<!-- /Sales Chart -->
-							
-						</div>
-						<div class="col-md-12 col-lg-6">
-						
-							<!-- Invoice Chart -->
-							<div class="card card-chart">
-								<div class="card-header">
-									<h4 class="card-title">Status</h4>
-								</div>
-								<div class="card-body">
-									<div id="morrisLine"></div>
-								</div>
-							</div>
-							<!-- /Invoice Chart -->
-							
-						</div>	
 					</div>
 					<div class="row">
 						<div class="col-md-6 d-flex">
@@ -269,6 +246,15 @@
 
 	<%--clickable table row js--%>
 	<script>
+
+		$.get( "http://localhost:8080/Hospital-management-system/rest/patient/getCount", function( data ) {
+			$('#patient_count').html(data);
+		});
+
+		$.get( "http://localhost:8080/Hospital-management-system/rest/patient/getTodayCount", function( data ) {
+			$('#patient_today_count').html(data);
+		});
+
 		$(document).ready(function($) {
 			$(".table-row").click(function() {
 				window.document.location = $(this).data("href");

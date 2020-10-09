@@ -15,7 +15,6 @@ public abstract class BaseEntity implements Serializable {
     private int id;
 
     @Column(name = "time_created")
-    //@Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private LocalDateTime timeCreated;
 
@@ -32,6 +31,9 @@ public abstract class BaseEntity implements Serializable {
     }
 
     public void setTimeCreated(LocalDateTime timeCreated) {
+/*
+        String date= String.valueOf(timeCreated);
+        String timeString=date.substring(0,10);*/
         this.timeCreated = timeCreated;
     }
 }
