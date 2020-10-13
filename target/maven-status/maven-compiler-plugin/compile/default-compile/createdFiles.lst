@@ -55,5 +55,6 @@ com/hospital/model/Encription.class
 com/hospital/model/MedicalRecord.class
 com/hospital/ws/HospitalRestApi/UserApi.class
 com/hospital/model/Room.class
+com/JaxRsActivation.class
 com/hospital/EJB/InvoiceLineBeanI.class
 com/hospital/model/Prescriptions.class

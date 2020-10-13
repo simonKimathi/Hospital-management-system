@@ -324,7 +324,7 @@
 																		<td><%=tmpDate%></td>
 																		<td><%=result1.getString("symptoms")%></td>
 																		<td><%=result1.getString("diagnosis")%></td>
-																		<td>ksh <%=result1.getString("prescriptions")%></td>
+																		<td><%=result1.getString("prescriptions")%></td>
 
 																	</tr>
 

@@ -54,7 +54,7 @@ public class PatientBean implements PatientBeanI {
 
     @Override
     public List<Patient> getPatientById(String nationalId) {
-        return  entityManager.createQuery("FROM Patient p Where p.bioData.nationalId = :nationalId")
+        return  entityManager.createQuery("FROM Patient p Where p.bioData.nationalId = :nationalId",Patient.class)
                 .setParameter("nationalId",nationalId)
                 .getResultList();
     }

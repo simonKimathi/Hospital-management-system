@@ -24,7 +24,7 @@
 					<a href="patient-list.jsp"><i class="fe fa-user-injured"></i> <span>Patients</span></a>
 				</li>
 				<li>
-					<a href="patient-list.jsp"><i class="fe fe-building"></i> <span>Rooms</span></a>
+					<a href="viewRooms.jsp"><i class="fe fe-building"></i> <span>Rooms</span></a>
 				</li>
 				<li>
 					<a href="Patient-visits.jsp"><i class="fe fa-list"></i> <span>Patients visits</span></a>

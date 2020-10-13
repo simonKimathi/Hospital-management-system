@@ -60,10 +60,12 @@ HospitalSystemJsLib.showGrid = function(){
 
 
         if(me.idFieldName){
-            hrefValue=me.dataHref+"?id="+me.idFieldName;
+            hrefValue=me.dataHref+"?id="+row.idFieldName;
 
         }else if (me.rowFieldName){
             hrefValue=me.dataHref+"?id="+row.rowFieldName;
+        }else if (me.idRoomName){
+            hrefValue=me.dataHref+"?id="+row.idRoomName;
         }else {
             hrefValue=me.dataHref+"?id="+row.bioData.nationalId;
 

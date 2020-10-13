@@ -37,6 +37,7 @@
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/ws/HospitalRestApi/UserApi.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/commonClasses/BaseEntity.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/Encription.java
+/home/symoh/workspace/Hospital-management-system/src/main/java/com/JaxRsActivation.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/ws/HospitalRestApi/LabApi.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/servlet/PatientVisitsServlet.java
 /home/symoh/workspace/Hospital-management-system/src/main/java/com/hospital/model/PatientVitals.java

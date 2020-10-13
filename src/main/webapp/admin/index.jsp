@@ -23,7 +23,7 @@
 								<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
 							</li>
 							<li>
-								<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
+								<a href="viewRooms.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
 							</li>
 							<li>
 								<a href="Patient-visits.jsp"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
@@ -35,6 +35,14 @@
 								<a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a href="invoice-report.jsp">Invoice Reports</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="#"><i class="fe fe-folder"></i> <span> Modules</span> <span class="menu-arrow"></span></a>
+								<ul style="display: none;">
+									<li><a href="../doctor/doctor-dashboard.jsp">Doctor</a></li>
+									<li><a href="../Cashier/cashier-dashboard.jsp">Cashier</a></li>
+									<li><a href="../Registration/registration-dashboard.jsp">Reception</a></li>
 								</ul>
 							</li>
 							<li> 

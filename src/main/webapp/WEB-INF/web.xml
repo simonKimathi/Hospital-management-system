@@ -9,7 +9,7 @@
   </welcome-file-list>
 
 
-  <servlet>
+  <!--<servlet>
     <servlet-name>Resteasy</servlet-name>
     <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
   </servlet>
@@ -37,7 +37,7 @@
 
   <listener>
     <listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
-  </listener>
+  </listener>-->
 
 
 <!--<servlet>

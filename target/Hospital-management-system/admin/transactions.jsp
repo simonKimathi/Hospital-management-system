@@ -1,3 +1,9 @@
+<%@ page import="javax.naming.Context" %>
+<%@ page import="javax.naming.InitialContext" %>
+<%@ page import="javax.sql.DataSource" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +30,7 @@
                     <a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
                 </li>
                 <li>
-                    <a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
+                    <a href="viewRooms.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
                 </li>
                 <li>
                     <a href="Patient-visits.jsp"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
@@ -32,7 +38,7 @@
                 <li>
                     <a href="transactions.jsp"><i class="fe fe-activity"></i> <span>Transactions</span></a>
                 </li>
-                <li class="submenu">
+                <li class="submenu" disabled="true">
                     <a href="#"><i class="fe fe-document"></i> <span> Reports</span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="invoice-report.jsp">Invoice Reports</a></li>
@@ -72,10 +78,63 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <div class="table-responsive">
-                                <div id="module-content">
-                                    ...loading
-                                </div>
+                            <div >
+
+
+                                <table class="table table-hover table-center mb-0">
+                                    <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Particular</th>
+                                        <th>Quantity</th>
+                                        <th>price</th>
+                                        <th>Bill status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <%
+                                        try
+                                        {
+                                            Context context1 = new InitialContext();
+                                            DataSource dataSource1 = (DataSource)context1.lookup("java:jboss/datasources/mrs");
+                                            Connection connection1 = dataSource1.getConnection();
+                                            String query1 = "Select * from hospital_invoice";
+                                            Statement statement1 = connection1.createStatement();
+                                            ResultSet result1 = statement1.executeQuery(query1);
+                                            while(result1.next())
+                                            {
+
+                                                String localDate= result1.getString("time_created");
+                                                String tmpDate=localDate.substring(0,10);
+                                                //<td><span class="badge badge-pill bg-success-light">Confirm</span></td>
+                                    %>
+                                    <tr>
+                                        <td><%=tmpDate%></td>
+                                        <td><%=result1.getString("particular")%></td>
+                                        <td><%=result1.getString("quantity")%></td>
+                                        <td>ksh <%=result1.getString("price")%></td>
+                                        <td><%=result1.getString("status")%></td>
+
+                                    </tr>
+
+
+                                    <%
+                                            }
+                                            connection1.close();
+                                        }
+                                        catch(Exception ex)
+                                        {
+                                            out.println("Exception:" +ex.getMessage());
+                                            ex.printStackTrace();
+                                        }
+
+                                    %>
+                                    </tbody>
+                                </table>
+
+
+
                             </div>
                         </div>
                     </div>

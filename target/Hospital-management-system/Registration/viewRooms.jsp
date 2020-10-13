@@ -96,8 +96,18 @@
 
 
 				<div class="row">
-					<div class="col-md-12">
-
+					<div class="col-sm-12">
+						<div class="card">
+							<div class="card-body">
+								<div class="table-responsive">
+									<div class="table-responsive">
+										<div id="room-content">
+											...loading
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -112,6 +122,8 @@
 </div>
 <!-- /Page Content -->
 
+
+<script src="../js/room.js"></script>
 <%@ include file="../commonSections/customFooter.jsp" %>
 
 </body>

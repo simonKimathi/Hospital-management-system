@@ -1,12 +1,10 @@
 (function(){
     HospitalSystemJsLib.showGrid.call({
-        /*dataUrl: '../room',*/
-        dataUrl: 'room/getRooms',/*
-        dataUrlSave : 'addRoom',*/
-        contentId:'module-content',/*
-        componentId: 'roomComponent',*/
-        gridStyle:'customers',
-        formContentType: 'application/json',
+        dataUrl: 'room/getRooms',
+        gridStyle:'datatable table table-hover table-center mb-0',
+        contentId:'room-content',
+        dataHref:'#assignRoom',
+        idRoomName:"roomId",
         gridColumns:[{
             header:'Room ID',
             dataIndex:'roomId'
@@ -16,18 +14,7 @@
         },{
             header:'Assigned To',
             dataIndex:'assigned'
-        }]/*,
-        formField:[{
-            label: 'Room ID',
-            name: 'roomId',
-            type: 'text',
-            id: 'org-name'
-        },{
-            label: 'Room Type',
-            name: 'contact.rType',
-            type: 'text',
-            id: 'org-name'
-        }]*/
+        }]
     });
 })();
 

@@ -24,7 +24,7 @@
 					<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
 				</li>
 				<li>
-					<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
+					<a href="viewRooms.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
 				</li>
 				<li>
 					<a href="Patient-visits.jsp"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
@@ -73,7 +73,7 @@
 					<div class="card-body">
 						<div class="table-responsive">
 							<div class="table-responsive">
-								<div id="module-content"> //datatable table table-hover table-center mb-0
+								<div id="module-content">
 									...loading
 								</div>
 							</div>

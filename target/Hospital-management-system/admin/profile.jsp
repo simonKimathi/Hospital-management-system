@@ -23,7 +23,7 @@
 						<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Patients</span></a>
 					</li>
 					<li>
-						<a href="patient-list.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
+						<a href="viewRooms.jsp"><i class="fe fe-user"></i> <span>Rooms</span></a>
 					</li>
 					<li>
 						<a href="Patient-visits.jsp"><i class="fe fe-star-o"></i> <span>Patients visits</span></a>
@@ -81,7 +81,7 @@
 										<h6 class="text-muted"><%=user.getUserName()%></h6>
 										<h6 class="about-text"></br><%=user.getRole()%></h6>
 									</div>
-									<div class="col-auto profile-btn">
+									<div class="col-auto profile-btn" >
 										
 										<a href="#" class="btn btn-primary">
 											Edit
@@ -111,7 +111,7 @@
 												<div class="card-body">
 													<h5 class="card-title d-flex justify-content-between">
 														<span>Personal Details</span> 
-														<a class="edit-link" data-toggle="modal" href="#edit_personal_details"><i class="fa fa-edit mr-1"></i>Edit</a>
+														<a class="edit-link" data-toggle="modal" href="#edit_personal_details" hidden><i class="fa fa-edit mr-1"></i>Edit</a>
 													</h5>
 													<div class="row">
 														<p class="col-sm-2 text-muted text-sm-right mb-0 mb-sm-3">Name</p>
